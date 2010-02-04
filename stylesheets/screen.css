@@ -33,3 +33,32 @@ h2 {
   color: green;
   text-decoration: none;
 }
+#experience {
+  text-align: justify;
+}
+#experience ol {
+  list-style-type: none;
+  padding: 5px;
+}
+#experience ul li div.header {
+  background: #eee;
+  font-weight: normal;
+  padding: 5px 10px;
+}
+#experience span.title {
+  font-weight: bold;
+}
+#experience span.period {
+  font-size: 0.8em;
+}
+#experience span.position {
+  display: block;
+}
+#experience div.footer {
+  padding: 5px;
+  font-size: 0.8em;
+  color: #888;
+}
+#experience div.footer p {
+  margin: 5px 0px;
+}

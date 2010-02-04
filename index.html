@@ -10,8 +10,7 @@
   <body>
     <h1>Cyril Rohr</h1>
     <div id="profile">
-      <a href="cv.html"><img src="images/me.jpg" /><br />
-      View my CV</a>
+      <img src="images/me.jpg" />
     </div>
     <div id="code">
       <h2>Code</h2>
@@ -24,8 +23,112 @@
         <li>Various patches for <a href="http://github.com/archiloque/rest-client">RestClient</a> and <a href="http://sequel.rubyforge.org">Sequel</a> libraries</li>
       </ul>      
     </div>
-    <div id="papers">
-      <h2>Papers</h2>
+    <div id="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          <div class="header">
+          <span class="period">Oct. 2008 until now</span>
+            <span class="title">Distributed Software Architectures</span>
+            <span class="position">Associate Engineer at <a href="http://inria.fr">INRIA</a> - Rennes Bretagne Atlantique, France</span>
+          </div>
+          <div class="summary">
+            <ol>
+              <li>
+                Designed, implemented and deployed a distributed software architecture based on RESTful APIs for the <a href="https://www.grid5000.fr">Grid5000</a> project (an infrastructure distributed in 9 sites around France, for research in large-scale parallel and distributed systems). 
+              </li>
+              <li>
+                Built a web interface on top of the APIs to allow for easy submission, deployment and monitoring of one's experiments. Led to the release of <a href="http://github.com/crohr/restfully">Restfully</a>, a client for RESTful APIs.
+              </li>
+              <li>
+                Did multiple presentations/formations about the REST architectural style to team members and fellow institute members.
+              </li>
+            </ol>
+          </div>
+          <div class="footer">
+            <p class="technologies">
+              Technologies:
+              Ruby stack (Sinatra, Eventmachine, Thin, Passenger, RSpec, Capistrano), Apache, Squid, Javascript (jQuery, jSpec), Git
+            </p>
+          </div>
+        </li>
+        
+        <li>
+          <div class="header">
+            <span class="period">Jan. 2008 - Jul. 2008</span>
+            <span class="title">Cross-Media Summarization and Video processing</span>
+            <span class="position">Research Internship at <a href="http://qut.edu.au">Queensland University of Technology</a> (QUT), Australia</span>
+          </div>
+          <div class="summary">
+            <ol>
+              <li>
+                Designed and built a solution to crawl, index and process media content (text, videos and images) from hundreds of online news sources to provide an aggregated view of the day-to-day news information flow. Also built an innovative interface for browsing and filtering the resulting news events. Led to the publication of the paper <a href="#publications"><em>Aggregated cross-media news visualization and personalization</em></a>
+              </li>
+              <li>
+                Participated in the international TRECVid research event, leading to the publication of the paper <a href="#publications"><em>Efficient generation of pleasant video summaries</em></a>.
+              </li>
+            </ol>
+          </div>
+          <div class="footer">
+            <p class="keywords">
+              Keyworks:
+              Information Retrieval, Clustering, Classification, News Visualization, Image and Video processing.</p>
+            <p class="technologies">
+              Technologies:
+              C, Ruby stack (Ruby on Rails, Mongrel), Javascript (jQuery), Clustering &amp; Classification tools (libSVM, custom Incremental Hierarchical Clustering algorithm, Reuters OpenCalais)
+            </p>
+          </div>
+        </li>
+        
+        <li>
+          <div class="header">
+            <span class="period">May 2007 - Jul. 2007</span>
+            <span class="title">Quality in Java developments</span>
+            <span class="position">Software Engineer Internship in the <a href="http://www.kalistick.fr">Kalistick</a> startup, Lyon, France</span>
+          </div>
+          <div class="summary">
+            <ol>
+              <li>
+                Analysed the quality issues in Java developments, and investigated the various metrics and best-practices available to measure the quality of Java applications during their development cycle.
+              </li>
+              <li>
+                Developed a reporting tool to display the issues in a prioritized way, so that the developer team can quickly pinpoint and act on the most urgent issues to solve.
+              </li>
+            </ol>
+          </div>
+          <div class="footer">
+            <p class="technologies">
+              Technologies:
+              Java, BIRT, Code analyzers (e.g. PMD), JBoss Drools (rules engine)
+            </p>
+          </div>
+        </li>
+        
+        <li>
+          <div class="header">
+            <span class="period">June 2006 - August 2006</span>
+            <span class="title">Business Application</span>
+            <span class="position">Software Developer Internship at <a href="http://www.lesbainsdelopera.com">Les Bains de l'Opéra</a>, Lyon, France</span>
+          </div>
+          <div class="summary">
+            <ol>
+              <li>
+                Designed, built and deployed an intranet application for managing the business (20000 customers, 10 employees) : invoicing, customer management, improving consumer loyalty. The setup was able to increase efficiency and provide reports on many of the business’ aspects.
+              </li>
+            </ol>
+          </div>
+          <div class="footer">
+            <p class="technologies">
+              Technologies:
+              XHTML, CSS, Ajax, PHP5, MySQL
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="publications">
+      <a name="publications" />
+      <h2>Publications</h2>
       <ul>
         <li>Cyril Rohr and Dian Tjondronegoro. 2008. Aggregated cross-media news visualization and personalization. In Proceeding of the 1st ACM international conference on Multimedia information retrieval (MIR '08). ACM, New York, NY, USA, 371-378.</li>
         <li>Johannes Sasongko, Cyril Rohr, and Dian Tjondronegoro. 2008. Efficient generation of pleasant video summaries. In Proceedings of the 2nd ACM TRECVid Video Summarization Workshop (TVS '08). ACM, New York, NY, USA, 119-123.</li>
