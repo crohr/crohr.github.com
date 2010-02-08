@@ -1,0 +1,103 @@
+# SSL Renegociation problems with OpenSSL 0.9.8l
+If your SSL connection to your Apache server hangs while trying to make a renegociation, [here is why](http://isc.sans.org/diary.html?storyid=7543)   
+To deal with a security issue, OpenSSL no longer honors SSL renegociation:
+
+> Due to the recent publishing of information regarding a TLS/SSL protocol vulnerability (previous ISC diary entry can be found here http://isc.sans.org/diary.html?storyid=7534)  OpenSSL has released a new version (OpenSSL 0.9.8l). It should be noted that this update does not "fix" the vulnerability in the protocol. It appears that they have made the choice to simply remove TLS/SSL renegotiation from their package by default.
+
+Instead, it just blocks:
+
+    $ curl -vkni https://api.grid5000.fr/sid/grid5000
+
+    * About to connect() to api.grid5000.fr port 443 (#0)
+    *   Trying 131.254.202.206... connected
+    * Connected to api.grid5000.fr (131.254.202.206) port 443 (#0)
+    * SSLv3, TLS handshake, Client hello (1):
+    * SSLv3, TLS handshake, Server hello (2):
+    * SSLv3, TLS handshake, CERT (11):
+    * SSLv3, TLS handshake, Server key exchange (12):
+    * SSLv3, TLS handshake, Server finished (14):
+    * SSLv3, TLS handshake, Client key exchange (16):
+    * SSLv3, TLS change cipher, Client hello (1):
+    * SSLv3, TLS handshake, Finished (20):
+    * SSLv3, TLS change cipher, Client hello (1):
+    * SSLv3, TLS handshake, Finished (20):
+    * SSL connection using DHE-RSA-AES256-SHA
+    * Server certificate:
+    * 	 subject: C=FR, O=INRIA, OU=Rennes, CN=*.grid5000.fr, emailAddress=support-staff@lists.grid5000.fr
+    * 	 start date: 2009-06-03 14:51:41 GMT
+    * 	 expire date: 2011-06-03 14:51:41 GMT
+    * 	 common name: *.grid5000.fr (matched)
+    * 	 issuer: C=FR, O=INRIA, CN=INRIA-Standard
+    * 	 SSL certificate verify result: self signed certificate in certificate chain (19), continuing anyway.
+    * Server auth using Basic with user 'yyy'
+    > GET /sid/grid5000 HTTP/1.1
+    > Authorization: Basic xxx
+    > User-Agent: curl/7.19.4 (universal-apple-darwin10.0) libcurl/7.19.4 OpenSSL/0.9.8l zlib/1.2.3
+    > Host: api.grid5000.fr
+    > Accept: */*
+    > 
+    * SSLv3, TLS handshake, Hello request (0):
+
+The renegociation was due to my Apache configuration: the `SSLOptions`, `SSLVerifyClient`, `SSLVerifyDepth` directives trigger an SSL renegociation at the directory level. Setting them at the VirtualHost level solves the problem, even though it may not be possible for you to do so if they are directory-specific.
+
+The configuration that cause the problem to occur was as follows:
+
+    <VirtualHost *:443>
+    ...
+      <Location />
+        Order deny,allow
+        Allow from all
+
+        SSLOptions -StrictRequire
+        SSLVerifyClient optional
+        SSLUserName SSL_CLIENT_S_DN_CN
+        SSLVerifyDepth 2
+        SSLRequireSSL
+
+        SSLRequire %{SSL_CLIENT_I_DN_CN} eq "xxx"
+
+        # fall back to Basic Auth
+        AuthType Basic
+        AuthBasicProvider ldap
+        AuthName "Please authenticate"
+        AuthLDAPURL ldaps://ldap-server:636/dc=xxx,dc=fr?uid
+        AuthzLDAPAuthoritative Off
+        AuthLDAPGroupAttribute memberUid
+        AuthLDAPGroupAttributeIsDN Off
+        require valid-user
+
+        Satisfy Any
+      </Location>
+    </VirtualHost>
+
+And the new configuration is:
+
+    <VirtualHost *:443>
+    ...
+      SSLOptions -StrictRequire
+      SSLVerifyClient optional
+      SSLUserName SSL_CLIENT_S_DN_CN
+      SSLVerifyDepth 2
+      
+      <Location />
+        Order deny,allow
+        Allow from all
+
+        SSLRequireSSL
+        SSLRequire %{SSL_CLIENT_I_DN_CN} eq "xxx"
+
+        # fall back to Basic Auth
+        AuthType Basic
+        AuthBasicProvider ldap
+        AuthName "Please authenticate"
+        AuthLDAPURL ldaps://ldap-server:636/dc=xxx,dc=fr?uid
+        AuthzLDAPAuthoritative Off
+        AuthLDAPGroupAttribute memberUid
+        AuthLDAPGroupAttributeIsDN Off
+        require valid-user
+
+        Satisfy Any
+      </Location>
+    </VirtualHost>
+
+See http://httpd.apache.org/docs/2.0/mod/mod_ssl.html for the list of directives that trigger a renegociation.
