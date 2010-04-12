@@ -58,7 +58,7 @@ p.technologies, p.keywords {
 #experience {
   text-align: justify;
 }
-#experience ol {
+#experience ol, #education ol {
   list-style-type: circle;
   padding-left: 25px;
 }
