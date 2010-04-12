@@ -86,3 +86,6 @@ p.technologies, p.keywords {
 #experience div.footer p {
   margin: 5px 0px;
 }
+span.location {
+  font-size: 0.8em;
+}
