@@ -1,0 +1,76 @@
+
+# Cyril Rohr
+Software Engineer specializing in distributed RESTful architectures and Ruby development.  
+Based in [Rennes](http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Rennes,+France&sll=37.0625,-95.677068&sspn=60.288153,97.119141&ie=UTF8&hq=&hnear=Rennes,+Ille-et-Vilaine,+Brittany,+France&z=13), France.
+
+## WORK EXPERIENCE
+
+### R&D Engineer - *Distributed Software Architectures* - [INRIA](http://inria.fr), Rennes, France
+Oct. 2008 until now
+
+* Designed, implemented and deployed a distributed software architecture based on RESTful APIs for the [Grid5000](http://www.grid5000.fr) project (an infrastructure distributed in 9 sites around France, for research in large-scale parallel and distributed systems).  
+* Built a web interface on top of the APIs to allow for easy submission, deployment and monitoring of a user's experiments. Led to the release of [Restfully](http://github.com/crohr/restfully), a client for RESTful APIs.  
+* Did multiple presentations/formations about the REST architectural style to team members and fellow institute members.  
+
+
+### Research Intern - *Cross-Media Summarization and Video processing* - [Queensland University of Technology](http://qut.edu.au) (QUT), Brisbane, Australia
+Jan. 2008 - Jul. 2008
+
+* Designed and built a solution to crawl, index and process media content (text, videos and images) from hundreds of online news sources to provide an aggregated view of the day-to-day news information flow. Also built an innovative interface for browsing and filtering the resulting news events. Led to the publication of the paper *Aggregated cross-media news visualization and personalization* (see [PUBLICATIONS](#PUBLICATIONS)).  
+* Participated in the international TRECVid research event, leading to the publication of the paper *Efficient generation of pleasant video summaries* (see [PUBLICATIONS](#PUBLICATIONS)).  
+
+
+
+### Software Engineer Intern - *Quality in Java developments* - [Kalistick](http://kalistick.fr), Lyon, France
+May 2007 - Jul. 2007
+
+* Within the Kalistick startup, I analyzed the quality issues in Java developments, and investigated the various metrics and best-practices available to measure the quality of Java applications during their development cycle.  
+* Developed a reporting tool to display the issues in a prioritized way, so that the developer team can quickly pinpoint and act on the most urgent issues to solve.  
+
+### Software Developer Intern - *Intranet Application* - Les Bains de l'Opéra, Lyon, France
+June 2006 - August 2006
+
+* Designed, built and deployed an intranet application for managing the business (20000 customers, 10 employees) : invoicing, customer management, improving consumer loyalty. The setup was able to increase efficiency and provide reports on many of the business’ aspects.
+
+
+
+## EDUCATION
+### Master of Science in Information Technology - [INSA Lyon](http://insa-lyon.fr/en), France
+July 2003 - September 2008
+
+* Obtained in September 2008 with **high honours**.
+* Final year at the Queensland University of Technology (QUT), Brisbane, AU (see [WORK EXPERIENCE](#WORK-EXPERIENCE)).
+
+
+## PUBLICATIONS
+* **Cyril Rohr** and Dian Tjondronegoro. 2008. [Aggregated cross-media news visualization and personalization](http://portal.acm.org/citation.cfm?id=1460157). In Proceeding of the 1st ACM international conference on Multimedia information retrieval (MIR '08). ACM, New York, NY, USA, 371-378.
+* Johannes Sasongko, **Cyril Rohr**, and Dian Tjondronegoro. 2008. [Efficient generation of pleasant video summaries](http://portal.acm.org/citation.cfm?id=1463563.1463585). In Proceedings of the 2nd ACM TRECVid Video Summarization Workshop (TVS '08). ACM, New York, NY, USA, 119-123.
+
+## SKILLS
+* **HTTP**:
+  Apache, Squid, HAProxy, nginx.
+* **Programming**: 
+  Ruby stack (Sinatra, Haml, Eventmachine, Thin, Passenger, RSpec, Capistrano), Javascript (jQuery, jSpec), HTML5, CSS, SQL, Java, C, C++.
+* **Tools**: 
+  Textmate, Version Control (Git, SVN), Server administration tools, Monitoring tools (Ganglia, Nagios), Configuration tools (Puppet, Chef), Clustering & Classification tools (various algorithms), Reporting tools (BIRT), Code analyzers (PMD...), Rules engine (Drools).
+* **Methods**: 
+  Test Driven Development, Information Retrieval, Clustering, Classification, Image and Video processing.
+* **Languages**:
+  French (native), English (fluent), German (intermediate), Spanish (beginner).
+
+
+
+## INTERESTS
+* Playing Chess, Juggling, Biking, Skiing, Reading.
+* Open Source contributions (see [LINKS](#LINKS) below).
+
+## LINKS
+
+[contact@crohr.me](mailto:contact@crohr.me),
+[+33-(0)6-33-85-83-32](tel:+33-6-33-85-83-32),
+[thoughts@twitter/crohr](http://twitter.com/crohr), [code@github/crohr](http://github.com/crohr)
+
+<!-- 
+  Generate this documentation using:
+  $ ronn -w --style print --manual="Cyril ROHR - CV" --html cv/2010.ronn && open cv/2010.html
+-->
