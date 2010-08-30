@@ -72,5 +72,5 @@ July 2003 - September 2008
 
 <!-- 
   Generate this documentation using:
-  $ ronn -w --style print --manual="Cyril ROHR - CV" --html cv/2010.ronn && open cv/2010.html
+  $ ronn -w --style print,all --manual="Cyril ROHR - CV" --html cyril-rohr.ronn && open cyril-rohr.html
 -->
