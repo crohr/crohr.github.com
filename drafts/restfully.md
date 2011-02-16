@@ -5,6 +5,77 @@
 * Works as a state machine
 
 
+* Need to semantically define what is a "thing" for a human with the corresponding relationaship.
+  Ex: a "job" is represented by a rel="http://whatever.com/job"
+  Ex: a "collection" of items is represented by rel="collection"
+  
+* The client defines 
+
+  rennes = find :site, /rennes/i
+
+  job = post :job, :on => rennes do |job|
+    job.name = "Hello Worl"
+    job.resources = "nodes=2"
+    job.script = "sleep 3600"
+  end
+  
+  job.wait(:timeout => 5.min) do |job|
+    job['status'] == 'running'
+  end
+  
+  deployment = post :deployment, :on => rennes do |dep|
+    dep.nodes = job['assigned_nodes']
+  end
+  
+  poll deployment
+
+Grammar[:job] = "http://whatever.com/job"
+Grammar[:site] = "http://whatever.com/site"
+
+root.collection(:site).each do |site|
+  site.collection(:job).each do |job|
+    site.get(
+  end
+end
+
+root.sites
+
+def site(name)
+  search(:rel => ["site", "collection"]).find{|item| item["name"] =~ /rennes/i }
+end
+
+def job(id)
+  search(:rel => ["job", "collection"]).find{|item| item["id"] == id }
+end
+
+site("rennes").job(1234) do |job|
+  delete job
+end
+
+site("rennes").job
+
+search(:rel => ["site", "collection"])
+search(:rel => ["job", "collection"]) do |jobs|
+  
+end
+
+find(:rel => http://whatever.com/jobs) do |jobs|
+  jobs.post()
+end
+
+
+OPTIONS /
+
+Allow: GET
+
+GET /
+Link: /jobs, rel="collection http://whatever.com/jobs"
+Link: /deployments
+
+OPTIONS
+
+
+
 
 Example: GOAL: ordering 2 products and paying
 
