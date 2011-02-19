@@ -3,7 +3,7 @@ layout: me
 title: Cyril Rohr
 ---
 
-I'm a 26 year old software engineer, passionate about the Ruby programming language, information retrieval, machine learning techniques, distributed software architectures, and web development in general.
+I'm a 25 year old software engineer, passionate about the Ruby programming language, information retrieval, machine learning techniques, distributed software architectures, and web development in general.
 
 [At work](https://www.grid5000.fr), I build easy-to-use HTTP APIs that closely follow the REST principles, deployed on a geographically distributed infrastructure I try to make as scalable and fault-tolerant as possible.
 More recently, I've been involved in projects around cloud computing and virtualization.
@@ -11,7 +11,7 @@ More recently, I've been involved in projects around cloud computing and virtual
 When I find something interesting or useful, I try to [write](/blog) or [twit](http://twitter.com/crohr) about it.
 When I don't find something I need, I try to write some [code](http://github.com/crohr).
 
-You can drop me a line at contact [at] crohr.me
+You can drop me a line at contact@crohr.me.
 
 ## Code
 Here are some software I've written in my spare time or that my employer has allowed me to publicly release.
@@ -40,10 +40,10 @@ I had a great time doing my final year of education and a bit of research at the
 * Since Oct. 2008, I work as a R&amp;D Engineer at the [INRIA](http://www.inria.fr/) national research institute in Rennes, France.
 
   I originally started to work on the [Grid'5000](http://www.grid5000.fr/) project, an infrastructure distributed in 9 sites around France for research in large-scale parallel and distributed systems.
-  In Aug. 2010 I also joined the EU founded [BonFIRE](http://bonfire-project.eu/) project to work on designing, building and operating a multi-site cloud facility.
+  In Aug. 2010 I also joined the EU founded [BonFIRE](http://bonfire-project.eu/) project to work on a multi-site cloud facility.
 
   I'm mainly in charge of designing, implementing and operating a distributed software architecture based on RESTful APIs.
-  I also build web interfaces and visualizations using standard and lightweight technologies: HTML5, Javascript, CSS.
+  I also build web interfaces and visualizations using standard and lightweight technologies such as HTML5, Javascript, CSS.
 
   My day-to-day work usually involves me writing code using a mix of Ruby, Javascript, HTML and CSS; pushing and pulling with Git; messing with DEB and RPM packages; cooking some Puppet recipes to configure and deploy two dozens of servers; and trying to bend big-old Apache and Squid to my will.
 
@@ -65,6 +65,6 @@ I had a great time doing my final year of education and a bit of research at the
 ## Publications
 I had a brief but fulfilling research experience during 6 months. Below are the two articles I (co)-authored:
 
-* **Cyril Rohr** and Dian Tjondronegoro. 2008. [Aggregated cross-media news visualization and personalization](http://portal.acm.org/citation.cfm?id=1460157). In Proceeding of the 1st ACM international conference on Multimedia information retrieval (MIR '08). ACM, New York, NY, USA, 371-378.
+* **Cyril Rohr** and Dian Tjondronegoro. 2008. [*Aggregated cross-media news visualization and personalization*](http://portal.acm.org/citation.cfm?id=1460157). In Proceeding of the 1st ACM international conference on Multimedia information retrieval (MIR '08). ACM, New York, NY, USA, 371-378.
 
-* Johannes Sasongko, **Cyril Rohr**, and Dian Tjondronegoro. 2008. [Efficient generation of pleasant video summaries](http://portal.acm.org/citation.cfm?id=1463563.1463585). In Proceedings of the 2nd ACM TRECVid Video Summarization Workshop (TVS '08). ACM, New York, NY, USA, 119-123.
+* Johannes Sasongko, **Cyril Rohr**, and Dian Tjondronegoro. 2008. [*Efficient generation of pleasant video summaries*](http://portal.acm.org/citation.cfm?id=1463563.1463585). In Proceedings of the 2nd ACM TRECVid Video Summarization Workshop (TVS '08). ACM, New York, NY, USA, 119-123.
