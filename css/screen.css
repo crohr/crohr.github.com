@@ -210,3 +210,7 @@ ul.posts {
   #about ul li {
     margin-left: 1.5em;
   }
+
+img[alt="Brisbane, AU"] {
+  width: 100%;
+}

@@ -3,7 +3,7 @@ layout: me
 title: Cyril Rohr
 ---
 
-I'm a 25 year old software engineer, passionate about the Ruby programming language, information retrieval, machine learning techniques, distributed software architectures, and web development in general.
+I'm a 25 years old software engineer, passionate about the Ruby programming language, information retrieval, machine learning techniques, distributed software architectures, and web development in general.
 
 [At work](https://www.grid5000.fr), I build easy-to-use HTTP APIs that closely follow the REST principles, deployed on a geographically distributed infrastructure I try to make as scalable and fault-tolerant as possible.
 More recently, I've been involved in projects around cloud computing and virtualization.
@@ -12,6 +12,8 @@ When I find something interesting or useful, I try to [write](/blog) or [twit](h
 When I don't find something I need, I try to write some [code](http://github.com/crohr).
 
 You can drop me a line at contact@crohr.me.
+
+![Brisbane, AU](/photos/brisbane.jpg)
 
 ## Code
 Here are some software I've written in my spare time or that my employer has allowed me to publicly release.
