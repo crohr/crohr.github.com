@@ -73,10 +73,8 @@ ul.posts {
     line-height: 1.75em;
   }
 
-  ul.posts span, #post span {
-    color: #aaa;
-    font-family: Monaco, "Courier New", monospace;
-    font-size: 80%;
+  ul.posts span.date, #post span.date {
+    font-size: 90%;
   }
 
 /*****************************************************************************/
@@ -165,6 +163,9 @@ ul.posts {
     border: 1px solid #ddd;
     background-color: #eef;
     padding: 0 .4em;
+    word-wrap: break-word;      /* IE 5.5-7 */
+    white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+    white-space: pre-wrap;      /* current browsers */
   }
 
   #post ul,
