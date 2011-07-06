@@ -9,6 +9,8 @@ Just a quick tip in case someone encounters the same problem: given the followin
 
 YAML configuration file:
 
+{% highlight yaml %}
+
     defaults: &defaults
       adapter: em_mysqlplus
       encoding: utf8
@@ -37,7 +39,11 @@ YAML configuration file:
       password:
       host: 127.0.0.1
 
+{% endhighlight %}
+
 Ruby code to load the configuration:
+
+{% highlight ruby %}
 
     # somewhere in an initializer
     h = YAML.load_file(Rails.root.join("config/database.yml").to_s)[Rails.env]
@@ -48,7 +54,11 @@ Ruby code to load the configuration:
     p h["pool"]
     # => 50
 
+{% endhighlight %}
+
 Not exactly the expected result right? In fact it seems that the default YAML parser for Ruby1.9.2 (`Psych`) does not support merge keys (see <http://redmine.ruby-lang.org/issues/show/4300>). Although the fix exists and may be backported soon, the current workaround is to revert to using the `Syck` engine:
+
+{% highlight ruby %}
 
     # somewhere in an initializer
     YAML::ENGINE.yamler = "syck"
@@ -60,3 +70,5 @@ Not exactly the expected result right? In fact it seems that the default YAML pa
 
     p h["pool"]
     # => 200
+
+{% endhighlight %}
