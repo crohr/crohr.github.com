@@ -8,8 +8,7 @@ I'm a 25 years old software engineer, passionate about the Ruby programming lang
 [At work](https://www.grid5000.fr), I build easy-to-use HTTP APIs that closely follow the REST principles, deployed on a geographically distributed infrastructure I try to make as scalable and fault-tolerant as possible.
 More recently, I've been involved in projects around cloud computing and virtualization.
 
-When I find something interesting or useful, I try to [write](/blog) or [twit](http://twitter.com/crohr) about it.
-When I don't find something I need, I try to write some [code](http://github.com/crohr).
+I keep a log at [Ebarnouflant](http://ebarnouflant.com), and you can also find me on [twitter](http://twitter.com/crohr). I also write some [code](http://github.com/crohr).
 
 You can drop me a line at contact@crohr.me.
 
