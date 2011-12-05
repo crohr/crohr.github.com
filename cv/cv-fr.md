@@ -1,6 +1,8 @@
 <style>
 body {
-  margin: 40px;
+  margin: 20px;
+  margin-bottom: 60px;
+  margin-top: 60px;
 }
 </style>
 
@@ -20,9 +22,10 @@ pragmatique, créatif. Basé à [Rennes] [rennes], France.
 
 Participation au projet européen [BonFIRE] [bonfire], visant à créer une
 fédération de plateformes de cloud-computing. Mise en place d'une API REST
-unifiée pour l'accès à toutes ces plateformes. Développement d'outils de
-conduite d'expérience, packaging de composants pour CentOS (RPM) et Debian
-(DEB). Manipulation et patching d'[OpenNebula] [opennebula].
+unifiée basée sur [OCCI] [occi] pour l'accès à toutes ces plateformes.
+Développement d'outils de conduite d'expérience, packaging de composants pour
+CentOS (RPM) et Debian (DEB). Manipulation et patching d'[OpenNebula]
+[opennebula].
 
 Contributeur au projet Grid'5000 (voir ci-dessous). Développement d'une
 infrastructure pour réserver à la demande un grand nombre de machines
@@ -34,6 +37,7 @@ une machine d'intégration sous [Jenkins] [jenkins].
 Participation à, et animation de réunions techniques avec les développeurs
 des partenaires européens.
 
+[occi]: http://occi-wg.org/
 [bonfire]: http://www.bonfire-project.eu/
 [cucumber]: http://cukes.info/
 [jenkins]: http://jenkins-ci.org/
@@ -92,13 +96,12 @@ l'efficacité et de produire des rapports détaillés sur l'activité.
 ### Diplôme d'ingénieur en informatique - [INSA Lyon](http://insa-lyon.fr/en), France <div style="font-size: 12px; float: right">Juil 2003 - Sept 2008</div>
 
 Reçu en septembre 2008 avec les **Félicitations du Jury**. Dernière année
-effectuée à l'université de technologie du Queensland (QUT), Brisbane, AU (cf.
-[EXPÉRIENCE](#EXP-RIENCE)).
+effectuée à l'université de technologie du Queensland (QUT), Brisbane, AU.
 
 ## COMPÉTENCES
 
-Maîtrise les architectures distribuées et le développement web. Utilise au
-quotidien :
+J'ai une bonne maîtrise des architectures distribuées et du développement web
+en général. J'utilise au quotidien :
 
 * les **langages de programmation** et **frameworks** de l'écosystème Ruby
   (RubyOnRails/Sinatra/Goliath, Haml, Eventmachine, Thin, Passenger, RSpec,
@@ -121,25 +124,25 @@ quotidien :
 
 * les **outils de bug-tracking** (Redmine, Bugzilla, Github Issues).
 
-Parle avec plus ou moins de réussite les **langues** suivantes: Français
+Je parle avec plus ou moins de réussite les **langues** suivantes: Français
 (natif), Anglais (courant), Allemand (intermédiaire), Espagnol (débutant).
 
-Peut aussi se débrouiller en Node.js, Java, PHP, C, **administration de
+Je peux aussi me débrouiller en Node.js, Java, PHP, C, **administration de
 systèmes** GNU/Linux, infrastructures à clés publiques, outils de monitoring
 Ganglia et Zabbix, machine learning (clustering, classification, information
 retrieval), traitement d'image et de vidéo, moteurs de règles (Drools).
 
 ## PUBLICATIONS
 
-**Cyril Rohr** et Dian Tjondronegoro. 2008. [Aggregated cross-media news
-visualization and personalization] [1]. In Proceeding of the 1st ACM
-international conference on Multimedia information retrieval (MIR '08). ACM,
-New York, NY, USA, 371-378.
+* **Cyril Rohr** et Dian Tjondronegoro. 2008. [Aggregated cross-media news
+  visualization and personalization] [1]. In Proceeding of the 1st ACM
+  international conference on Multimedia information retrieval (MIR '08). ACM,
+  New York, NY, USA, 371-378.
 
-Johannes Sasongko, **Cyril Rohr**, et Dian Tjondronegoro. 2008. [Efficient
-generation of pleasant video summaries] [2]. In Proceedings of the 2nd ACM
-TRECVid Video Summarization Workshop (TVS '08). ACM, New York, NY, USA,
-119-123.
+* Johannes Sasongko, **Cyril Rohr**, et Dian Tjondronegoro. 2008. [Efficient
+  generation of pleasant video summaries] [2]. In Proceedings of the 2nd ACM
+  TRECVid Video Summarization Workshop (TVS '08). ACM, New York, NY, USA,
+  119-123.
 
 [1]: http://portal.acm.org/citation.cfm?id=1460157
 [2]: http://portal.acm.org/citation.cfm?id=1463563.1463585
@@ -154,11 +157,6 @@ TRECVid Video Summarization Workshop (TVS '08). ACM, New York, NY, USA,
 
 [contact@crohr.me](mailto:contact@crohr.me),
 [+33-(0)6-33-85-83-32](tel:+33-6-33-85-83-32),
-[blog](http://ebarnouflant.com/),
+[crohr.me](http://crohr.me/),
 [twitter/crohr](http://twitter.com/crohr),
 [github/crohr](http://github.com/crohr)
-
-<!--
-  Generate this documentation using:
-  $ ronn -w --style print,all --manual="Cyril ROHR - CV" --html cyril-rohr.ronn && open cyril-rohr.html
--->
