@@ -3,9 +3,9 @@ layout: me
 title: Cyril Rohr
 ---
 
-I'm a 25 years old software engineer, passionate about the Ruby programming
-language, information retrieval, machine learning techniques, distributed
-software architectures, and web development in general.
+I'm 26, passionate about the Ruby programming language, information retrieval,
+machine learning techniques, distributed software architectures, and web
+development in general.
 
 [At work](https://www.grid5000.fr), I build easy-to-use HTTP APIs that closely
 follow the REST principles, deployed on a geographically distributed
@@ -42,7 +42,7 @@ allowed me to publicly release.
 * [toggl-notifier] [toggl-notifier] - Hack! Update your Adium status with the
   description of your current task in [Toggl](http://toggl.com) (Mac only).
 
-[restfully]: http://github.com/crohr/restfully
+[restfully]: http://crohr.me/restfully/
 [components]: http://github.com/crohr/rest-client-components
 [rack]: http://rack.rubyforge.com
 [g5k-campaign]: http://g5k-campaign.gforge.inria.fr/
