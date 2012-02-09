@@ -7,8 +7,7 @@ I'm 26, passionate about the Ruby programming language, information retrieval,
 machine learning techniques, distributed software architectures, and web
 development in general.
 
-I currently live in Rennes, France and I'm **looking for freelance work
-starting April 2012**.
+**I'm looking for freelance work starting April 2012**.
 
 [At work](https://www.grid5000.fr), I build easy-to-use HTTP APIs that closely
 follow the REST principles, deployed on a geographically distributed
@@ -20,10 +19,13 @@ I keep a log at [Ebarnouflant](http://ebarnouflant.com), and you can also find
 me on [twitter](http://twitter.com/crohr). I also write some
 [code](http://github.com/crohr).
 
-You can drop me a line at **contact@crohr.me**. French readers can find a
-Résumé (CV) here: [cv-fr.pdf](/cv-fr.pdf).
+I currently live in [Rennes, France] [location]. You can drop me a line at
+**contact@crohr.me**. French readers can find a Résumé (CV) here:
+[cv-fr.pdf](/cv-fr.pdf).
 
 ![Brisbane, AU](/photos/brisbane.jpg)
+
+[location]: http://g.co/maps/k6ezv
 
 ## Code
 
