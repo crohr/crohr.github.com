@@ -58,7 +58,7 @@ allowed me to publicly release.
 Most of the code I produced has been within INRIA. Thanks to the following
 screencast, you can have a small overview of what I've done there:
 
-<video width="560" height="340" controls><source src="https://www.grid5000.fr/pub/screencasts/grid5000-web-portal.mov" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' /></video>
+<video width="560" height="340" controls><source src="https://www.grid5000.fr/pub/screencasts/grid5000-web-portal.mov" type="video/mp4" /></video>
 
 The screencast above presents the user interface I built on top of the APIs I
 developed for the Grid'5000 platform. It shows how you can select and reserve
