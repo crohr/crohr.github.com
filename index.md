@@ -29,7 +29,7 @@ I currently live in [Rennes, France] [location]. You can drop me a line at
 
 ## Code
 
-Here are some software I've written in my spare time or that my employer has
+Here is some software I've written in my spare time or that my employer has
 allowed me to publicly release.
 
 * [restfully] [restfully] - A Ruby client for RESTful APIs.
