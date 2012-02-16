@@ -55,6 +55,13 @@ allowed me to publicly release.
 [syslogger]: http://github.com/crohr/syslogger
 [toggl-notifier]: http://github.com/crohr/toggl-notifier
 
+## Presentations
+
+* Take a REST
+
+<script src="http://speakerdeck.com/embed/4f39429ffe6466002101d84e.js">
+</script>
+
 <!--
 ## Screencasts
 
