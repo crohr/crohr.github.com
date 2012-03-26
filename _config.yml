@@ -1,3 +1,4 @@
 auto: true
 pygments: true
 lsi: true
+plugins: ./_plugins
