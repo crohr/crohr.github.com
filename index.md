@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cyril Rohr (crohr) - Ruby and Node.js freelancer in Rennes, France
+title: Cyril Rohr - Ruby and Node.js freelancer in Rennes, France
 ---
 
 {% include about.md %}
