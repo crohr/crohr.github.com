@@ -1,33 +1,52 @@
-<!--
 <style>
 body {
-  margin: 20px;
+  margin: 40px;
   margin-bottom: 60px;
-  margin-top: 60px;
+  margin-top: 20px;
+  margin-right: 40px;
+}
+p {
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: justify;
+  font-size: 12px;
+}
+h2 {
+  font-size: 18px;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+ul p {
+  margin-left: 0px;
 }
 </style>
-//-->
 
 # Cyril Rohr
+
+<div style="float: right; border: 1px solid #ccc; padding: 10px;margin-left: 20px">
+  <a href="mailto:contact@crohr.me">contact@crohr.me</a>
+  <br />
+  +33-6-33-85-83-32
+</div>
 
 Ingénieur en informatique, spécialisé dans les architectures distribuées de
 type REST et le développement Ruby. Fortes compétences de développement, mais
 compréhension et maîtrise des problématiques opérationnelles. Autonome,
 pragmatique, créatif. Basé à [Rennes] [rennes], France.
 
-[rennes]: http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Rennes,+France&sll=37.0625,-95.677068&sspn=60.288153,97.119141&ie=UTF8&hq=&hnear=Rennes,+Ille-et-Vilaine,+Brittany,+France&z=13
 
+[rennes]: http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Rennes,+France&sll=37.0625,-95.677068&sspn=60.288153,97.119141&ie=UTF8&hq=&hnear=Rennes,+Ille-et-Vilaine,+Brittany,+France&z=13
 
 ## EXPÉRIENCE
 
-### Ingénieur R&D - *BonFIRE* - [INRIA](http://inria.fr), Rennes, France <div style="font-size: 12px; float: right">Oct. 2010 - présent</div>
+### Ingénieur R&D - *BonFIRE* - [INRIA](http://inria.fr), Rennes, France <div style="font-size: 12px; float: right">Oct. 2010 - Mars 2012</div>
 
 Participation au projet européen [BonFIRE] [bonfire], visant à créer une
 fédération de plateformes de cloud-computing. Mise en place d'une API REST
 unifiée basée sur [OCCI] [occi] pour l'accès à toutes ces plateformes.
 Développement d'outils de conduite d'expérience, packaging de composants pour
-CentOS (RPM) et Debian (DEB). Manipulation et patching d'[OpenNebula]
-[opennebula].
+les distributions Linux CentOS (RPM) et Debian (DEB). Manipulation et patching
+d'[OpenNebula] [opennebula].
 
 Contributeur au projet Grid'5000 (voir ci-dessous). Développement d'une
 infrastructure pour réserver à la demande un grand nombre de machines
@@ -67,34 +86,36 @@ membres de l'équipe technique et de l'institut.
 
 Conception et développement d'une solution permettant de récupérer, indexer et
 analyser les contenus multimédia (texte, vidéos et images) provenant de
-centaines de sources d'information sur Internet. Le but étant de fournir aux
-utilisateur une vue agrégée du flux quotidien d'information (a la Google
-News). Plus d'infos dans *Aggregated cross-media news visualization and
-personalization* (cf. [PUBLICATIONS](#PUBLICATIONS)).
+centaines de sources d'information sur Internet (cf.
+[PUBLICATIONS](#PUBLICATIONS)). Le but étant de fournir aux utilisateur une
+vue agrégée du flux quotidien d'information (a la Google News).
 
-Participation au TRECVid, concours organisé dans le domaine du traitement
-Vidéo par un organisme du gouvernement américain. Publication de *Efficient
+Participation au TRECVid, concours dans le domaine du traitement Vidéo,
+organisé par un organisme du gouvernement américain. Publication de *Efficient
 generation of pleasant video summaries* (cf. [PUBLICATIONS](#PUBLICATIONS)).
 
 ### Stage Ingénieur - *La qualité dans les développements Java* - [Kalistick](http://kalistick.fr), Lyon, France <div style="font-size: 12px; float: right">Mai 2007 - Juil. 2007</div>
 
-Travail au sein d'une start-up en incubation. Analyse des problèmes de
-qualité dans les développements Java, et recherche des métriques et bonnes
-pratiques disponibles pour mesurer la qualité des applications Java, tout au
-long du cycle de développement. 
+Travail au sein d'une start-up en incubation. Analyse des problèmes de qualité
+dans les développements Java, recherche des métriques et bonnes pratiques
+disponibles pour mesurer la qualité des applications Java tout au long du
+cycle de développement.
 
 Développement d'un outil de reporting pour afficher les problèmes de manière
-priorisée, de façon à ce que l'équipe de développement puisse rapidement
-déceler et agir sur les problèmes de qualité les plus importants.
+priorisée, pour que l'équipe de développement puisse rapidement déceler et
+agir sur les problèmes de qualité les plus importants.
 
 ### Stage Développeur - *Application Intranet* - Les Bains de l'Opéra, Lyon, France <div style="font-size: 12px; float: right">Juin 2006 - Août 2006</div>
 
-Conception, développement et déploiement d'une application intranet permettant
-de gérer au jour le jour l'entreprise (20000 clients, 10 employés) :
-facturation, gestion client, fidélisation. L'installation a permis d'accroître
-l'efficacité et de produire des rapports détaillés sur l'activité.
+Conception, développement et déploiement d'une application intranet (PHP)
+permettant de gérer au jour le jour l'entreprise (20000 clients, 10 employés)
+: facturation, gestion client, fidélisation. L'installation a permis
+d'accroître l'efficacité et de produire des rapports détaillés sur l'activité.
+
+<div style="page-break-after:always"></div>
 
 ## ÉDUCATION
+
 ### Diplôme d'ingénieur en informatique - [INSA Lyon](http://insa-lyon.fr/en), France <div style="font-size: 12px; float: right">Juil 2003 - Sept 2008</div>
 
 Reçu en septembre 2008 avec les **Félicitations du Jury**. Dernière année
@@ -102,10 +123,10 @@ effectuée à l'université de technologie du Queensland (QUT), Brisbane, AU.
 
 ## COMPÉTENCES
 
-J'ai une bonne maîtrise des architectures distribuées et du développement web
-en général. J'utilise au quotidien :
+Bonne maîtrise des architectures distribuées et du développement web en
+général. Utilise au quotidien :
 
-* les **langages de programmation** et **frameworks** de l'écosystème Ruby
+* les **langages de programmation** et **frameworks** de l'écosystème **Ruby**
   (RubyOnRails/Sinatra/Goliath, Haml, Eventmachine, Thin, Passenger, RSpec,
   Capistrano), Javascript (jQuery, jQuery UI, jQuery Mobile), SQL, HTML5, CSS.
 
@@ -126,13 +147,14 @@ en général. J'utilise au quotidien :
 
 * les **outils de bug-tracking** (Redmine, Bugzilla, Github Issues).
 
-Je parle avec plus ou moins de réussite les **langues** suivantes: Français
-(natif), Anglais (courant), Allemand (intermédiaire), Espagnol (débutant).
+Bonne connaissance des technologies suivantes : Node.js, Java, PHP, C,
+**administration de systèmes** GNU/Linux, infrastructures à clés publiques,
+outils de monitoring Ganglia et Zabbix, machine learning (clustering,
+classification, information retrieval), traitement d'image et de vidéo,
+moteurs de règles (Drools).
 
-Je peux aussi me débrouiller en Node.js, Java, PHP, C, **administration de
-systèmes** GNU/Linux, infrastructures à clés publiques, outils de monitoring
-Ganglia et Zabbix, machine learning (clustering, classification, information
-retrieval), traitement d'image et de vidéo, moteurs de règles (Drools).
+Connaissance des **langues** suivantes: Français (natif), Anglais (courant),
+Allemand (intermédiaire), Espagnol (débutant).
 
 ## PUBLICATIONS
 
@@ -152,13 +174,4 @@ retrieval), traitement d'image et de vidéo, moteurs de règles (Drools).
 
 ## INTÉRÊTS
 
-Échecs, jonglage, vélo, ski, lecture. Contributeur Open Source (cf.
-[LIENS](#LIENS) ci-dessous).
-
-## LIENS
-
-[contact@crohr.me](mailto:contact@crohr.me),
-[+33-(0)6-33-85-83-32](tel:+33-6-33-85-83-32),
-[crohr.me](http://crohr.me/),
-[twitter/crohr](http://twitter.com/crohr),
-[github/crohr](http://github.com/crohr)
+Échecs, jonglage, vélo, ski, lecture. Contributeur Open Source. Pour plus d'informations, vous pouvez consulter mon site personnel à l'adresse: <http://crohr.me>.
