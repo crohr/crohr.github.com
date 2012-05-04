@@ -76,8 +76,8 @@ Australia.
 
 ## Publications
 
-I had a brief but fulfilling research experience during 6 months. Below are
-the two articles I (co)-authored:
+I had a brief but fulfilling research experience during the last 6 months of
+my education. Below are the two articles I (co)-authored:
 
 * **Cyril Rohr** and Dian Tjondronegoro. 2008. [*Aggregated cross-media news
   visualization and
@@ -90,3 +90,9 @@ the two articles I (co)-authored:
   summaries*](http://portal.acm.org/citation.cfm?id=1463563.1463585). In
   Proceedings of the 2nd ACM TRECVid Video Summarization Workshop (TVS '08).
   ACM, New York, NY, USA, 119-123.
+
+And below is an article I co-authored while at Inria:
+
+* Eugen Feller, **Cyril Rohr**, David Margery, and Christine Morin. *Energy
+  Management in IaaS Clouds: A Holistic Approach*. The 5th IEEE International
+  Conference on Cloud Computing (CLOUD), Honolulu, Hawaii, USA, June 2012.
