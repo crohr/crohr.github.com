@@ -6,6 +6,10 @@ title: Code
 Here is some software I've written in my spare time or that my previous
 employers allowed me to publicly release.
 
+* [pkgr] [pkgr] - Easily package your Rails app into deb or rpm packages.
+  After a few months of dealing with the various intricacies of packaging Ruby
+  apps for debian or centos, here is a gem that does everything for you.
+
 * [restfully] [restfully] - A Ruby client for RESTful APIs.
 
 * [rest-client-components] [components] - [Rack] [rack] should not be limited
@@ -21,6 +25,7 @@ employers allowed me to publicly release.
 * [toggl-notifier] [toggl-notifier] - Hack! Update your Adium status with the
   description of your current task in [Toggl](http://toggl.com) (Mac only).
 
+[pkgr]: http://crohr.me/pkgr/
 [restfully]: http://crohr.me/restfully/
 [components]: http://github.com/crohr/rest-client-components
 [rack]: http://rack.rubyforge.com
