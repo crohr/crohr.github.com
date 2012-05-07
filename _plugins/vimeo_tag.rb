@@ -16,13 +16,13 @@ module Jekyll
     end
 
     def render(context)
-      if parts = @text.match(/(\d+) (\d+) (\d+)/)
+      if parts = @text.match(/(\d+) (\d+%?) (\d+%?)/)
         id, width, height = parts[1].strip, parts[2].strip, parts[3].strip
       end
 
       vimeo = get_vimeo(id)
       <<-HTML
-<iframe src="http://player.vimeo.com/video/#{id}?color=ffffff" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+<iframe src="http://player.vimeo.com/video/#{id}?color=ffffff" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen="webkitAllowFullScreen" allowFullScreen="allowFullScreen">&nbsp;</iframe>
       HTML
     end
 

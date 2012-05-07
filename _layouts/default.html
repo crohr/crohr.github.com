@@ -14,35 +14,70 @@
    <!-- Homepage CSS -->
    <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
 
+   <!--[if lt IE 9]>
+   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
 </head>
 <body>
 
+<div class="header">
+  &nbsp;
+</div>
+
 <div class="site">
-  <div class="title">
-    <a href="/">Cyril Rohr (crohr)</a>
-    <a class="extra" href="/code">code</a>
-    <a class="extra" href="/projects">projects</a>
-    <a class="extra" href="/presentations">presentations</a>
-    <a class="extra" href="http://ebarnouflant.com">journal</a>
-    <a class="extra" href="/contact" style="float: right">contact</a>
-    <a class="extra" href="/about" style="float: right">about</a>
+  
+  <nav class="panel">
+    <ul>
+      <li class="link">
+        <a href="/">
+          <img src="/images/cyrilrohr.jpg" width="40px" class="shadow" />
+        </a>
+      </li>
+      <li class="link">
+        <a href="/code"><span>Code</span></a>
+      </li>
+      <li class="link">
+        <a href="/projects"><span>Projects</span></a>
+      </li>
+      <li class="link">
+        <a href="/presentations"><span>Presentations</span></a>
+      </li>
+      <li class="link">
+        <a href="/journal"><span>Journal</span></a>
+      </li>
+      <li class="link">
+        <a href="/contact"><span>Contact</span></a>
+      </li>
+      <li class="link">
+        <a href="/about"><span>About</span></a>
+      </li>
+    </ul>
+    <ul class="badges">
+      <li class="link">
+        <a href="http://feeds.feedburner.com/crohr">
+          <img src="/images/rss.png" alt="Subscribe to RSS Feed" width="16" height="16" />
+        </a>
+      </li>
+      <li class="link"><a href="http://github.com/crohr/"><img src="https://s2.googleusercontent.com/s2/favicons?domain=github.com" alt="View my code on Github"></a>
+      </li>
+      <li class="link"><a href="http://www.linkedin.com/in/cyrilrohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=linkedin.com" alt="View my profile on LinkedIn"></a>
+      </li>
+      <li class="link"><a href="http://twitter.com/crohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=twitter.com" alt="Follow me on Twitter"></a>
+      </li>
+    </ul>
+
+  </nav>
+  
+  <div class="content">
+    {{ content }}
   </div>
-  
-  {{ content }}
-  
-  <div class="footer">
-    <div class="contact">
-      <p>
-        <a href="http://github.com/crohr/">github.com/crohr</a><br />
-        <a href="http://twitter.com/crohr/">twitter.com/crohr</a><br />
-        <a href="http://www.linkedin.com/in/cyrilrohr">linkedin.com/in/cyrilrohr</a><br />
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/crohr">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" width="60" height="60" />
-      </a>
-    </div>
+
+  <div class="footer" style="text-align: right;">  
+    <form action="http://www.google.com/search" method="get" style=" margin-bottom: 2em;">
+        <input name="sitesearch" type="hidden" value="crohr.me">
+        <input name="q" type="text" size="12" class="text">
+        <input type="submit" value="Search" class="button">
+    </form>  
   </div>
 </div>
 

@@ -1,0 +1,33 @@
+---
+layout: page
+title: Journal
+---
+
+Here is the place where I collect links and thoughts about things that I find interesting.
+
+{% for year in site.years %}                                                                                    
+  <h2>Year {{ year.first.first.date | date: "%Y" }}</h2>
+                          
+  {% for month in year %}                                                                                       
+    <h3>{{ month.first.date | date: "%B" }}</h3>                                                          
+      <ul>                           
+    {% for post in month %}                           
+      <li><a href="{{ post.url }}">{{ post.title }}</a>
+        {% for tag in post.tags %}
+          <a class="tag" href="/tags/#{{ tag }}">{{ tag }}</a>
+        {% endfor %}
+      </li>
+    {% endfor %}                                                                                                
+    
+    </ul>
+  {% endfor %}                                                                                                  
+{% endfor %}
+
+<div class="cloud">
+{% tag_cloud font-size: 12 - 20px %}
+</div>
+
+<p style="text-align: center">
+  <a href="/tags/">Click here to see the list of the articles indexed by tags</a>.
+</p>
+
