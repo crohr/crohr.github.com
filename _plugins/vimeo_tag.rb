@@ -4,7 +4,7 @@
 # Example usage: {% vimeo 28040685 800 600 %}
 
 require 'open-uri'
-require 'multi_json' 
+# require 'multi_json' 
 
 module Jekyll
   class VimeoTag < Liquid::Tag
@@ -12,7 +12,7 @@ module Jekyll
       super
       @text = text
       @cache_dir = File.expand_path "../.vimeo-cache", File.dirname(__FILE__)
-      FileUtils.mkdir_p @cache_dir
+      # FileUtils.mkdir_p @cache_dir
     end
 
     def render(context)
@@ -20,7 +20,7 @@ module Jekyll
         id, width, height = parts[1].strip, parts[2].strip, parts[3].strip
       end
 
-      vimeo = get_vimeo(id)
+      # vimeo = get_vimeo(id)
       <<-HTML
 <iframe src="http://player.vimeo.com/video/#{id}?color=ffffff" width="#{width}" height="#{height}" frameborder="0" webkitAllowFullScreen="webkitAllowFullScreen" allowFullScreen="allowFullScreen">&nbsp;</iframe>
       HTML
