@@ -1,3 +1,0 @@
-#ProxyPass /blog http://crohr.me/blog.html
-#ProxyPass /feed http://feeds.feedburner.com/crohr
-
