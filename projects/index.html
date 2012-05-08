@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Projects</title>
+   <meta name="author" content="Cyril Rohr" />
+   <link href="http://feeds.feedburner.com/crohr" rel="alternate" title="Cyril Rohr" type="application/atom+xml" />
+
+   <link rel="icon" type="image/png" href="/images/favicon.png" />
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+
+   <!--[if lt IE 9]>
+   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+</head>
+<body>
+
+<div class="header">
+  &nbsp;
+</div>
+
+<div class="site">
+  
+  <nav class="panel">
+    <ul>
+      <li class="link">
+        <a href="/">
+          <img src="/images/cyrilrohr.jpg" width="40px" class="shadow" />
+        </a>
+      </li>
+      <li class="link">
+        <a href="/code"><span>Code</span></a>
+      </li>
+      <li class="link">
+        <a href="/projects"><span>Projects</span></a>
+      </li>
+      <li class="link">
+        <a href="/presentations"><span>Presentations</span></a>
+      </li>
+      <li class="link">
+        <a href="/journal"><span>Journal</span></a>
+      </li>
+      <li class="link">
+        <a href="/contact"><span>Contact</span></a>
+      </li>
+      <li class="link">
+        <a href="/about"><span>About</span></a>
+      </li>
+    </ul>
+    <ul class="badges">
+      <li class="link">
+        <a href="http://feeds.feedburner.com/crohr">
+          <img src="/images/rss.png" alt="Subscribe to RSS Feed" width="16" height="16" />
+        </a>
+      </li>
+      <li class="link"><a href="http://github.com/crohr/"><img src="https://s2.googleusercontent.com/s2/favicons?domain=github.com" alt="View my code on Github"></a>
+      </li>
+      <li class="link"><a href="http://www.linkedin.com/in/cyrilrohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=linkedin.com" alt="View my profile on LinkedIn"></a>
+      </li>
+      <li class="link"><a href="http://twitter.com/crohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=twitter.com" alt="Follow me on Twitter"></a>
+      </li>
+    </ul>
+
+  </nav>
+  
+  <div class="content">
+    <h1>Projects</h1>
+
+<h2>Github Watchlist</h2>
+
+<a href="http://watchlist.crohr.me/"><img src="/images/githubwatchlist-resized.png" width="100%" /></a>
+
+<p>What if you could have <strong>full-text search within all the READMEs</strong> of your <strong>watched</strong> repositories?</p>
+
+<h2>Flag.io</h2>
+
+<a href="http://flag.io"><img src="/images/flagio-resized.png" width="100%" /></a>
+
+<p><strong>Upload files from your terminal</strong>. Tired of having to open a
+web browser to upload some files and make them available to people on the Web?
+Don’t want to remember a complicated API to do it on the command line? <a
+href="http://flag.io">Flag.io</a> is designed to be the simplest way to upload
+a file from the command line.</p>
+
+<h2>On Demand Resources for OpenNebula Cluster</h2>
+
+<iframe src="http://player.vimeo.com/video/39257324?color=ffffff" width="100%" height="360" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+
+<p>In this screencast, I demonstrate how BonFIRE users can get access to
+additional computing power by asking for physical resources from the Grid'5000
+platform, on demand. With a few clicks, or through a JSON API, physical
+resources are reserved on Grid'5000, reconfigured with a specific image, and
+then transferred to a private cluster in the local OpenNebula installation of
+the Inria testbed. This allows any user to scale by a few orders of magnitude
+the number of physical resources available on the testbed, hence allowing for
+a much greater number of VMs to be deployed. All without having to do
+anything, except specifying the private cluster ID when creating new VMs.</p>
+
+<p> The UI has been developed using <a href="http://jquerymobile.com/"
+target="_blank">jQuery Mobile</a>, on top of a <a href="http://sinatrarb.com"
+target="_blank">Sinatra</a> powered backend. The Gantt chart that you can see
+in the video is a jQuery plugin I developed. The app is packaged as a Debian
+package, with proper init script to launch the <a
+href="http://unicorn.bogomips.org/" target="_blank">Unicorn</a> daemon. We use
+<a href="http://crohr.me/restfully">Restfully</a> to automate launching
+hundreds of VMs.</p>
+
+<h2>Grid'5000 Web UI</h2>
+
+<iframe src="http://player.vimeo.com/video/36507035?color=ffffff" width="100%" height="360" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+
+<p> The screencast above presents the user interface I built on top of the
+APIs I developed for the Grid'5000 platform. It shows how you can select and
+reserve physical nodes on the infrastructure, launch a script on those nodes,
+register metrics through the <a href="http://ganglia.sourceforge.net/"
+target="_blank">Ganglia</a> tool, and visualize results, all from a web
+interface. This UI uses a number of Javascript libraries, among which <a
+href="http://jquery.com/" target="_blank">jQuery</a>, <a
+href="http://simile.mit.edu/wiki/Exhibit" target="_blank">Simile Exhibit</a>,
+and <a href="http://mbostock.github.com/protovis/"
+target="_blank">Protovis</a> (now replaced by <a
+href="http://mbostock.github.com/d3/" target="_blank">D3.js</a>). On the
+backend there is a number of RESTful APIs developed with Ruby and
+Sinatra/Rails. The page that allows to graph metrics takes the data from an
+API I developed on top of the <a
+href="http://en.wikipedia.org/wiki/Round-Robin_Database"
+target="_blank">RRD</a> files generated by Ganglia.</p>
+
+<h2>Grid'5000 API</h2>
+
+<img src="/images/g5kapi-overview.png" width="100%" alt="Grid'5000 API" />
+
+<p> During three years at <a href="http://www.inria.fr"
+target="_blank">Inria</a>, I was in charge of developing and deploying APIs on
+top of the infrastructure tools of the <a href="https://www.grid5000.fr"
+target="_blank">Grid'5000 platform</a>. Written in Ruby using a mix of Rails
+and Sinatra applications, and implemented as HTTP APIs closely following the
+constraints advocated by the REST architectural style, the infrastructure
+receives more than 1 million hits per month. Server configuration is automated
+using the <a href="http://puppetlabs.com/" target="_blank">Puppet</a>
+provisioning tool, and applications are distributed as Debian packages to
+facilitate installation.</p>
+
+<h2>OneStopNews</h2>
+
+<img src="/images/onestopnews1.png" width="60%" height="158" alt="" />
+<img src="/images/onestopnews2.png" width="35%" alt="" style="float: right" />
+
+<div style="clear: both"></div>
+
+<p>Web application developed as a prototype for the framework described in one
+of the <a href="/about/#publications">publications</a> I've written. It was a kind
+of Google News website, but using Semantic analysis and aggregating videos in
+addition to text articles and images (at the time, Google News did not show
+relevant videos for news events). I used the <a
+href="http://www.opencalais.com/" target="_blank">Calais</a> web service for
+entity extraction. Developed using Rails for the frontend, and a variant of an
+existing incremental hierarchical clustering algorithm.</p>
+
+
+
+  </div>
+
+  <div class="footer" style="text-align: right;">  
+    <form action="http://www.google.com/search" method="get" style=" margin-bottom: 2em;">
+        <input name="sitesearch" type="hidden" value="crohr.me">
+        <input name="q" type="text" size="12" class="text">
+        <input type="submit" value="Search" class="button">
+    </form>  
+  </div>
+</div>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	try {
+	  var pageTracker = _gat._getTracker("UA-13023229-1");
+	  pageTracker._setDomainName(".crohr.me");
+	  pageTracker._trackPageview();
+	} catch(err) {}
+</script>
+<!-- Google Analytics end -->
+
+</body>
+</html>
