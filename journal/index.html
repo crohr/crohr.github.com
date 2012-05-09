@@ -41,6 +41,7 @@
   <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
   <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"> -->
 
+  <link rel="stylesheet" href="/css/highlight/github.min.css">
 </head>
 <body>
 
@@ -768,7 +769,27 @@ interesting. </p>
 	<!-- JS
 	================================================== -->
 
-	<!-- <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  
+  <script src='/js/highlight.min.js'></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var codeCommentRegexp = /code\[(.+)\]/;
+      var match;
+      $("pre").parent().contents().filter(function(){
+          return this.nodeType == 8;
+      }).each(function(i, e){
+        if (match=codeCommentRegexp.exec(e.nodeValue)) {
+          try{
+            $(e).nextAll("pre").first().
+              find("code").addClass(match[1]);
+          } catch(e) {}
+        }
+      });
+      hljs.tabReplace = '  ';
+      hljs.initHighlightingOnLoad();
+    });
+  </script>
 
   <!-- Google Analytics -->
   <script type="text/javascript">
