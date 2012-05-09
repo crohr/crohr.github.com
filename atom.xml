@@ -4,13 +4,67 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2012-05-09T16:55:12+02:00</updated>
+ <updated>2012-05-09T17:06:24+02:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Selection of data visualization tools</title>
+   <link href="http://crohr.me/journal/2012/selection-of-data-visualization-tools.html"/>
+   <updated>2012-05-09T00:00:00+02:00</updated>
+   <id>http://crohr.me/journal/2012/selection-of-data-visualization-tools</id>
+   <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href='http://selection.datavisualization.ch/'&gt;Datavisualization.ch Selected Tools&lt;/a&gt; is a collection of tools that we, the people behind Datavisualization.ch, work with on a daily basis and recommend warmly. This is not a list of everything out there, but instead a thoughtfully curated selection of our favourite tools that will make your life easier creating meaningful and beautiful data visualizations.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Really useful reference for visualization tools.&lt;/p&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Distributed Systems Design</title>
+   <link href="http://crohr.me/journal/2012/distributed-systems-design.html"/>
+   <updated>2012-05-09T00:00:00+02:00</updated>
+   <id>http://crohr.me/journal/2012/distributed-systems-design</id>
+   <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Blue Box is proud to present this series on understanding the basics of distributed systems design. Stephen Balukoff, BBG’s Principal Technologist, was surprised by the lack of practical information available on the subject. He authored this document to help fill the gap and hopefully start an exchange of information within the community.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Very thorough tour of thoughts and choices to be made when working on the design of distributed systems. This is a series of four articles:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://www.bluebox.net/news/2012/04/distributed-systems-design-part-1/'&gt;Distributed Systems Design part 1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://www.bluebox.net/news/2012/04/distributed-systems-design-part-2/'&gt;Distributed Systems Design part 2&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://www.bluebox.net/news/2012/04/distributed-systems-design-part-3/'&gt;Distributed Systems Design part 3&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://www.bluebox.net/news/2012/04/distributed-systems-design-part-4/'&gt;Distributed Systems Design part 4&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
+   <title>Change of address</title>
+   <link href="http://crohr.me/journal/2012/change-of-address.html"/>
+   <updated>2012-05-09T00:00:00+02:00</updated>
+   <id>http://crohr.me/journal/2012/change-of-address</id>
+   <content type="html">&lt;p&gt;I&amp;#8217;ve decided to move this collection of notes off of Tumblr and back to my main site at &lt;a href='http://crohr.me'&gt;crohr.me&lt;/a&gt;. Thanks to Feedburner, the Atom feed address will stay the same, but it&amp;#8217;s more than likely that you&amp;#8217;ll get a large list of new (but already published) articles in your feed reader due to the switch.&lt;/p&gt;
+
+&lt;p&gt;Tumblr is good, but I prefer adding articles without quitting my standard workflow (text editor + git). Plus this will be better integrated with my main site. For those interested, I used this &lt;a href='https://gist.github.com/867468'&gt;simple migration script&lt;/a&gt; to import the existing articles from Tumblr to my Jekyll-powered site.&lt;/p&gt;
+
+&lt;p&gt;I also took the time to change the site design, and put in place a responsive design based on &lt;a href='http://getskeleton.com/'&gt;Skeleton&lt;/a&gt;. There is still a lot of room for improvement, but I&amp;#8217;m quite happy with the result.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Objective-C</title>
@@ -739,91 +793,6 @@ bundle update&lt;/code&gt;. Do &lt;em&gt;not&lt;/em&gt; commit this file if you&
 &lt;/blockquote&gt;
 
 &lt;p&gt;Finally.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Rollbacks and Other Deployment Myths</title>
-   <link href="http://crohr.me/journal/2011/rollbacks-and-other-deployment-myths.html"/>
-   <updated>2011-11-15T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/rollbacks-and-other-deployment-myths</id>
-   <content type="html">&lt;a href='http://blog.lusis.org/blog/2011/10/18/rollbacks-and-other-deployment-myths/'&gt;Rollbacks and Other Deployment Myths&lt;/a&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Yes, it’s true. You can never roll back. You can’t go back in time. You can fake it but understand that it’s typically more risky to rollback than rolling forward. Always be rolling forward.&lt;/p&gt;
-&lt;/blockquote&gt;</content>
- </entry>
- 
- <entry>
-   <title>How Can I Help You?</title>
-   <link href="http://crohr.me/journal/2011/how-can-i-help-you.html"/>
-   <updated>2011-11-15T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/how-can-i-help-you</id>
-   <content type="html">&lt;img src='/images/posts/28.media.tumblr.com/tumblr_lupngpPRWF1r4ghsio1_1280.png' width='100%' /&gt;
-&lt;p&gt;From &lt;a href='http://www.randsinrepose.com/archives/2011/11/13/how_can_i_help_you.html'&gt;How Can I Help You?&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;I have a system for evaluating a problem which is accompanied by colorful inner monologue. The following flowchart explains both the details of how I triage a problem, how I might fix it, and how and why I’m likely to swear while I’m helping.&lt;/p&gt;
-&lt;/blockquote&gt;</content>
- </entry>
- 
- <entry>
-   <title>Syntax highlighting in Tumblr</title>
-   <link href="http://crohr.me/journal/2011/syntax-highlighting-in-tumblr.html"/>
-   <updated>2011-11-14T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/syntax-highlighting-in-tumblr</id>
-   <content type="html">&lt;p&gt;There are multiple solutions to add syntax highlighting for code blocks in Tumblr articles written with Markdown, but they all demand to manually put &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tags and &lt;code&gt;class&lt;/code&gt; attributes in the text. You can find the references here:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href='http://drnicwilliams.com/2007/03/08/syntax-highlighting-in-tumblr/'&gt;http://drnicwilliams.com/2007/03/08/syntax-highlighting-in-tumblr/&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='http://alan.dipert.org/post/55814908/shjs-javascript-syntax-highlighting-for-tumblr'&gt;http://alan.dipert.org/post/55814908/shjs-javascript-syntax-highlighting-for-tumblr&lt;/a&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;a href='http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr'&gt;http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is too much pollution for me, so I came up with a simple HTML comment to put before code blocks you want to highlight. I then use a small bit of Javascript to extract that info and automatically update the class of the &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; tag. Associated with &lt;a href='http://softwaremaniacs.org/soft/highlight/en/'&gt;Highlight.js&lt;/a&gt;, this gives nice syntax highlighting in just one line. For example, the following Markdown snippet:&lt;/p&gt;
-&lt;!-- code[no-highlight] --&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;!-- code[ruby] --&amp;gt;
-
-    puts &amp;quot;This is Ruby code&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Will give:&lt;/p&gt;
-&lt;!-- code[ruby] --&gt;
-&lt;pre&gt;&lt;code&gt;puts &amp;quot;This is Ruby code&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note that most of the time, you don&amp;#8217;t even need to specify the language, since Highlight.js will often detect the right brush for you. Also, HTML comments won&amp;#8217;t show up in your RSS feed.&lt;/p&gt;
-
-&lt;p&gt;To enable this feature, open the &amp;#8216;customize appearance&amp;#8217; link in your Tumblr dashboard, then click on &amp;#8216;Edit HTML&amp;#8217;, and enter the following code just before the opening &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; tag (you might need to include the &lt;a href='http://code.google.com/apis/libraries/devguide.html#jquery'&gt;jQuery&lt;/a&gt; library if you don&amp;#8217;t already have it):&lt;/p&gt;
-&lt;!-- code[html] --&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; 
-      href=&amp;quot;http://yandex.st/highlightjs/6.1/styles/zenburn.min.css&amp;quot;&amp;gt;
-&amp;lt;style&amp;gt;
-  code {
-    font-family: monospace;
-    overflow: auto;
-  }
-&amp;lt;/style&amp;gt;
-
-&amp;lt;script src=&amp;#39;http://yandex.st/highlightjs/6.1/highlight.min.js&amp;#39;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
-  $(document).ready(function() {
-    var codeCommentRegexp = /code\[(.+)\]/;
-    var match;
-    $(&amp;quot;pre&amp;quot;).parent().contents().filter(function(){
-        return this.nodeType == 8;
-    }).each(function(i, e){
-      if (match=codeCommentRegexp.exec(e.nodeValue)) {
-        try{
-          $(e).nextAll(&amp;quot;pre&amp;quot;).first().
-            find(&amp;quot;code&amp;quot;).addClass(match[1]);
-        } catch(e) {}
-      }
-    });
-    hljs.tabReplace = &amp;#39;  &amp;#39;;
-    hljs.initHighlightingOnLoad();
-  });
-&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Enjoy!&lt;/p&gt;</content>
  </entry>
  
  
