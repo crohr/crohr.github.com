@@ -1,0 +1,74 @@
+@media screen and (min-width: 800px) {
+  .panel {
+    position: fixed;
+    top: 10px;
+    margin: 0;
+    left: inherit;
+    right: 0px;
+    background: #fff;
+    width: 90%;
+    height: 20px;
+    -moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    -o-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    border-radius: 3px 0px 0px 3px;
+    border: 1px solid #ccc;
+    padding: 0px 4px;
+    padding-top: 4px;
+  }
+  
+/*  .panel ul.navigation {
+    position: fixed;
+    top: -5px;
+    background: #fff;
+    -moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    -o-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    border-radius: 0px 0px 3px 3px;
+    border: 1px solid #ccc;
+    padding: 0px 4px;
+    padding-top: 4px;
+  }*/
+  .me img {
+    position: absolute;
+    left: 10px;
+    top: -6px;
+    border: 1px solid #fff;
+/*    height: 24px;*/
+/*    width: 20px;*/
+  }
+  .panel ul {
+    line-height: 20px;
+  }
+  .panel li {
+    display: inline;
+  }
+  .panel li a {
+  }
+/*  .panel li.link:first-child {
+    display: block;
+  }*/
+/*  .panel li a, .panel li a:visited {
+    color: #fff;
+  }*/
+/*  .panel ul.badges {
+    background: #fff;
+    position: fixed;
+    top: -5px;
+    right: 0px;
+    width: 80px;
+    padding: 0px 4px;
+    padding-top: 4px;
+    -moz-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    -o-box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
+    border-radius: 5px 0px 0px 3px;
+    border: 1px solid #ccc;
+  }*/
+  .content {
+    margin-top: 110px;
+  }
+}
