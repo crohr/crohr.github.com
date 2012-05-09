@@ -1,6 +1,6 @@
 ---
-layout: default
-title: Contact
+layout: page
+title: Contact me
 ---
 
 <p style="text-align: center; margin-top: 10%; margin-bottom: 10%">

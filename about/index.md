@@ -21,58 +21,62 @@ Australia.
 
 ## Work Experience
 
-* From Oct. 2008 to Mar. 2012, I worked as a R&amp;D Engineer at the
-  [INRIA](http://www.inria.fr/) national research institute in Rennes, France.
+### INRIA - National Research Institute
 
-  I originally started to work on the [Grid'5000](http://www.grid5000.fr/)
-  project, an infrastructure distributed in 9 sites around France for research
-  in large-scale parallel and distributed systems. In Aug. 2010 I also joined
-  the EU founded [BonFIRE](http://bonfire-project.eu/) project to work on a
-  multi-site cloud facility.
+From Oct. 2008 to Mar. 2012, I worked as a R&amp;D Engineer at the
+[INRIA](http://www.inria.fr/) national research institute in Rennes, France.
 
-  I was mainly in charge of designing, implementing and operating a
-  distributed software architecture based on RESTful APIs. I also built web
-  interfaces and visualizations using standard and lightweight technologies
-  such as HTML5, Javascript, CSS.
+I originally started to work on the [Grid'5000](http://www.grid5000.fr/)
+project, an infrastructure distributed in 9 sites around France for research
+in large-scale parallel and distributed systems. In Aug. 2010 I also joined
+the EU founded [BonFIRE](http://bonfire-project.eu/) project to work on a
+multi-site cloud facility.
 
-  My day-to-day work usually involved me writing code using a mix of Ruby,
-  Javascript, HTML and CSS; pushing and pulling with Git; messing with DEB and
-  RPM packages; cooking some Puppet recipes to configure and deploy two dozens
-  of servers; and trying to bend big-old Apache and Squid to my will.
+I was mainly in charge of designing, implementing and operating a distributed
+software architecture based on RESTful APIs. I also built web interfaces and
+visualizations using standard and lightweight technologies such as HTML5,
+Javascript, CSS.
 
-* From Jan. to Jul. 2008, I was a Research Intern at the [Queensland Institute
-  of Technology](http://qut.edu.au/) in Brisbane, Australia, where I worked on
-  Cross-Media summarization and Video processing.
+My day-to-day work usually involved me writing code using a mix of Ruby,
+Javascript, HTML and CSS; pushing and pulling with Git; messing with DEB and
+RPM packages; cooking some Puppet recipes to configure and deploy two dozens
+of servers; and trying to bend big-old Apache and Squid to my will.
 
-  My research project consisted in designing and building a solution to crawl,
-  index and process media content (text, videos and images) from hundreds of
-  online news sources to provide an aggregated view of the day-to-day news
-  information flow. A (then) innovative browser-based interface was also built
-  for browsing and filtering the resulting news events (see
-  [Publications](#publications)).
+### Queensland University of Technology
 
-  I also participated in the international [TRECVid](http://trecvid.nist.gov/)
-  workshop sponsored by the National Institute of Standards and Technology
-  ([NIST](http://www.nist.gov/)), devoted to research in automatic
-  segmentation, indexing, and content-based retrieval of digital video (see
-  [Publications](#publications)).
+From Jan. to Jul. 2008, I was a Research Intern at the [Queensland Institute
+of Technology](http://qut.edu.au/) in Brisbane, Australia, where I worked on
+Cross-Media summarization and Video processing.
 
-* In 2007, I worked for 3 months as a Software Engineer Intern for the
-  [Kalistick](http://kalistick.com/) startup (*Agile quality for continuous
-  delivery*) in Lyon, France.
+My research project consisted in designing and building a solution to crawl,
+index and process media content (text, videos and images) from hundreds of
+online news sources to provide an aggregated view of the day-to-day news
+information flow. A (then) innovative browser-based interface was also built
+for browsing and filtering the resulting news events (see
+[Publications](#publications)).
 
-  This internship brought me a lot of knowledge about software quality,
-  testing, and best-practices. I mainly worked with Java, code analyzers,
-  rules engines and business intelligence tools.
+I also participated in the international [TRECVid](http://trecvid.nist.gov/)
+workshop sponsored by the National Institute of Standards and Technology
+([NIST](http://www.nist.gov/)), devoted to research in automatic segmentation,
+indexing, and content-based retrieval of digital video (see
+[Publications](#publications)).
 
-* In 2006, I worked for 2 months as a Software Developer Intern for [Les Bains
-  de l'Opéra](http://lesbainsdelopera.com/) in Lyon, France, where I developed
-  a web intranet application to replace their invoicing and customer
-  management tool. At that time, I mainly worked with PHP5, HTML and what was
-  called AJAX.
+### Kalistick - Startup
 
-  This internship was particularly important since I discovered and played
-  with Ruby on Rails during my spare time at work ;-)
+In 2007, I worked for 3 months as a Software Engineer Intern for the
+[Kalistick](http://kalistick.com/) startup (*Agile quality for continuous
+delivery*) in Lyon, France.
+
+This internship brought me a lot of knowledge about software quality, testing,
+and best-practices. I mainly worked with Java, code analyzers, rules engines
+and business intelligence tools.
+
+### Les Bains de l'Opéra - Small business
+
+In 2006, I worked for 2 months as a Software Developer Intern for [Les Bains
+de l'Opéra](http://lesbainsdelopera.com/) in Lyon, France, where I developed a
+web intranet application to replace their invoicing and customer management
+tool. At that time, I mainly worked with PHP5, HTML and what was called AJAX.
 
 ## Publications
 
