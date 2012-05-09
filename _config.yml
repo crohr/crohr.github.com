@@ -3,3 +3,4 @@ pygments: true
 lsi: false
 plugins: ./_plugins
 permalink: /journal/:year/:title.html
+url: http://crohr.me
