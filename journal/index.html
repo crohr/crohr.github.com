@@ -1,84 +1,114 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Journal</title>
-   <meta name="author" content="Cyril Rohr" />
-   <link href="http://feeds.feedburner.com/crohr" rel="alternate" title="Cyril Rohr" type="application/atom+xml" />
 
-   <link rel="icon" type="image/png" href="/images/favicon.png" />
+	<!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Journal</title>
+  <meta name="author" content="Cyril Rohr" />
+  <meta name="description" content="">
+  <link href="http://feeds.feedburner.com/crohr" rel="alternate" title="Cyril Rohr" type="application/atom+xml" />
 
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
 
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 
-   <!--[if lt IE 9]>
-   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-   <![endif]-->
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="/css/base.css">
+	<link rel="stylesheet" href="/css/skeleton.css">
+	<link rel="stylesheet" href="/css/custom.css">
+	<link rel="stylesheet" href="/css/layout.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="/images/favicon.ico">
+	<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+
 </head>
 <body>
 
-<div class="header">
-  &nbsp;
-</div>
 
-<div class="site">
-  
-  <nav class="panel">
-    <ul>
-      <li class="link">
-        <a href="/">
-          <img src="/images/cyrilrohr.jpg" width="40px" class="shadow" />
-        </a>
-      </li>
-      <li class="link">
-        <a href="/code"><span>Code</span></a>
-      </li>
-      <li class="link">
-        <a href="/projects"><span>Projects</span></a>
-      </li>
-      <li class="link">
-        <a href="/presentations"><span>Presentations</span></a>
-      </li>
-      <li class="link">
-        <a href="/journal"><span>Journal</span></a>
-      </li>
-      <li class="link">
-        <a href="/contact"><span>Contact</span></a>
-      </li>
-      <li class="link">
-        <a href="/about"><span>About</span></a>
-      </li>
-    </ul>
-    <ul class="badges">
-      <li>
-        <a href="http://feeds.feedburner.com/crohr">
-          <img src="/images/rss.png" alt="Subscribe to RSS Feed" width="16" height="16" />
-        </a>
-      </li>
-      <li><a href="http://github.com/crohr/"><img src="https://s2.googleusercontent.com/s2/favicons?domain=github.com" alt="View my code on Github"></a>
-      </li>
-      <li><a href="http://www.linkedin.com/in/cyrilrohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=linkedin.com" alt="View my profile on LinkedIn"></a>
-      </li>
-      <li><a href="http://twitter.com/crohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=twitter.com" alt="Follow me on Twitter"></a>
-      </li>
-    </ul>
 
-  </nav>
-  
-  <div class="content">
-    <h1>Journal</h1>
+	<!-- Primary Page Layout
+	================================================== -->
 
-Here is the place where I collect links and thoughts about things that I find interesting.
+	<!-- Delete everything in this .container and get started on your own site! -->
+
+	<div class="container">
+	  <div class="three columns sidebar">
+	    <nav style="margin-top: 40px">
+        <ul class="navigation">
+          <li class="link me">
+            <a href="/">
+              <img src="/images/cyrilrohr.jpg" class="shadow" width="40">
+            </a>
+          </li>
+          <li class="link">
+            <a href="/code">Code</a>
+          </li>
+          <li class="link">
+            <a href="/projects">Projects</a>
+          </li>
+          <li class="link">
+            <a href="/presentations">Presentations</a>
+          </li>
+          <li class="link">
+            <a href="/journal">Journal</a>
+          </li>
+          <li class="link">
+            <a href="/contact">Contact</a>
+          </li>
+          <li class="link">
+            <a href="/about">About</a>
+          </li>
+        </ul>
+        <ul class="badges">
+          <li>
+            <a href="http://feeds.feedburner.com/crohr">
+              <img src="/images/rss.png" alt="Subscribe to RSS Feed" width="16" height="16" />
+            </a>
+          </li>
+          <li><a href="http://github.com/crohr/"><img src="https://s2.googleusercontent.com/s2/favicons?domain=github.com" alt="View my code on Github"></a>
+          </li>
+          <li><a href="http://www.linkedin.com/in/cyrilrohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=linkedin.com" alt="View my profile on LinkedIn"></a>
+          </li>
+          <li><a href="http://twitter.com/crohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=twitter.com" alt="Follow me on Twitter"></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nine columns offset-by-one content">
+  <header>
+  <h1>Journal</h1>
+</header>
+<hr class="large" />
+
+<p> The place where I collect links and thoughts about things that I find
+interesting. </p>
 
                                                                                     
   <h2>Year 2012</h2>
                           
                                                                                          
     <h3>May</h3>                                                          
-      <ul>                           
+      <ul class="disc">                           
                                
       <li><a href="/journal/2012/objective-c.html">Objective-C</a>
         
@@ -130,7 +160,7 @@ Here is the place where I collect links and thoughts about things that I find in
     </ul>
                                                                                          
     <h3>April</h3>                                                          
-      <ul>                           
+      <ul class="disc">                           
                                
       <li><a href="/journal/2012/the-node-toolbox.html">The Node Toolbox</a>
         
@@ -218,7 +248,7 @@ Here is the place where I collect links and thoughts about things that I find in
     </ul>
                                                                                          
     <h3>March</h3>                                                          
-      <ul>                           
+      <ul class="disc">                           
                                
       <li><a href="/journal/2012/tesseract-fast-multidimensional-filtering-for-coordinated-views.html">Tesseract - Fast Multidimensional Filtering for Coordinated Views.</a>
         
@@ -264,7 +294,7 @@ Here is the place where I collect links and thoughts about things that I find in
     </ul>
                                                                                          
     <h3>February</h3>                                                          
-      <ul>                           
+      <ul class="disc">                           
                                
       <li><a href="/journal/2012/submarine-cable-map.html">Submarine Cable Map</a>
         
@@ -304,7 +334,7 @@ Here is the place where I collect links and thoughts about things that I find in
     </ul>
                                                                                          
     <h3>January</h3>                                                          
-      <ul>                           
+      <ul class="disc">                           
                                
       <li><a href="/journal/2012/staying-up-with-node-js.html">Staying up with Node.JS</a>
         
@@ -402,7 +432,7 @@ Here is the place where I collect links and thoughts about things that I find in
                           
                                                                                          
     <h3>December</h3>                                                          
-      <ul>                           
+      <ul class="disc">                           
                                
       <li><a href="/journal/2011/the-messy-art-of-ux-sketching.html">The Messy Art Of UX Sketching</a>
         
@@ -456,7 +486,7 @@ Here is the place where I collect links and thoughts about things that I find in
     </ul>
                                                                                          
     <h3>November</h3>                                                          
-      <ul>                           
+      <ul class="disc">                           
                                
       <li><a href="/journal/2011/money-chart.html">Money Chart</a>
         
@@ -568,7 +598,7 @@ Here is the place where I collect links and thoughts about things that I find in
     </ul>
                                                                                          
     <h3>October</h3>                                                          
-      <ul>                           
+      <ul class="disc">                           
                                
       <li><a href="/journal/2011/ile-de-la-r-union-france-may-2010.html">Ile de la Réunion (France), May 2010</a>
         
@@ -730,31 +760,30 @@ Here is the place where I collect links and thoughts about things that I find in
 
 
 
-  </div>
-
-  <div class="footer" style="text-align: right;">  
-    <form action="http://www.google.com/search" method="get" style=" margin-bottom: 2em;">
-        <input name="sitesearch" type="hidden" value="crohr.me">
-        <input name="q" type="text" size="12" class="text">
-        <input type="submit" value="Search" class="button">
-    </form>  
-  </div>
 </div>
+	</div><!-- container -->
 
 
-<!-- Google Analytics -->
-<script type="text/javascript">
-	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-	try {
-	  var pageTracker = _gat._getTracker("UA-13023229-1");
-	  pageTracker._setDomainName(".crohr.me");
-	  pageTracker._trackPageview();
-	} catch(err) {}
-</script>
-<!-- Google Analytics end -->
 
+	<!-- JS
+	================================================== -->
+
+	<!-- <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script> -->
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+  	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+  	try {
+  	  var pageTracker = _gat._getTracker("UA-13023229-1");
+  	  pageTracker._setDomainName(".crohr.me");
+  	  pageTracker._trackPageview();
+  	} catch(err) {}
+  </script>
+  <!-- Google Analytics end -->
+<!-- End Document
+================================================== -->
 </body>
 </html>
