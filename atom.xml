@@ -4,7 +4,7 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2012-05-15T09:23:11+02:00</updated>
+ <updated>2012-05-15T09:24:39+02:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>Virtualize your development environments with Vagrant & Puppet</title>
+   <title>Virtualize your development environments with Vagrant &amp; Puppet</title>
    <link href="http://crohr.me/journal/2012/virtualize-your-development-environments-with-vagrant-and-puppet.html"/>
    <updated>2012-05-15T00:00:00+02:00</updated>
    <id>http://crohr.me/journal/2012/virtualize-your-development-environments-with-vagrant-and-puppet</id>
