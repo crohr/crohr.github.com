@@ -1,5 +1,5 @@
 ---
-title: Virtualize your development environments with Vagrant & Puppet
+title: "Virtualize your development environments with Vagrant &amp; Puppet"
 layout: post
 tags:
   - vagrant
