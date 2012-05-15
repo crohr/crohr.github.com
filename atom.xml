@@ -4,13 +4,23 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2012-05-14T16:08:20+02:00</updated>
+ <updated>2012-05-15T09:23:11+02:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Virtualize your development environments with Vagrant & Puppet</title>
+   <link href="http://crohr.me/journal/2012/virtualize-your-development-environments-with-vagrant-and-puppet.html"/>
+   <updated>2012-05-15T00:00:00+02:00</updated>
+   <id>http://crohr.me/journal/2012/virtualize-your-development-environments-with-vagrant-and-puppet</id>
+   <content type="html">&lt;p&gt;Yesterday I presented the Vagrant &amp;amp; Puppet tools at the Rails Bar in Rennes, to show how you can use these tools to easily provision virtual machines that can be used as isolated development environments for your projects. You&amp;#8217;ll keep your development machine fast, your environments isolated (+ they replicate your production setup), and any developer will be able to get up and running on a new project in less than 5 minutes.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#8217;re interested, it&amp;#8217;s available at &lt;a href='http://crohr.me/presentations/vagrant-puppet/'&gt;http://crohr.me/presentations/vagrant-puppet/&lt;/a&gt;.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>The Toolbox</title>
@@ -779,15 +789,6 @@ bundle update&lt;/code&gt;. Do &lt;em&gt;not&lt;/em&gt; commit this file if you&
    <updated>2011-11-18T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2011/create-zip-files-with-javascript</id>
    <content type="html">&lt;a href='http://jszip.stuartk.co.uk/'&gt;Create .zip files with Javascript&lt;/a&gt;</content>
- </entry>
- 
- <entry>
-   <title>The Knife Maker</title>
-   <link href="http://crohr.me/journal/2011/the-knife-maker.html"/>
-   <updated>2011-11-17T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/the-knife-maker</id>
-   <content type="html">&lt;iframe allowFullScreen='allowFullScreen' frameborder='0' height='300' src='http://player.vimeo.com/video/31455885?color=ffffff' webkitAllowFullScreen='webkitAllowFullScreen' width='100%'&gt;&amp;nbsp;&lt;/iframe&gt;
-&lt;p&gt;From &lt;a href='http://thisismadebyhand.com/film/the_knife_maker'&gt;http://thisismadebyhand.com/film/the_knife_maker&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
  
  
