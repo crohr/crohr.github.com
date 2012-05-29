@@ -283,6 +283,7 @@ CSS contents and browser compatibility">CSS contents and browser compatibility &
   <script src='/js/highlight.min.js'></script>
   <script type="text/javascript">
     $(document).ready(function() {
+      hljs.tabReplace = '  ';
       var codeCommentRegexp = /code\[(.+)\]/;
       var match;
       $("pre").parent().contents().filter(function(){
@@ -290,13 +291,12 @@ CSS contents and browser compatibility">CSS contents and browser compatibility &
       }).each(function(i, e){
         if (match=codeCommentRegexp.exec(e.nodeValue)) {
           try{
-            $(e).nextAll("pre").first().
-              find("code").addClass(match[1]);
+            var code = $(e).nextAll("pre").first().find("code"); 
+            code.addClass(match[1]); 
+            hljs.highlightBlock(code.get(0));
           } catch(e) {}
         }
       });
-      hljs.tabReplace = '  ';
-      hljs.initHighlightingOnLoad();
     });
   </script>
 

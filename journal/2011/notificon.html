@@ -252,6 +252,7 @@ Ile de la Réunion (France), May 2010">Ile de la Réunion (France), May 2010 &ra
   <script src='/js/highlight.min.js'></script>
   <script type="text/javascript">
     $(document).ready(function() {
+      hljs.tabReplace = '  ';
       var codeCommentRegexp = /code\[(.+)\]/;
       var match;
       $("pre").parent().contents().filter(function(){
@@ -259,13 +260,12 @@ Ile de la Réunion (France), May 2010">Ile de la Réunion (France), May 2010 &ra
       }).each(function(i, e){
         if (match=codeCommentRegexp.exec(e.nodeValue)) {
           try{
-            $(e).nextAll("pre").first().
-              find("code").addClass(match[1]);
+            var code = $(e).nextAll("pre").first().find("code"); 
+            code.addClass(match[1]); 
+            hljs.highlightBlock(code.get(0));
           } catch(e) {}
         }
       });
-      hljs.tabReplace = '  ';
-      hljs.initHighlightingOnLoad();
     });
   </script>
 

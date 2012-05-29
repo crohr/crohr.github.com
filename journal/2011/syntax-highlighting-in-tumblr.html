@@ -124,7 +124,7 @@
 <li><a href='http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr'>http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr</a></li>
 </ul>
 
-<p>This is too much pollution for me, so I came up with a simple HTML comment to put before code blocks you want to highlight. I then use a small bit of Javascript to extract that info and automatically update the class of the <code>&lt;code&gt;</code> tag. Associated with <a href='http://softwaremaniacs.org/soft/highlight/en/'>Highlight.js</a>, this gives nice syntax highlighting in just one line. For example, the following Markdown snippet:</p>
+<p>This is too much pollution for me, since you will no longer see the code blocks nicely formatted in your text editor of choice. Therefore I came up with a simple solution that consists in putting an HTML comment before the code blocks you want to highlight. I then use a small bit of Javascript to extract that info and automatically update the class of the <code>&lt;code&gt;</code> tag. Associated with <a href='http://softwaremaniacs.org/soft/highlight/en/'>Highlight.js</a>, this gives nice syntax highlighting in just one line. For example, the following Markdown snippet:</p>
 <!-- code[no-highlight] -->
 <pre><code>&lt;!-- code[ruby] --&gt;
 
@@ -168,6 +168,8 @@
 &lt;/script&gt;</code></pre>
 
 <p>Enjoy!</p>
+
+<p><strong>Update (2012/05/29)</strong>: this technique also works for Jekyll blogs (look at the source code of this site). In the comments, <em>isagalaev</em> (the author of Highlight.js) points out a performance improvement to apply the highlighting brush directly in the loop.</p>
 </div>
 
 
@@ -304,6 +306,7 @@ How Can I Help You?">How Can I Help You? &raquo; </a>
   <script src='/js/highlight.min.js'></script>
   <script type="text/javascript">
     $(document).ready(function() {
+      hljs.tabReplace = '  ';
       var codeCommentRegexp = /code\[(.+)\]/;
       var match;
       $("pre").parent().contents().filter(function(){
@@ -311,13 +314,12 @@ How Can I Help You?">How Can I Help You? &raquo; </a>
       }).each(function(i, e){
         if (match=codeCommentRegexp.exec(e.nodeValue)) {
           try{
-            $(e).nextAll("pre").first().
-              find("code").addClass(match[1]);
+            var code = $(e).nextAll("pre").first().find("code"); 
+            code.addClass(match[1]); 
+            hljs.highlightBlock(code.get(0));
           } catch(e) {}
         }
       });
-      hljs.tabReplace = '  ';
-      hljs.initHighlightingOnLoad();
     });
   </script>
 
