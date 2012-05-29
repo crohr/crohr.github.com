@@ -14,7 +14,15 @@ There are multiple solutions to add syntax highlighting for code blocks in Tumbl
 * <http://alan.dipert.org/post/55814908/shjs-javascript-syntax-highlighting-for-tumblr>
 * <http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr>
 
-This is too much pollution for me, so I came up with a simple HTML comment to put before code blocks you want to highlight. I then use a small bit of Javascript to extract that info and automatically update the class of the `<code>` tag. Associated with [Highlight.js](http://softwaremaniacs.org/soft/highlight/en/), this gives nice syntax highlighting in just one line. For example, the following Markdown snippet:
+This is too much pollution for me, since you will no longer see the code
+blocks nicely formatted in your text editor of choice. Therefore I came
+up with a simple solution that consists in putting an HTML comment
+before the code blocks you want to highlight. I then use a small bit of
+Javascript to extract that info and automatically update the class of
+the `<code>` tag. Associated with
+[Highlight.js](http://softwaremaniacs.org/soft/highlight/en/), this
+gives nice syntax highlighting in just one line. For example, the
+following Markdown snippet:
 
 <!-- code[no-highlight] -->
 
@@ -29,9 +37,15 @@ Will give:
 
     puts "This is Ruby code"
 
-Note that most of the time, you don't even need to specify the language, since Highlight.js will often detect the right brush for you. Also, HTML comments won't show up in your RSS feed.
+Note that most of the time, you don't even need to specify the language,
+since Highlight.js will often detect the right brush for you. Also, HTML
+comments won't show up in your RSS feed.
 
-To enable this feature, open the 'customize appearance' link in your Tumblr dashboard, then click on 'Edit HTML', and enter the following code just before the opening `<body>` tag (you might need to include the [jQuery](http://code.google.com/apis/libraries/devguide.html#jquery) library if you don't already have it):
+To enable this feature, open the 'customize appearance' link in your
+Tumblr dashboard, then click on 'Edit HTML', and enter the following
+code just before the opening `<body>` tag (you might need to include the
+[jQuery](http://code.google.com/apis/libraries/devguide.html#jquery)
+library if you don't already have it):
 
 <!-- code[html] -->
 
@@ -65,3 +79,8 @@ To enable this feature, open the 'customize appearance' link in your Tumblr dash
     </script>
 
 Enjoy!
+
+**Update (2012/05/29)**: this technique also works for Jekyll blogs
+(look at the source code of this site). In the comments, *isagalaev*
+(the author of Highlight.js) points out a performance improvement to
+apply the highlighting brush directly in the loop.
