@@ -4,13 +4,25 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2012-05-30T09:21:31+02:00</updated>
+ <updated>2012-05-30T11:03:47+02:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>The Valve handbook for new employees</title>
+   <link href="http://crohr.me/journal/2012/the-valve-handbook-for-new-employees.html"/>
+   <updated>2012-05-30T00:00:00+02:00</updated>
+   <id>http://crohr.me/journal/2012/the-valve-handbook-for-new-employees</id>
+   <content type="html">&lt;blockquote&gt;
+&lt;p&gt;A fearless adventure in knowing what to do when no one’s there telling you what to do.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Interesting &lt;a href='http://newcdn.flamehaus.com/Valve_Handbook_LowRes.pdf'&gt;read&lt;/a&gt; (PDF) on how Valve operates internally. Flat structure, self-organization, importance of the hiring process.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>People are your competitive advantage</title>
@@ -784,15 +796,6 @@ bundle update&lt;/code&gt;. Do &lt;em&gt;not&lt;/em&gt; commit this file if you&
 &lt;p&gt;Looks like every &amp;#8220;rich&amp;#8221; country (including France) went down the same alley. So if we know where this came from, and how to fix it (fix tax loopholes, and increase taxes for the rich), then why our &amp;#8220;leaders&amp;#8221; tell us that we should pay for those guys? Are they naïve/stupid/corrupt? Do they still believe that people sitting on piles of money are going to magically create tons of jobs by intelligently spending their money? I believe that the majority of them just don&amp;#8217;t care. They speculate ; They prefer to employ useless people to make the best of tax loopholes ; They just want more of it, and they&amp;#8217;ll find every way to have it all.&lt;/p&gt;
 
 &lt;p&gt;Our beloved politicians need to step up and fix this, or be replaced.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>jQuery Mobile hits 1.0</title>
-   <link href="http://crohr.me/journal/2011/jquery-mobile-hits-1-0.html"/>
-   <updated>2011-11-18T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/jquery-mobile-hits-1-0</id>
-   <content type="html">&lt;a href='http://jquerymobile.com/'&gt;jQuery Mobile hits 1.0&lt;/a&gt;
-&lt;p&gt;Awesome.&lt;/p&gt;</content>
  </entry>
  
  
