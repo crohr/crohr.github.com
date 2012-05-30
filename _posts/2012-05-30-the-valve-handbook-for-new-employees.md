@@ -1,7 +1,9 @@
 ---
 title: The Valve handbook for new employees
 layout: post
-tags: business, workplace
+tags: 
+  - business
+  - workplace
 
 type: link
 ---
