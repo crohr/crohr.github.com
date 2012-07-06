@@ -9,7 +9,7 @@
   ================================================== -->
   <meta charset="utf-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>A Documentation Talk</title>
+  <title>Rails3 apps to package</title>
   <meta name="author" content="Cyril Rohr" />
   <meta name="description" content="">
   <link href="http://feeds.feedburner.com/crohr" rel="alternate" title="Cyril Rohr" type="application/atom+xml" />
@@ -101,31 +101,42 @@
     </div>
     <div class="nine columns offset-by-one content">
   <header>
-  <h1>A Documentation Talk</h1>
+  <h1>Rails3 apps to package</h1>
 </header>
 <hr class="large" />
 <div class="article-date">
   
-    <a class="tag" href="/tags/#documentation">documentation</a>
+    <a class="tag" href="/tags/#ruby">ruby</a>
   
-    <a class="tag" href="/tags/#talks">talks</a>
+    <a class="tag" href="/tags/#debian">debian</a>
   
-  &nbsp;&nbsp;21 Oct 2011
+    <a class="tag" href="/tags/#packaging">packaging</a>
+  
+    <a class="tag" href="/tags/#devops">devops</a>
+  
+  &nbsp;&nbsp;06 Jul 2012
 </div>
 
 <div id="post">
-  <a href='http://zachholman.com/talk/a-documentation-talk'>A Documentation Talk</a>
-<blockquote>
-<p>Everyone hates shitty README.</p>
-</blockquote>
+  <p>I&#8217;m still thinking about <a href='http://crohr.me/pkgr'>pkgr</a>, and I came up with a few Rails apps that would be nice to package as .deb:</p>
 
-<p>True. I&#8217;m guilty of a few ones. <a href='http://tom.preston-werner.com/2010/08/23/readme-driven-development.html'>README Driven Development</a> helps a lot.</p>
+<ul>
+<li>
+<p><a href='http://redmine.org'>Redmine</a> - the famous project management tool. A debian package already exists, but with a way too old version. I&#8217;ve been able to build a package with pkgr. Just need to test it further and upload it somewhere.</p>
+</li>
 
-<blockquote>
-<p>Documentation should be Selfish.</p>
-</blockquote>
+<li>
+<p><a href='gitlabhq.com'>Gitlab HQ</a> - a Github clone. Useful for setting up a private Github clone with pull requests, comments, etc.</p>
+</li>
 
-<p>Thinking about it, it&#8217;s true that it&#8217;s easier to write doc when you&#8217;re thinking about your own needs first. Then you&#8217;ll find yourself refining the doc for other people as well.</p>
+<li>
+<p><a href='http://getbarkeep.org/'>barkeep</a> - a new code review tool.</p>
+</li>
+</ul>
+
+<p>All those projects use a mix of dependencies (MySQL, Postgres, Redis, Git, etc.), have different configuration strategies, and some of them have a <a href='https://devcenter.heroku.com/articles/procfile'>Procfile</a> where they declare the processes to run. Therefore it&#8217;ll be a good test to see if I&#8217;m able to package them easily.</p>
+
+<p>If it works, then it&#8217;ll be time to set up a continuous packaging server hooked to Github ;)</p>
 </div>
 
 
@@ -134,14 +145,11 @@
   <div class="clear">&nbsp;</div> 
   <div class="left"> 
    
-          <a href="/journal/2011/understanding-how-dilution-affects-you-at-a-startup.html" title="Previous Post: 
-Understanding How Dilution Affects You at a Startup">&laquo; Understanding How Dilution Affects You at a Startup</a> 
+          <a href="/journal/2012/rulu2012.html" title="Previous Post: 
+Rulu 2012">&laquo; Rulu 2012</a> 
    
   </div> 
   <div class="right"> 
-   
-          <a href="/journal/2011/pick-two.html" title="next Post: 
-Pick Two">Pick Two &raquo; </a> 
    
   </div> 
   <div class="clear">&nbsp;</div> 
@@ -151,11 +159,11 @@ Pick Two">Pick Two &raquo; </a>
   <!-- <p>Related posts</p>
   <ul class="posts">
     
-      <li><span class="date">06 Jul 2012</span> &raquo; <a href="/journal/2012/rails3-apps-to-package.html">Rails3 apps to package</a></li>
-    
       <li><span class="date">25 Jun 2012</span> &raquo; <a href="/journal/2012/rulu2012.html">Rulu 2012</a></li>
     
       <li><span class="date">30 May 2012</span> &raquo; <a href="/journal/2012/the-valve-handbook-for-new-employees.html">The Valve handbook for new employees</a></li>
+    
+      <li><span class="date">30 May 2012</span> &raquo; <a href="/journal/2012/people-are-your-competitive-advantage.html">People are your competitive advantage</a></li>
     
   </ul> -->
 
@@ -239,8 +247,8 @@ Pick Two">Pick Two &raquo; </a>
 <div id="disqus_thread" style="margin-top: 3em"></div>
 <script type="text/javascript">
     var disqus_shortname = 'crohr';
-    var disqus_identifier = '/journal/2011/a-documentation-talk';
-    var disqus_url = 'http://crohr.me/journal/2011/a-documentation-talk.html';
+    var disqus_identifier = '/journal/2012/rails3-apps-to-package';
+    var disqus_url = 'http://crohr.me/journal/2012/rails3-apps-to-package.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
