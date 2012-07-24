@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>bibrennes</title>
+
+  <script type="text/javascript" src="d3.v2.js"></script>
+  <script type="text/javascript" src="crossfilter.js"></script>
+  <script type="text/javascript" src="dc.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="dc.css"/>
+  <style>
+
+  @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+
+  body {
+    font-family: "Helvetica Neue";
+    margin: 40px auto;
+    width: 960px;
+  }
+
+  #body {
+    position: relative;
+  }
+
+  footer {
+    padding: 2em 0 1em 0;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 96px;
+    margin-top: .3em;
+    margin-bottom: 0;
+  }
+
+  h1 + h2 {
+    margin-top: 0;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 28px;
+  }
+
+  h1, h2 {
+    font-family: "Yanone Kaffeesatz";
+    text-rendering: optimizeLegibility;
+  }
+
+  #body > p {
+    line-height: 1.5em;
+    width: 640px;
+    text-rendering: optimizeLegibility;
+  }
+
+  #charts {
+    padding: 10px 0;
+  }
+
+  .chart {
+    margin-bottom: 2em;
+  }
+
+  .reset {
+    padding-left: 1em;
+    font-size: smaller;
+    color: #ccc;
+  }
+
+  .background.bar {
+    fill: #ccc;
+  }
+
+  .foreground.bar {
+    fill: steelblue;
+  }
+
+  .axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .axis text {
+    font: 10px sans-serif;
+  }
+
+  .brush rect.extent {
+    fill: steelblue;
+    fill-opacity: .125;
+  }
+
+  .brush .resize path {
+    fill: #eee;
+    stroke: #666;
+  }
+
+  aside {
+    position: absolute;
+    left: 740px;
+    font-size: smaller;
+    width: 220px;
+  }
+
+  </style>
+
+</head>
+<body>
+
+<div class="content">
+
+<h1>bibrennes</h1>
+
+<h2>Affluence par jour depuis mai 2010 jusqu'à mai 2012 à la <a
+href="http://www.bibliotheque-rennesmetropole.fr/">bibliothèque des
+Champs Libres de Rennes</a></h2>
+
+<p>La sélection par défaut est sur l'année 2011. Vous pouvez interagir
+avec le graph pour sélectionner une période particulière.</p>
+
+<div id="charts">
+
+  <div id="quarter-chart" class="chart">
+      <span>Par trimestre</span>
+      <a class="reset" href="javascript:quarterChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+
+      <div class="clear"></div>
+  </div>
+
+  <div id="day-of-week-chart" class="chart">
+      <span>Par jour de la semaine</span>
+      <a class="reset" href="javascript:dayOfWeekChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+
+      <div class="clear"></div>
+  </div>
+
+  <div id="origin-chart" class="chart">
+      <span>Par borne d'accès</span>
+      <a class="reset" href="javascript:originChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+
+      <div class="clear"></div>
+  </div>
+
+  <div class="clear"></div>
+
+  <div id="volume-month-chart" class="chart">
+      <span>Nombre d'entrées par mois</span>
+      <a class="reset" href="javascript:volumeByMonthChart.filterAll();dc.redrawAll();"
+         style="display: none;">reset</a>
+
+      <div class="clear"></div>
+  </div>
+
+  <div class="clear"></div>
+
+  <div id="volume-quarter-chart" class="chart">
+      <span>Nombre d'entrées par trimestre</span>
+      <a class="reset" href="javascript:volumeByQuarterChart.filterAll();dc.redrawAll();"
+         style="display: none;">reset</a>
+
+      <div class="clear"></div>
+  </div>
+  
+  <div class="clear"></div>
+
+  <div id="data-count">
+      <span class="filter-count"></span> enregistrements sélectionnés sur un total de <span class="total-count"/>
+  </div>
+</div>
+
+
+<div>
+    <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+</div>
+
+<div id="data-table">
+    <div class="header">
+        <span>Date</span>
+        <span>Entrées</span>
+        <span>Borne d'accès</span>
+    </div>
+</div>
+
+
+<footer>
+  <p>
+  Copyright 2012 <a href="http://crohr.me">Cyril Rohr</a>.
+  Cette page est sous licence <a href="http://creativecommons.org/licenses/by-sa/2.0/fr/">CC-BY-SA</a>.
+  </p>
+
+  <p>
+  (Très) inspiré par <a href="http://nickqizhu.github.com/dc.js/">dc.js</a>,
+  <a href="http://square.github.com/crossfilter/">crossfilter.js</a>, et
+  <a href="http://d3js.org/">d3.js</a>.
+  dc.js et crossfilter.js sont sous licence <a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License 2.0</a>.
+  </p>
+
+  <p>Les données utilisées sont sous une <a
+  href="http://www.data.rennes-metropole.fr/fileadmin/licence/licence_janvier2011.pdf">licence
+  spécifique à Rennes Métropole</a>. L'export CSV des données utilisées
+  sur cette page est disponible ici: <a
+  href="rennes-bib.csv">rennes-bib.csv</a>. </p> </footer>
+
+
+<script type="text/javascript">
+    var volumeByMonthChart = dc.barChart("#volume-month-chart");
+    var volumeByQuarterChart = dc.barChart("#volume-quarter-chart");
+    // var gainOrLossChart = dc.pieChart("#gain-loss-chart");
+    // var fluctuationChart = dc.barChart("#fluctuation-chart");
+    var quarterChart = dc.pieChart("#quarter-chart");
+    var dayOfWeekChart = dc.pieChart("#day-of-week-chart");
+    var originChart = dc.pieChart("#origin-chart");
+
+    // load data from a csv file
+    d3.csv("rennes-bib.csv", function(data) {
+      // since its a csv file we need to format the data a bit
+      var dateFormat = d3.time.format("%Y-%m-%d"),
+          timeFormat = d3.time.format("%Y-%m-%d %H:%M");
+      // var numberFormat = d3.format(".2f");
+
+      data.forEach(function(e) {
+        if (e.date.length > 10) {
+          e.dd = timeFormat.parse(e.date);
+        } else {
+          e.dd = dateFormat.parse(e.date);
+        }
+        e.entries = +e.entries;
+      });
+
+      // feed it through crossfilter
+      var ndx = crossfilter(data);
+      var all = ndx.groupAll();
+
+      var dateDimension = ndx.dimension(function(d) {
+          return d.dd;
+      });
+
+      // define a dimension
+      var volumeByMonth = ndx.dimension(function(d) {
+          return d3.time.month(d.dd);
+      });
+      // map/reduce to group sum
+      var volumeByMonthGroup = volumeByMonth.group().reduceSum(function(d) {
+          return d.entries;
+      });
+      
+      // define a dimension
+      var volumeByQuarter = ndx.dimension(function(d) {
+        var month = d.dd.getMonth();
+        if (month <= 3)
+            return "Q1";
+        else if (month > 3 && month <= 5)
+            return "Q2";
+        else if (month > 5 && month <= 7)
+            return "Q3";
+        else
+            return "Q4";
+      });
+      // map/reduce to group sum
+      var volumeByQuarterGroup = volumeByQuarter.group().reduceSum(function(d) {
+          return d.entries;
+      });
+
+      var quarter = ndx.dimension(function(d) {
+          var month = d.dd.getMonth();
+          if (month <= 3)
+              return "Q1";
+          else if (month > 3 && month <= 5)
+              return "Q2";
+          else if (month > 5 && month <= 7)
+              return "Q3";
+          else
+              return "Q4";
+      });
+      var quarterGroup = quarter.group().reduceSum(function(d) {
+          return d.entries;
+      });
+
+      var dayOfWeek = ndx.dimension(function(d) {
+          var day = d.dd.getDay();
+          switch (day) {
+              case 0:
+                  return "Dim";
+              case 1:
+                  return "Lun";
+              case 2:
+                  return "Mar";
+              case 3:
+                  return "Mer";
+              case 4:
+                  return "Jeu";
+              case 5:
+                  return "Ven";
+              case 6:
+                  return "Sam";
+          }
+      });
+      var dayOfWeekGroup = dayOfWeek.group();
+
+
+      var origin = ndx.dimension(function(d) {
+        return d.origin;
+      })
+      var originGroup = origin.group();
+
+      quarterChart.width(200)
+              .height(200)
+              .radius(90)
+              .innerRadius(40)
+              .dimension(quarter)
+              .group(quarterGroup);
+
+      dayOfWeekChart.width(200)
+              .height(200)
+              .colors(['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#dadaeb'])
+              .radius(90)
+              .innerRadius(40)
+              .dimension(dayOfWeek)
+              .group(dayOfWeekGroup);
+
+      originChart.width(200)
+              .height(200)
+              .colors(['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#dadaeb'])
+              .radius(90)
+              .innerRadius(40)
+              .dimension(origin)
+              .group(originGroup);
+
+      volumeByMonthChart.width(990)
+              .height(250)
+              .margins({top: 10, right: 50, bottom: 30, left: 40})
+              .dimension(volumeByMonth)
+              .group(volumeByMonthGroup)
+              .x(d3.time.scale().
+                domain([new Date(2010, 3, 1), new Date(2012, 05, 31)]))
+              .round(d3.time.month.round)
+              .filter([new Date(2011, 0, 1), new Date(2011, 11, 31)])
+              .xUnits(d3.time.months);
+
+      volumeByQuarterChart.width(990)
+              .height(250)
+              .margins({top: 10, right: 50, bottom: 30, left: 40})
+              .dimension(volumeByQuarter)
+              .group(volumeByQuarterGroup)
+              .x(d3.scale.ordinal().
+                domain(["Q1", "Q4"]).range(["Q1", "Q2", "Q3", "Q4"]))
+              .xUnits(function (s, e) {
+                return ["Q1", "Q2", "Q3", "Q4"];
+              })
+              // .round(d3.time.month.round)
+              // .filter([new Date(2011, 0, 1), new Date(2011, 11, 31)])
+              // .xUnits(d3.time.years);
+
+      dc.dataCount("#data-count")
+              .dimension(ndx)
+              .group(all);
+
+      dc.dataTable("#data-table")
+              .dimension(dateDimension)
+              .group(function(d) {
+                  var format = d3.format("02d");
+                  return d.dd.getFullYear() + "/" + format((d.dd.getMonth() + 1));
+              })
+              .size(10)
+              .columns([
+                  function(d) {
+                      return d.date;
+                  },
+                  function(d) {
+                      return d.entries;
+                  },
+                  function(d) {
+                      return d.origin;
+                  }
+              ])
+              .sortBy(function(d){return d.dd;})
+              .order(d3.ascending);
+
+      dc.renderAll();
+      }
+    );
+</script>
+
+</div>
+
+</div>
+
+</body>
+</html>
