@@ -9,7 +9,7 @@
   ================================================== -->
   <meta charset="utf-8">
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Rollbacks and Other Deployment Myths</title>
+  <title>Software blueprint</title>
   <meta name="author" content="Cyril Rohr" />
   <meta name="description" content="">
   <link href="http://feeds.feedburner.com/crohr" rel="alternate" title="Cyril Rohr" type="application/atom+xml" />
@@ -101,21 +101,28 @@
     </div>
     <div class="nine columns offset-by-one content">
   <header>
-  <h1>Rollbacks and Other Deployment Myths</h1>
+  <h1>Software blueprint</h1>
 </header>
 <hr class="large" />
 <div class="article-date">
   
-    <a class="tag" href="/tags/#devops">devops</a>
+    <a class="tag" href="/tags/#architecture">architecture</a>
   
-  &nbsp;&nbsp;15 Nov 2011
+    <a class="tag" href="/tags/#opinions">opinions</a>
+  
+  &nbsp;&nbsp;26 Sep 2012
 </div>
 
 <div id="post">
-  <a href='http://blog.lusis.org/blog/2011/10/18/rollbacks-and-other-deployment-myths/'>Rollbacks and Other Deployment Myths</a>
+  <p>From that <a href='http://typicalprogrammer.com/?p=15'>Typicalprogrammer article</a>, in which Greg Jorgensen comments on Joel Spolsky&#8217;s article on five ways to make a software project fail:</p>
+
 <blockquote>
-<p>Yes, it’s true. You can never roll back. You can’t go back in time. You can fake it but understand that it’s typically more risky to rollback than rolling forward. Always be rolling forward.</p>
+<p>The detailed plan for a non-trivial program is as complicated as the program itself. If every problem is solved enough to estimate the code in hours, if every logical module is described, and if every contingency is anticipated and planned for, the code will almost write itself.</p>
 </blockquote>
+
+<p>Rings very true with a presentation given at BaRuCo this year by <a href='https://twitter.com/nusco'>Paolo Perrotta</a>, i.e. the code IS the <strong>blueprint</strong>, not the specification, as detailed as it could be. And the act of <strong>building</strong> software is the compilation step (which comes for free in our world), not the process of writing the code.</p>
+
+<p>I&#8217;ll update this article once the recording of the talk is available.</p>
 </div>
 
 
@@ -124,14 +131,11 @@
   <div class="clear">&nbsp;</div> 
   <div class="left"> 
    
-          <a href="/journal/2011/how-can-i-help-you.html" title="Previous Post: 
-How Can I Help You?">&laquo; How Can I Help You?</a> 
+          <a href="/journal/2012/rails3-apps-to-package.html" title="Previous Post: 
+Rails3 apps to package">&laquo; Rails3 apps to package</a> 
    
   </div> 
   <div class="right"> 
-   
-          <a href="/journal/2011/moment-js.html" title="next Post: 
-Moment.js">Moment.js &raquo; </a> 
    
   </div> 
   <div class="clear">&nbsp;</div> 
@@ -141,11 +145,11 @@ Moment.js">Moment.js &raquo; </a>
   <!-- <p>Related posts</p>
   <ul class="posts">
     
-      <li><span class="date">26 Sep 2012</span> &raquo; <a href="/journal/2012/software-blueprint.html">Software blueprint</a></li>
-    
       <li><span class="date">06 Jul 2012</span> &raquo; <a href="/journal/2012/rails3-apps-to-package.html">Rails3 apps to package</a></li>
     
       <li><span class="date">25 Jun 2012</span> &raquo; <a href="/journal/2012/rulu2012.html">Rulu 2012</a></li>
+    
+      <li><span class="date">30 May 2012</span> &raquo; <a href="/journal/2012/the-valve-handbook-for-new-employees.html">The Valve handbook for new employees</a></li>
     
   </ul> -->
 
@@ -230,8 +234,8 @@ Moment.js">Moment.js &raquo; </a>
 <div id="disqus_thread" style="margin-top: 3em"></div>
 <script type="text/javascript">
     var disqus_shortname = 'crohr';
-    var disqus_identifier = '/journal/2011/rollbacks-and-other-deployment-myths';
-    var disqus_url = 'http://crohr.me/journal/2011/rollbacks-and-other-deployment-myths.html';
+    var disqus_identifier = '/journal/2012/software-blueprint';
+    var disqus_url = 'http://crohr.me/journal/2012/software-blueprint.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

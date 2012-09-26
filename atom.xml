@@ -4,13 +4,29 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2012-08-13T18:46:45+02:00</updated>
+ <updated>2012-09-26T15:38:36+02:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Software blueprint</title>
+   <link href="http://crohr.me/journal/2012/software-blueprint.html"/>
+   <updated>2012-09-26T00:00:00+02:00</updated>
+   <id>http://crohr.me/journal/2012/software-blueprint</id>
+   <content type="html">&lt;p&gt;From that &lt;a href='http://typicalprogrammer.com/?p=15'&gt;Typicalprogrammer article&lt;/a&gt;, in which Greg Jorgensen comments on Joel Spolsky&amp;#8217;s article on five ways to make a software project fail:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The detailed plan for a non-trivial program is as complicated as the program itself. If every problem is solved enough to estimate the code in hours, if every logical module is described, and if every contingency is anticipated and planned for, the code will almost write itself.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Rings very true with a presentation given at BaRuCo this year by &lt;a href='https://twitter.com/nusco'&gt;Paolo Perrotta&lt;/a&gt;, i.e. the code IS the &lt;strong&gt;blueprint&lt;/strong&gt;, not the specification, as detailed as it could be. And the act of &lt;strong&gt;building&lt;/strong&gt; software is the compilation step (which comes for free in our world), not the process of writing the code.&lt;/p&gt;
+
+&lt;p&gt;I&amp;#8217;ll update this article once the recording of the talk is available.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Rails3 apps to package</title>
@@ -799,19 +815,6 @@ bundle update&lt;/code&gt;. Do &lt;em&gt;not&lt;/em&gt; commit this file if you&
 &lt;p&gt;Once you push into production, I would go against using RVM and instead picking the adequate Ruby version from your distribution package manager (assuming that version exists). However, you should vendor any Ruby dependency with your project.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;</content>
- </entry>
- 
- <entry>
-   <title>Money Chart</title>
-   <link href="http://crohr.me/journal/2011/money-chart.html"/>
-   <updated>2011-11-26T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/money-chart</id>
-   <content type="html">&lt;img src='/images/posts/27.media.tumblr.com/tumblr_lv5w1tPQwv1r4ghsio1_1280.jpg' width='100%' /&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Money Chart: a chart of almost all of it, where it is, and what it can do.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Fascinating work.&lt;/p&gt;</content>
  </entry>
  
  

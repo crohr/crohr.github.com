@@ -174,4 +174,6 @@ Allemand (intermédiaire), Espagnol (débutant).
 
 ## INTÉRÊTS
 
-Échecs, jonglage, vélo, ski, lecture. Contributeur Open Source. Pour plus d'informations, vous pouvez consulter mon site personnel à l'adresse: <http://crohr.me>.
+Échecs, jonglage, vélo, ski, lecture. Contributeur Open Source. Pour
+plus d'informations, vous pouvez consulter mon site personnel à
+l'adresse: <http://crohr.me>.
