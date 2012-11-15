@@ -9,6 +9,13 @@ div.container {
   padding-top: 60px;
 }
 
+ul li {
+  list-style-type: circle;
+}
+
+ul.navigation li {
+  list-style-type: none;
+}
 
 a {
   color: #00a;

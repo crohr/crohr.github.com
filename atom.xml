@@ -4,13 +4,273 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2012-10-16T11:53:40+02:00</updated>
+ <updated>2012-11-15T10:15:53+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Who said Puppet was hard?</title>
+   <link href="http://crohr.me/journal/2012/who-said-puppet-was-hard.html"/>
+   <updated>2012-11-15T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2012/who-said-puppet-was-hard</id>
+   <content type="html">&lt;p&gt;Yesterday I was at the second edition of the &lt;a href='http://www.lacantine-rennes.net/2012/11/devcamp2-si-tu-codes-tu-viens/'&gt;Devcamp&lt;/a&gt; in Rennes, where developers from various horizons and communities gather to share ideas and tools related to a specific theme.&lt;/p&gt;
+
+&lt;p&gt;This time the theme was about deployment, and I took the lightning talk slot to present a short demo with the goal of demystifying &lt;a href='http://puppetlabs.com/'&gt;Puppet&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Indeed, Puppet (or Chef for that matter) is often seen as a tool only used and usable in large organizations. People often think it has to be a client-server architecture, with lots of dependencies and configuration to setup, but the truth is that it comes with a solo mode that is really painless to use, even for simple deployments on a single or few machines.&lt;/p&gt;
+
+&lt;h2 id='puppet'&gt;Puppet&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Server provisioning tool.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Can be a pain to install in a client-server setup.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;For simple installations, use the solo mode!&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;The only thing to install on the remote server is the puppet gem (go with v2.6.x for now):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  apt-get install ruby1.8 rubygems1.8 libopenssl-ruby1.8 -y &amp;amp;&amp;amp; \
+  gem install puppet --version 2.6.11 --no-ri --no-rdoc&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See the last section for a &lt;a href='http://capify.org/'&gt;Capistrano&lt;/a&gt; task to automate the whole thing.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='puppet_manifest'&gt;Puppet manifest&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Declares everything that needs to be installed and configured in order for a piece of software to be functional.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Can be as simple as a single file, with directives such as:&lt;/p&gt;
+&lt;!-- code[ruby] --&gt;
+&lt;pre&gt;&lt;code&gt;  # site.pp
+  package {&amp;quot;mysql-server&amp;quot;:
+    ensure =&amp;gt; installed
+  }
+
+  service {&amp;quot;mysqld&amp;quot;:
+    name =&amp;gt; &amp;quot;mysql&amp;quot;,
+    ensure =&amp;gt; running,
+    require =&amp;gt; Package[&amp;quot;mysql-server&amp;quot;]
+  }
+
+  exec { &amp;quot;allow-mysql&amp;quot;:
+    command =&amp;gt; &amp;quot;/bin/echo &amp;#39;mysqld: ALL: allow&amp;#39; &amp;gt;&amp;gt; /etc/hosts.allow&amp;quot;,
+    onlyif  =&amp;gt; &amp;quot;/bin/grep -qv ^mysqld /etc/hosts.allow&amp;quot;,
+    require =&amp;gt; Package[&amp;quot;mysql-server&amp;quot;]
+  }
+
+  file { &amp;quot;/etc/mysql/conf.d/custom.cnf&amp;quot;:
+    mode =&amp;gt; 644, owner =&amp;gt; root, group =&amp;gt; root,
+    content =&amp;gt; &amp;quot;[mysqld]\nbind-address = 127.0.0.1\n&amp;quot;,
+    notify =&amp;gt; Service[&amp;quot;mysqld&amp;quot;],
+    require =&amp;gt; Package[&amp;quot;mysql-server&amp;quot;];
+  }&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Provision the remote server with the following command (add &lt;code&gt;/var/lib/gems/1.8/bin/&lt;/code&gt; to your &lt;code&gt;PATH&lt;/code&gt; if needed):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  puppet apply site.pp&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You should see the following output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  notice: /Stage[main]//Package[mysql-server]/ensure: ensure changed &amp;#39;purged&amp;#39; to &amp;#39;present&amp;#39;
+  notice: /Stage[main]//File[/etc/mysql/conf.d/custom.cnf]/ensure: defined content as &amp;#39;{md5}6cf7741c1e6fc9baafca18e65f68d9ca&amp;#39;
+  notice: /Stage[main]//Service[mysqld]: Triggered &amp;#39;refresh&amp;#39; from 1 events
+  notice: /Stage[main]//Exec[allow-mysql]/returns: executed successfully
+  notice: Finished catalog run in 51.92 seconds&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='puppet_modules'&gt;Puppet modules&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;When you have lots of things to install, you can create specific modules for each software component.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Don&amp;#8217;t reinvent the wheel, lots of modules have already been created, that are parametrized and re-usable on various distributions. See the &lt;a href='http://forge.puppetlabs.com'&gt;Puppet forge&lt;/a&gt;, or search on Github.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Use &lt;a href='https://github.com/rodjek/librarian-puppet'&gt;&lt;code&gt;librarian-puppet&lt;/code&gt;&lt;/a&gt; to manage your modules dependencies.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='manage_your_puppet_module_dependencies_with_librarianpuppet'&gt;Manage your Puppet module dependencies with librarian-puppet&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Like &lt;a href='http://gembundler.com/'&gt;&lt;code&gt;bundler&lt;/code&gt;&lt;/a&gt;, but for Puppet modules.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  gem install librarian-puppet&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Example &lt;code&gt;Puppetfile&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  forge &amp;quot;http://forge.puppetlabs.com&amp;quot;
+
+  mod &amp;#39;puppetlabs/stdlib&amp;#39;
+  mod &amp;quot;puppetlabs/apt&amp;quot;
+  mod &amp;#39;puppetlabs/ntp&amp;#39;
+  mod &amp;#39;puppetlabs/apache&amp;#39;
+  mod &amp;#39;puppetlabs/firewall&amp;#39;
+  mod &amp;#39;huit/gitolite&amp;#39;
+  mod &amp;#39;alup/rbenv&amp;#39;
+  mod &amp;#39;saz/sudo&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Then let librarian-puppet fetch the dependencies with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  librarian-puppet install&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;This will create a &lt;code&gt;modules/&lt;/code&gt; directory locally, containing all the modules you declared in your &lt;code&gt;Puppetfile&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;You can also reference specific Git repositories, branches, etc. See the &lt;code&gt;librarian-puppet&lt;/code&gt; README for this.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='usage'&gt;Usage&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Include the modules you need in a site manifest &lt;code&gt;site.pp&lt;/code&gt;. For instance:&lt;/p&gt;
+&lt;!-- code[ruby] --&gt;
+&lt;pre&gt;&lt;code&gt;  include ntp
+
+  package{&amp;quot;some-package&amp;quot;:
+    ensure =&amp;gt; installed
+  }
+
+  user {&amp;quot;some-user&amp;quot;:
+    ensure =&amp;gt; present,
+    managehome =&amp;gt; true,
+    shell =&amp;gt; &amp;quot;/bin/bash&amp;quot;
+  }
+
+  rbenv::install { &amp;quot;some-user rbenv&amp;quot;:
+    user =&amp;gt; &amp;quot;some-user&amp;quot;,
+    require =&amp;gt; User[&amp;quot;some-user&amp;quot;]
+  }
+
+  rbenv::compile { &amp;quot;1.9.3-p286&amp;quot;:
+    user =&amp;gt; &amp;quot;some-user&amp;quot;,
+    global =&amp;gt; true,
+    require =&amp;gt; Rbenv::Install[&amp;quot;some-user rbenv&amp;quot;]
+  }
+
+  class {&amp;#39;apache&amp;#39;:  }
+
+  apache::vhost { &amp;#39;server.com&amp;#39;:
+      priority      =&amp;gt; &amp;#39;10&amp;#39;,
+      port          =&amp;gt; &amp;#39;80&amp;#39;,
+      docroot       =&amp;gt; &amp;#39;/var/www/server.com&amp;#39;,
+      serveradmin   =&amp;gt; &amp;#39;support@server.com&amp;#39;,
+      ensure        =&amp;gt; present
+  }&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Make sure you have installed &lt;code&gt;puppet&lt;/code&gt; on the target server.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Upload your manifests and modules to the target server.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Provision your server using:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  puppet apply /path/to/site.pp --modulepath /path/to/modules/&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='automate_with_capistrano'&gt;Automate with Capistrano&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Put this in your &lt;code&gt;config/deploy.rb&lt;/code&gt;&lt;/p&gt;
+&lt;!-- code[ruby] --&gt;
+&lt;pre&gt;&lt;code&gt;  set :puppet_dir, &amp;quot;/tmp/puppet&amp;quot;
+  set :puppet_cmd, &amp;quot;/var/lib/gems/1.8/bin/puppet&amp;quot;
+
+  desc &amp;quot;Install and configure the puppet recipes on a remote machine.&amp;quot;
+  task :provision do
+    system &amp;quot;rm -f modules.tar.gz &amp;amp;&amp;amp; tar czf modules.tar.gz modules&amp;quot;
+    run &amp;quot;rm -rf #{puppet_dir} &amp;amp;&amp;amp; mkdir -p #{puppet_dir}&amp;quot;
+
+    upload &amp;quot;modules.tar.gz&amp;quot;, puppet_dir, :force =&amp;gt; true, :via =&amp;gt; :scp
+    upload &amp;quot;./config/site.pp&amp;quot;, puppet_dir, :force =&amp;gt; true, :via =&amp;gt; :scp
+
+    run &amp;quot;cd #{puppet_dir} &amp;amp;&amp;amp; tar xzf modules.tar.gz &amp;amp;&amp;amp; \
+      #{sudo} apt-get update &amp;amp;&amp;amp; #{sudo} apt-get install ruby1.8 rubygems1.8 libopenssl-ruby1.8 -y &amp;amp;&amp;amp; \
+      ( [ -f #{puppet_cmd} ] || #{sudo} gem install puppet --version 2.6.11 --no-ri --no-rdoc ) &amp;amp;&amp;amp; \
+      #{sudo} #{puppet_cmd} #{puppet_dir}/site.pp --modulepath #{puppet_dir}/modules/&amp;quot;
+  end&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;And then:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  HOSTS=my-server.com cap provision&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;[optional] Finally, once your server is provisioned with everything you need for your main app (let&amp;#8217;s say a Rails app), you can deploy it using the standard Capistrano process:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  HOSTS=my-server.com cap deploy:setup deploy&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='demo'&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;The demo started with a fresh Ubuntu 10.04LTS EC2 instance (with a single click from the &lt;a href='http://uec-images.ubuntu.com/releases/10.04/release/'&gt;Ubuntu Cloud image repository&lt;/a&gt; which is great stuff by the way), and then the single Capistrano command deployed everything on that bare server in less than 5&amp;#8217;. For a last minute presentation, I think it went great.&lt;/p&gt;
+
+&lt;h2 id='conclusion'&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;If you want to get one or more servers deployed in no time, find the Puppet modules you need on the forge or create your own simple manifests, and use Puppet in solo mode to apply the recipes on any number of server with a simple Capistrano task.&lt;/p&gt;
+
+&lt;p&gt;Also, it&amp;#8217;s likely that you can get to the same result with Chef (see the original &lt;a href='https://github.com/applicationsonline/librarian'&gt;Librarian&lt;/a&gt; gem, which comes with librarian-chef), so there is really no excuse to keep using your shell scripts or half-backed libraries to provision servers.&lt;/p&gt;
+
+&lt;h2 id='resources'&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href='https://github.com/rodjek/librarian-puppet'&gt;https://github.com/rodjek/librarian-puppet&lt;/a&gt; - Github repository where you can find &lt;code&gt;librarian-puppet&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://forge.puppetlabs.com'&gt;http://forge.puppetlabs.com&lt;/a&gt; - Puppet forge, where you can find modules for almost everything.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;a href='http://docs.puppetlabs.com/references/latest/type.html'&gt;http://docs.puppetlabs.com/references/latest/type.html&lt;/a&gt; - Puppet type reference.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Software blueprint</title>
@@ -657,164 +917,6 @@
 curl http://flag.io/33998d87be6c9f8f3a6b0ae72c65fbb9 | patch /usr/lib/one/ruby/OpenNebula.rb -&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: looks like you can get similar performance boost by installing the &lt;code&gt;xmlparser&lt;/code&gt; Ruby gem, which uses the Expat XML parsing library (see this &lt;a href='http://opennebula.org/documentation:rel3.0:ignc#ruby_libraries_requirements_front-end'&gt;doc&lt;/a&gt;) and is already supported by OpenNebula for Ruby &amp;lt; 1.9.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>How to develop with Ruby</title>
-   <link href="http://crohr.me/journal/2011/how-to-develop-with-ruby.html"/>
-   <updated>2011-12-05T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/how-to-develop-with-ruby</id>
-   <content type="html">&lt;p&gt;RVM - Gemsets - Bundler - Gemfiles - Dependencies - Packaging&lt;/p&gt;
-
-&lt;h2 id='the_sysadmins_dream'&gt;The Sysadmin&amp;#8217;s Dream&lt;/h2&gt;
-
-&lt;p&gt;AKA the &lt;em&gt;production&lt;/em&gt; mindset.&lt;/p&gt;
-
-&lt;p&gt;Install Ruby:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get install ruby1.8&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Install the required Ruby libs:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get install libhopefullymygemispackaged-ruby1.8&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Well, we&amp;#8217;re not there yet, and anyway we might have two Ruby projects in need of two different versions of the same library. So&amp;#8230; what do we do?&lt;/p&gt;
-
-&lt;h2 id='the_developers_dream'&gt;The Developer&amp;#8217;s Dream&lt;/h2&gt;
-
-&lt;p&gt;AKA the&amp;#8230; well&amp;#8230; &lt;em&gt;development&lt;/em&gt; mindset. And Sysadmin&amp;#8217;s Nightmare.&lt;/p&gt;
-
-&lt;h3 id='managing_rubies_and_installed_gems_rvm'&gt;Managing rubies and installed gems (RVM)&lt;/h3&gt;
-
-&lt;p&gt;I need libA with version 1.2.3 and libB with version 4.5.6 for projectC, running on rubyX.Y.Z, and I don&amp;#8217;t want to mess around with my carefully crafted list of system gems.&lt;/p&gt;
-
-&lt;p&gt;Install Ruby Version Manager (&lt;a href='http://beginrescueend.com/rvm'&gt;RVM&lt;/a&gt;):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bash &amp;lt; &amp;lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Install required ruby version from source (JRuby, Rubinius and other Ruby runtimes are also available)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rvm install X.Y.Z
-$ rvm use X.Y.Z&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Create a project-specific &lt;code&gt;gemset&lt;/code&gt;, that will contain all the gems installed for this project:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rvm gemset create projectC-gemset
-$ rvm gemset use projectC-gemset
-$ gem install libA --version 1.2.3
-$ gem install libB --version 4.5.6&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Under the hood, &lt;code&gt;rvm&lt;/code&gt; creates a specific &lt;code&gt;GEM_HOME&lt;/code&gt; for each &lt;code&gt;gemset&lt;/code&gt;. When you run &lt;code&gt;rvm gemset use project-gemset&lt;/code&gt;, it will change the &lt;code&gt;GEM_HOME&lt;/code&gt; environment variable. In this way, the installed gems are isolated from the gems that were installed system-wide.&lt;/p&gt;
-
-&lt;p&gt;So:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;RVM is for managing multiple versions of Ruby on the same machine, and&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;switching between them. Gemsets is a powerful feature RVM provides that isolates gems for one application/library from the rest of your system.&lt;/p&gt;
-
-&lt;h3 id='managing_dependencies_bundler'&gt;Managing dependencies (Bundler)&lt;/h3&gt;
-
-&lt;p&gt;Wait, I&amp;#8217;m working with other developers, and even I don&amp;#8217;t want to have to remember the specific lib versions I want. Here comes &lt;a href='http://gembundler.com/'&gt;Bundler&lt;/a&gt;, which is available as a ruby gem:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Bundler makes it easy to make sure that your application has the dependencies it needs to start up and run without errors.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;You describe your dependencies for the target project in a specific file named &lt;code&gt;Gemfile&lt;/code&gt;, that you place in your project&amp;#8217;s root directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;projectC $ cat Gemfile
-
-source &amp;quot;http://rubygems.org&amp;quot;
-
-gem &amp;quot;rails&amp;quot;, &amp;quot;3.0.0.rc&amp;quot;
-gem &amp;quot;rack-cache&amp;quot;
-gem &amp;quot;nokogiri&amp;quot;, &amp;quot;~&amp;gt; 1.4.2&amp;quot;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then install the specified gems in your newly created ruby environment:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ rvm use X.Y.Z &amp;amp;&amp;amp; rvm gemset use projectC-gemset
-$ gem install bundler
-$ bundle install&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Bundler will fetch the requested dependencies (and check that they can be fulfilled), and then install the gems in the specified gemset (this is transparent for Bundler since it&amp;#8217;s based on &lt;code&gt;GEM_HOME&lt;/code&gt; environment variable).&lt;/p&gt;
-
-&lt;p&gt;This means any developer can then install all the required dependencies by running &lt;code&gt;$ bundle install&lt;/code&gt; on their machine.&lt;/p&gt;
-
-&lt;p&gt;Also, some libraries come with executables (e.g. &lt;code&gt;rails&lt;/code&gt;, &lt;code&gt;sequel&lt;/code&gt;, etc.). If you want to run these executables in the current dependency context, you must use the &lt;code&gt;bundle exec&lt;/code&gt; command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ bundle exec rails ...&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Bundler is for managing Ruby dependencies. Those dependencies are described in a &lt;code&gt;Gemfile&lt;/code&gt; file.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;You don&amp;#8217;t &lt;em&gt;need&lt;/em&gt; to use RVM with Bundler. They are separate tools. By default Bundler will install your gems in the default &lt;code&gt;GEM_HOME&lt;/code&gt; path. When using RVM and Bundler together, RVM &amp;#8220;tells&amp;#8221; (by setting a different &lt;code&gt;GEM_HOME&lt;/code&gt;) Bundler where the gems should go, and Bundler installs them into the RVM-folder.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id='files_of_interest'&gt;Files of interest&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Obviously there is the &lt;code&gt;Gemfile&lt;/code&gt; file, which lists the dependencies required by your project. Commit this into your repository, be it a Ruby application or a gem.&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;The first time bundle runs, it will create a &lt;code&gt;Gemfile.lock&lt;/code&gt; file that will contain a dump of the library dependency tree for the gems it just installed. If you commit this file into your project&amp;#8217;s repository, then when other developers will run &lt;code&gt;$ bundle install&lt;/code&gt; on their machines, they&amp;#8217;ll get the &lt;em&gt;exact&lt;/em&gt; same versions for the gems. If one of the developers want to update a dependency, he&amp;#8217;ll have to modify the &lt;code&gt;Gemfile&lt;/code&gt; file and run &lt;code&gt;$
-bundle update&lt;/code&gt;. Do &lt;em&gt;not&lt;/em&gt; commit this file if you&amp;#8217;re developing a Ruby gem, otherwise you&amp;#8217;ll be always testing against a static view of the dependency tree your gem is using, which is probably not the one that your users are seeing.&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;To avoid entering &lt;code&gt;$ rvm use X.Y.Z &amp;amp;&amp;amp; rvm gemset use projectC-gemset&lt;/code&gt; each time you work on &lt;code&gt;projectC&lt;/code&gt;, you can create a &lt;code&gt;.rvmrc&lt;/code&gt; file that will be picked up by RVM when you &lt;code&gt;cd&lt;/code&gt; into the project&amp;#8217;s directory:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  projectC $ cat .rvmrc
-  rvm use ruby1.9.2@projectC-gemset --create&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You may commit this file into the project&amp;#8217;s repository, but only if it&amp;#8217;s a Ruby application, not a Ruby gem.&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;There is also a &lt;code&gt;.bundle/config&lt;/code&gt; file, which contains the Bundler configuration for the project. This is especially useful (and must be shipped with the project) if you&amp;#8217;re using Bundler in deployment mode (see next section). Do not commit this into the repository.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id='finding_a_tradeoff_between_the_sysadmins_and_developers_dreams'&gt;Finding a trade-off between the Sysadmin&amp;#8217;s and Developer&amp;#8217;s dreams&lt;/h2&gt;
-
-&lt;p&gt;Where we&amp;#8217;ll talk about packaging.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Usually it makes a lot of sense to install the Ruby version with your distribution package manager =&amp;gt; Sysadmin is happy, and you get security patches for free. Same for standard non-ruby dependencies (&lt;code&gt;libxml2&lt;/code&gt;, &lt;code&gt;sqlite3&lt;/code&gt;, etc.)&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;Vendor all the Ruby libraries you&amp;#8217;re using. Vendoring means: shipping all the source code of your dependencies with your project. It&amp;#8217;s usually located in a &lt;code&gt;vendor/&lt;/code&gt; folder, and Bundler can create it for you by running it in deployment mode:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  $ bundler install --deployment&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You should even package Bundler in your &lt;code&gt;vendor/&lt;/code&gt; directory!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  $ gem install bundler -i vendor/bundle/&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then you just need to change the &lt;code&gt;$LOAD_PATH&lt;/code&gt; in your application, so that Ruby looks for libraries in your &lt;code&gt;vendor/&lt;/code&gt; folder first. Note that the installation of the gems in &lt;code&gt;vendor/&lt;/code&gt; must be done on a machine that has the same distribution and architecture of the target machine, &lt;em&gt;unless all&lt;/em&gt; your dependencies are pure Ruby libraries.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id='takeaway_messages'&gt;Take-Away messages&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Go crazy on your development machine. You need a quick and easy way to test your app on different versions of Ruby, switch between library versions, reinstall dependencies from scratch, etc. RVM fits the bill perfectly. And Bundler is the de-factor standard for managing dependencies in your applications (for Ruby gems just use the &lt;code&gt;.gemspec&lt;/code&gt; file and point your &lt;code&gt;Gemfile&lt;/code&gt; to the &lt;code&gt;.gemspec&lt;/code&gt;).&lt;/p&gt;
-&lt;/li&gt;
-
-&lt;li&gt;
-&lt;p&gt;Once you push into production, I would go against using RVM and instead picking the adequate Ruby version from your distribution package manager (assuming that version exists). However, you should vendor any Ruby dependency with your project.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</content>
  </entry>
  
  
