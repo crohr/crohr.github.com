@@ -26,6 +26,9 @@ configuration to setup, but the truth is that it comes with a solo mode
 that is really painless to use, even for simple deployments on a single
 or few machines.
 
+If you're interested in the end result, you can just go look at the
+[demo][demo] on github.
+
 ## Puppet
 
 * Server provisioning tool.
@@ -218,6 +221,9 @@ which is great stuff by the way), and then the single Capistrano command
 deployed everything on that bare server in less than 5'. For a last
 minute presentation, I think it went great.
 
+Have a look at the [demo][demo] on github.
+
+[demo]: https://github.com/crohr/who-said-puppet-was-hard
 [ubuntucloud]: http://uec-images.ubuntu.com/releases/10.04/release/
 
 ## Conclusion
