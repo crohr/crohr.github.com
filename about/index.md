@@ -5,21 +5,11 @@ title: About me
 
 {% include about.md %}
 
-## Education
-
-In 2008, I obtained my MSc in Computer Science with high honours from the
-*Institut National des Sciences Appliquées* ([INSA] [insa]), a French
-engineering [*Grande École*] [grande-ecole] in Lyon, France.
-
-I had a great time doing my final year of education and a bit of research at
-the *Queensland University of Technology* ([QUT] [qut]) in Brisbane,
-Australia.
-
-[insa]: http://www.insa-lyon.fr/
-[grande-ecole]: http://en.wikipedia.org/wiki/Grandes_%C3%A9coles
-[qut]: http://qut.edu.au
-
 ## Work Experience
+
+### Freelance
+
+Working independently since April 2012.
 
 ### INRIA - National Research Institute
 
@@ -77,6 +67,20 @@ In 2006, I worked for 2 months as a Software Developer Intern for [Les Bains
 de l'Opéra](http://lesbainsdelopera.com/) in Lyon, France, where I developed a
 web intranet application to replace their invoicing and customer management
 tool. At that time, I mainly worked with PHP5, HTML and what was called AJAX.
+
+## Education
+
+In 2008, I obtained my MSc in Computer Science with high honours from the
+*Institut National des Sciences Appliquées* ([INSA] [insa]), a French
+engineering [*Grande École*] [grande-ecole] in Lyon, France.
+
+I had a great time doing my final year of education and a bit of research at
+the *Queensland University of Technology* ([QUT] [qut]) in Brisbane,
+Australia.
+
+[insa]: http://www.insa-lyon.fr/
+[grande-ecole]: http://en.wikipedia.org/wiki/Grandes_%C3%A9coles
+[qut]: http://qut.edu.au
 
 ## Publications
 
