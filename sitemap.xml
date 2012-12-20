@@ -1,19 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://crohr.me/old/code/</loc>
-        <lastmod>2012-12-20T13:20:09+01:00</lastmod>
+        <loc>http://crohr.me/</loc>
+        <lastmod>2012-12-20T13:26:19+01:00</lastmod>
     </url>
     <url>
-        <loc>http://crohr.me/old/contact/</loc>
-        <lastmod>2012-12-20T13:20:09+01:00</lastmod>
+        <loc>http://crohr.me/journal/</loc>
+        <lastmod>2012-12-20T13:20:14+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://crohr.me/presentations/vagrant-puppet/</loc>
+        <lastmod>2012-12-20T13:20:14+01:00</lastmod>
+    </url>
+    <url>
+        <loc>http://crohr.me/projects/</loc>
+        <lastmod>2012-12-20T13:20:14+01:00</lastmod>
     </url>
     <url>
         <loc>http://crohr.me/tags/</loc>
-        <lastmod>2012-12-20T12:56:49+01:00</lastmod>
+        <lastmod>2012-12-20T13:20:14+01:00</lastmod>
     </url>
     <url>
         <loc>http://crohr.me/thanks.html</loc>
-        <lastmod>2012-12-20T12:56:49+01:00</lastmod>
+        <lastmod>2012-12-20T13:20:14+01:00</lastmod>
     </url>
 </urlset>
