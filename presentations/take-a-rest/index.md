@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Take a REST!
+tab: talks
 ---
 
 <script src="http://speakerdeck.com/embed/4f39429ffe6466002101d84e.js">

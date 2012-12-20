@@ -15,35 +15,28 @@
 
 
 <div id="page-navigation"> 
-
   <div class="clear">&nbsp;</div> 
   <div class="left"> 
   {% if page.previous.url %} 
-          <a href="{{page.previous.url}}" title="Previous Post: 
-{{page.previous.title}}">&laquo; {{page.previous.title}}</a> 
+      <a href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}" class="btn btn-small"><i class="icon-caret-left"></i> {{page.previous.title}}</a> 
   {% endif %} 
   </div> 
   <div class="right"> 
   {% if page.next.url %} 
-          <a href="{{page.next.url}}" title="next Post: 
-{{page.next.title}}">{{page.next.title}} &raquo; </a> 
+          <a href="{{page.next.url}}" title="next Post: {{page.next.title}}" class="btn btn-small">{{page.next.title}} <i class="icon-caret-right"></i></a> 
   {% endif %} 
   </div> 
   <div class="clear">&nbsp;</div> 
 </div>
 
-<div id="related">
-  <!-- <p>Related posts</p>
+<!-- <div id="related">
+  <p>Related posts</p>
   <ul class="posts">
     {% for post in site.related_posts limit:3 %}
       <li><span class="date">{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
-  </ul> -->
-
-  <div class="cloud">
-    {% tag_cloud font-size: 12 - 20px %}
-  </div>
-</div>
+  </ul>
+</div> -->
 
 <div id="disqus_thread" style="margin-top: 3em"></div>
 <script type="text/javascript">

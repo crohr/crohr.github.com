@@ -7,4 +7,4 @@ cloud computing, REST and HTTP APIs, and web development in general.
 The good thing about me is that I'm a full stack engineer, meaning I can
 handle everything from architecture design, development, and deployment in
 production. If it looks like I may help you with your projects, please <a
-href="/contact">contact me</a>.
+href="/#contact">contact me</a>.

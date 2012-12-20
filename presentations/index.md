@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Presentations
+tab: talks
 ---
 
 * [Who said Puppet was hard?](/journal/2012/who-said-puppet-was-hard.html)
