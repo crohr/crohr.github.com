@@ -1,141 +1,270 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
 
-	<!-- Basic Page Needs
-  ================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>Cyril Rohr - Ruby and Node.js freelancer in Rennes, France</title>
-  <meta name="author" content="Cyril Rohr" />
-  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ruby and RubyOnRails developer living in Rennes, France. I offer various consulting services such as new developments, legacy application maintenance and migration, formation, and cloud computing consulting.">
+  <meta name="keywords" content="ruby rails freelance developer french france consulting cloud computing javascript web sites">
+  <meta name="author" content="Cyril Rohr">
+
   <link href="http://feeds.feedburner.com/crohr" rel="alternate" title="Cyril Rohr" type="application/atom+xml" />
 
-  <!-- syntax highlighting CSS -->
-  <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
 
-  <link rel="openid.server" 
-        href="http://www.myopenid.com/server">
-  <link rel="openid.delegate" 
-        href="http://crohr.myopenid.com/">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic' rel='stylesheet' type='text/css'>
 
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="/css/base.css">
-	<link rel="stylesheet" href="/css/skeleton.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="stylesheet" href="/css/layout.css">
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="/favicon.ico">
-  <!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"> -->
-
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/css/application.css" rel="stylesheet">
+  <link href="/css/font-awesome.css" rel="stylesheet">
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="css/font-awesome-ie7.css">
+  <![endif]-->
   <link rel="stylesheet" href="/css/highlight/github.min.css">
+
+  <link rel="shortcut icon" href="images/favicon/favicon.png">
+
+  <link rel="openid.server"
+         href="http://www.myopenid.com/server">
+   <link rel="openid.delegate"
+         href="http://crohr.myopenid.com/">
 </head>
+
 <body>
 
-
-
-	<!-- Primary Page Layout
-	================================================== -->
-
-	<!-- Delete everything in this .container and get started on your own site! -->
-
-	<div class="container">
-	  <div class="three columns sidebar">
-	    <nav style="margin-top: 40px">
-        <ul class="navigation">
-          <li class="link me">
-            <a href="/">
-              <img src="/images/cyrilrohr.jpg" class="shadow" width="60">
-            </a>
-          </li>
-          <li class="link">
-            <a href="/journal">Journal</a>
-          </li>
-          <li class="link">
-            <a href="/projects">Projects</a>
-          </li>
-          <li class="link">
-            <a href="/code">Code</a>
-          </li>
-          <li class="link">
-            <a href="/presentations">Talks</a>
-          </li>
-        </ul>
+  <div class="container">
+    <header>
+      <ul class="nav nav-pills pull-right">
         
-        <ul class="navigation">
-          <li class="link">
-            <a href="/about">About</a>
-          </li>
-          <li class="link">
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-        
-        <ul class="badges">
-          <li>
-            <a href="http://feeds.feedburner.com/crohr">
-              <img src="/images/rss.png" alt="Subscribe to RSS Feed" width="16" height="16" />
-            </a>
-          </li>
-          <li><a href="http://github.com/crohr/"><img src="https://s2.googleusercontent.com/s2/favicons?domain=github.com" alt="View my code on Github"></a>
-          </li>
-          <li><a href="http://www.linkedin.com/in/cyrilrohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=linkedin.com" alt="View my profile on LinkedIn"></a>
-          </li>
-          <li><a href="http://twitter.com/crohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=twitter.com" alt="Follow me on Twitter"></a>
-          </li>
-        </ul>
-        
+        <li class="active"><a href="/">Home</a></li>
+        <li class=""><a href="/journal/">Journal</a></li>
+        <li class=""><a href="/presentations/">Talks</a></li>
+        <li class=""><a href="/about">About</a></li>
+      </ul>
+      <h1>
+        <div class="pic" style="display: inline"><img src="/images/me.jpg" width="50" alt="Cyril Rohr" class="img-circle" /></div>
+        <a href="http://crohr.me" class="brand"><span class="color">Cyril</span> Rohr<span class="color">.</span></a>
+      </h1>
+    </header>
+  </div>
+  
 
-      </nav>
-    </div>
-    <div class="nine columns offset-by-one content">
-  <h1 id='cyril_rohr'>Cyril Rohr</h1>
-
-<p>Hello, my name is <strong>Cyril Rohr</strong>, and I&#8217;m currently working as a <strong>Freelance</strong> in France. I do <strong>Ruby</strong> and <strong>Node.js</strong> development, using frameworks such as RubyOnRails, Sinatra, Goliath, and Express. I’m also interested in information retrieval, machine learning techniques, distributed software architectures, cloud computing, REST and HTTP APIs, and web development in general.</p>
-
-<p>The good thing about me is that I&#8217;m a full stack engineer, meaning I can handle everything from architecture design, development, and deployment in production. If it looks like I may help you with your projects, please <a href='/contact'>contact me</a>.</p>
-
-<h2 id='latest_entries_from_the_journal'>Latest entries from the <a href='/journal'>journal</a>:</h2>
-<ul class='posts disc'>
-  
-    <li><a href='/journal/2012/who-said-puppet-was-hard.html'>Who said Puppet was hard?</a></li>
-  
-    <li><a href='/journal/2012/software-blueprint.html'>Software blueprint</a></li>
-  
-    <li><a href='/journal/2012/rails3-apps-to-package.html'>Rails3 apps to package</a></li>
-  
-    <li><a href='/journal/2012/rulu2012.html'>Rulu 2012</a></li>
-  
-    <li><a href='/journal/2012/the-valve-handbook-for-new-employees.html'>The Valve handbook for new employees</a></li>
-  
-</ul><img alt='Nouvelle Z&eacute;lande' class='shadow' src='/photos/nz.jpg' width='100%' />
+  <div class="container">
+  <div class="jumbotron">
+  <h1>Hi, I'm a <span class="color">Ruby</span> &amp; <span class="color">RubyOnRails</span> freelancer.</h1>
+  <p class="lead">I help small businesses get to the next level.</p>
+  <div class="social">
+    <a href="https://twitter.com/crohr"><i class="icon-twitter"> </i></a>
+    <a href="https://github.com/crohr"><i class="icon-github"> </i></a>
+    <a href="http://www.linkedin.com/in/cyrilrohr"><i class="icon-linkedin"> </i></a>
+  </div>
 </div>
-	</div><!-- container -->
+
+<hr />
+
+<div class="services content">
+  <div class="row">
+    <div class="span12">
+      <h2>What can I help you with?</h2>
+      <p class="center">
+        I mainly do web development using Ruby, RubyOnRails, and Javascript. I’m also interested in information
+        retrieval, machine learning techniques, distributed software
+        architectures, cloud computing, REST and HTTP APIs.
+
+        Here are the main areas where I can help you:
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+       <div class="service">
+          <p class="sicon"><i class="icon-beaker"></i></p>
+          <h5>New development</h5>
+          <p class="small">
+            Be it a full-fledged project or a prototype to explore a new market, I
+            can help you <strong>build any kind of web application</strong>.
+          </p>
+          <hr />
+       </div>
+    </div>
+    <div class="span4">
+       <div class="service">
+          <p class="sicon"><i class="icon-cloud"></i></p>
+          <h5>DevOps &amp; Cloud Computing</h5>
+          <p class="small">
+            Automation and proper infrastructure can give a competitive edge to your business.
+            I can help you <strong>move to the cloud</strong> or provision the servers and tools you need.
+          </p>
+          <hr />
+       </div>
+    </div>
+    <div class="span4">
+      <div class="service">
+         <p class="sicon"><i class="icon-cogs"></i></p>
+         <h5>Formation</h5>
+         <p class="small">
+           If your development team needs a refreshment in a specific technology or area of my expertise,
+           I can dedicate a few days to <strong>personal training and workshops</strong>.
+         </p>
+         <hr />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span3">
+      <div class="service">
+         <p class="sicon"><i class="icon-road"></i></p>
+         <h5>Migrating</h5>
+         <p class="small">
+           Stuck with a older version of Ruby and/or RubyOnRails?
+           I can help you <strong>migrate to the latest and greatest</strong>.
+         </p>
+         <hr />
+      </div>
+    </div>
+    <div class="span3">
+      <div class="service">
+         <p class="sicon"><i class="icon-cut"></i></p>
+         <h5>Refactoring</h5>
+         <p class="small">
+           Spending a lot more time than expected each time you're making
+           a change to existing code? I can help you <strong>refactor</strong>.
+         </p>
+         <hr />
+      </div>
+    </div>
+    <div class="span3">
+      <div class="service">
+         <p class="sicon"><i class="icon-ok"></i></p>
+         <h5>Testing</h5>
+         <p class="small">
+           Wasting time with manual testing, or worse, fixing bugs due to regressions?
+           I can help you <strong>build a strong test suite</strong>.
+         </p>
+         <hr />
+      </div>
+    </div>
+    <div class="span3">
+      <div class="service">
+         <p class="sicon"><i class="icon-dashboard"></i></p>
+         <h5>Performance</h5>
+         <p class="small">
+           Be it slow SQL queries, slow page loading, or poor HTTP caching, I can help you <strong>pin-point issues and act</strong> on them.
+         </p>
+         <hr />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="testimonials content">
+  <div class="row">
+    <div class="span12">
+      <h2>I've worked with these fine companies</h2>
+      <ul class="thumbnails">
+        <li class="thumbnail">
+          <img src="images/companies/dexem.jpg" alt="Dexem" />
+        </li>
+        <li class="thumbnail">
+          <img src="images/companies/dimelo.jpg" alt="Dimelo" />
+        </li>
+        <li class="thumbnail">
+          <img src="images/companies/reverb.jpg" alt="Reverb" />
+        </li>
+        <li class="thumbnail">
+          <img src="images/companies/inria.jpg" alt="Inria" />
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<footer>
+  <div class="container">
+    <div class="contact" id="contact">
+      <div class="row">
+         <div class="span6">
+            <div class="form padd">
+              <h2>Contact Me</h2>
+              <hr />
+              <form class="form-horizontal" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://crohr.wufoo.eu/forms/r7x3a7/#public">
+                  <div class="control-group">
+                    <label class="control-label" for="name">* Name</label>
+                    <div class="controls">
+                      <input id="Field15" name="Field15" type="text" class="input-medium" value="" maxlength="255" onkeyup="" required />
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="email">* Email</label>
+                    <div class="controls">
+                      <input id="Field2" name="Field2" type="email" spellcheck="false" class="input-large" value="" maxlength="255" required /> 
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="comment">* Message</label>
+                    <div class="controls">
+                      <textarea id="Field1" name="Field1" class="input-medium" spellcheck="true" rows="10" cols="50" onkeyup="" required  ></textarea>
+                    </div>
+                  </div>
+                  <div class="hide">
+                    <label for="comment">Do Not Fill This Out</label>
+                    <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+                    <input type="hidden" id="idstamp" name="idstamp" value="Fn7x2q50jAaW5mBZAF9Gwvgc3BLBEyNwH0kAxJVe5Gk=" />
+                  </div>
+                  <div class="form-actions">
+                    <button id="saveForm" name="saveForm" class="btn btn-success" type="submit" value="Submit">Submit</button>
+                    <button type="reset" class="btn">Reset</button>
+                  </div>
+              </form>
+            </div>
+         </div>
+         <div class="span6">
+               <div class="gmap">
+                 <iframe width="425" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=71+Avenue+Aristide+Briand,+Rennes&amp;aq=0&amp;oq=71&amp;sll=48.113475,-1.675708&amp;sspn=0.142576,0.363579&amp;g=rennes,+france&amp;ie=UTF8&amp;hq=&amp;t=m&amp;ll=48.253941,-1.779785&amp;spn=1.828777,4.669189&amp;z=7&amp;output=embed"></iframe>
+               </div>
+               <hr />
+               <div class="address">
+                  <div class="row">
+                     <div class="span3">
+                        <address class="small">
+                          <span class="bold company"><i class="icon-globe color"></i> Cyril Rohr EIRL</span><br>
+                          71 avenue Aristide Briand<br>
+                          35000 Rennes, France<br>
+                        </address>
+                     </div>
+                     <div class="span3">
+                        <address class="small">
+                          <span class="bold company"><i class="icon-user color"></i> Cyril Rohr</span><br>
+                          <i class="icon-envelope-alt color"></i> <a href="mailto:contact@crohr.me?subject=Hello">contact@crohr.me</a><br>
+                          <i class="icon-phone color"></i> +33-6-51-74-39-39
+                        </address>
+                     </div>
+                  </div>
+               </div>
+         </div>
+      </div>
+    </div>
+
+  </div>
+</footer>
 
 
-
-	<!-- JS
-	================================================== -->
-
-  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  
+  <!-- JS -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.js"></script>
   <script src='/js/highlight.min.js'></script>
+
   <script type="text/javascript">
     $(document).ready(function() {
       hljs.tabReplace = '  ';
@@ -146,8 +275,8 @@
       }).each(function(i, e){
         if (match=codeCommentRegexp.exec(e.nodeValue)) {
           try{
-            var code = $(e).nextAll("pre").first().find("code"); 
-            code.addClass(match[1]); 
+            var code = $(e).nextAll("pre").first().find("code");
+            code.addClass(match[1]);
             hljs.highlightBlock(code.get(0));
           } catch(e) {}
         }
@@ -169,7 +298,5 @@
     })();
   </script>
   <!-- Google Analytics end -->
-<!-- End Document
-================================================== -->
 </body>
 </html>

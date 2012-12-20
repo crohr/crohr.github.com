@@ -1,111 +1,66 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
-<head>
 
-	<!-- Basic Page Needs
-  ================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <title>The Toolbox</title>
-  <meta name="author" content="Cyril Rohr" />
-  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ruby and RubyOnRails developer living in Rennes, France. I offer various consulting services such as new developments, legacy application maintenance and migration, formation, and cloud computing consulting.">
+  <meta name="keywords" content="ruby rails freelance developer french france consulting cloud computing javascript web sites">
+  <meta name="author" content="Cyril Rohr">
+
   <link href="http://feeds.feedburner.com/crohr" rel="alternate" title="Cyril Rohr" type="application/atom+xml" />
 
-  <!-- syntax highlighting CSS -->
-  <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
 
-  <link rel="openid.server" 
-        href="http://www.myopenid.com/server">
-  <link rel="openid.delegate" 
-        href="http://crohr.myopenid.com/">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic' rel='stylesheet' type='text/css'>
 
-	<!-- Mobile Specific Metas
-  ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-  ================================================== -->
-	<link rel="stylesheet" href="/css/base.css">
-	<link rel="stylesheet" href="/css/skeleton.css">
-	<link rel="stylesheet" href="/css/custom.css">
-	<link rel="stylesheet" href="/css/layout.css">
-
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-	<!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="/favicon.ico">
-  <!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"> -->
-
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/css/application.css" rel="stylesheet">
+  <link href="/css/font-awesome.css" rel="stylesheet">
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="css/font-awesome-ie7.css">
+  <![endif]-->
   <link rel="stylesheet" href="/css/highlight/github.min.css">
+
+  <link rel="shortcut icon" href="images/favicon/favicon.png">
+
+  <link rel="openid.server"
+         href="http://www.myopenid.com/server">
+   <link rel="openid.delegate"
+         href="http://crohr.myopenid.com/">
 </head>
+
 <body>
 
-
-
-	<!-- Primary Page Layout
-	================================================== -->
-
-	<!-- Delete everything in this .container and get started on your own site! -->
-
-	<div class="container">
-	  <div class="three columns sidebar">
-	    <nav style="margin-top: 40px">
-        <ul class="navigation">
-          <li class="link me">
-            <a href="/">
-              <img src="/images/cyrilrohr.jpg" class="shadow" width="60">
-            </a>
-          </li>
-          <li class="link">
-            <a href="/journal">Journal</a>
-          </li>
-          <li class="link">
-            <a href="/projects">Projects</a>
-          </li>
-          <li class="link">
-            <a href="/code">Code</a>
-          </li>
-          <li class="link">
-            <a href="/presentations">Talks</a>
-          </li>
-        </ul>
+  <div class="container">
+    <header>
+      <ul class="nav nav-pills pull-right">
         
-        <ul class="navigation">
-          <li class="link">
-            <a href="/about">About</a>
-          </li>
-          <li class="link">
-            <a href="/contact">Contact</a>
-          </li>
-        </ul>
-        
-        <ul class="badges">
-          <li>
-            <a href="http://feeds.feedburner.com/crohr">
-              <img src="/images/rss.png" alt="Subscribe to RSS Feed" width="16" height="16" />
-            </a>
-          </li>
-          <li><a href="http://github.com/crohr/"><img src="https://s2.googleusercontent.com/s2/favicons?domain=github.com" alt="View my code on Github"></a>
-          </li>
-          <li><a href="http://www.linkedin.com/in/cyrilrohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=linkedin.com" alt="View my profile on LinkedIn"></a>
-          </li>
-          <li><a href="http://twitter.com/crohr"><img src="https://s2.googleusercontent.com/s2/favicons?domain=twitter.com" alt="Follow me on Twitter"></a>
-          </li>
-        </ul>
-        
+        <li class=""><a href="/">Home</a></li>
+        <li class="active"><a href="/journal/">Journal</a></li>
+        <li class=""><a href="/presentations/">Talks</a></li>
+        <li class=""><a href="/about">About</a></li>
+      </ul>
+      <h1>
+        <div class="pic" style="display: inline"><img src="/images/me.jpg" width="50" alt="Cyril Rohr" class="img-circle" /></div>
+        <a href="http://crohr.me" class="brand"><span class="color">Cyril</span> Rohr<span class="color">.</span></a>
+      </h1>
+    </header>
+  </div>
+  
 
-      </nav>
-    </div>
-    <div class="nine columns offset-by-one content">
-  <header>
+  <div class="container content">
+  <div class="row">
+    <div class="span12">
+      <a name="top"></a>
+      <header>
   <h1>The Toolbox</h1>
 </header>
 <hr class="large" />
@@ -132,25 +87,22 @@
 
 
 <div id="page-navigation"> 
-
   <div class="clear">&nbsp;</div> 
   <div class="left"> 
    
-          <a href="/journal/2012/selection-of-data-visualization-tools.html" title="Previous Post: 
-Selection of data visualization tools">&laquo; Selection of data visualization tools</a> 
+      <a href="/journal/2012/selection-of-data-visualization-tools.html" title="Previous Post: Selection of data visualization tools" class="btn btn-small"><i class="icon-caret-left"></i> Selection of data visualization tools</a> 
    
   </div> 
   <div class="right"> 
    
-          <a href="/journal/2012/virtualize-your-development-environments-with-vagrant-and-puppet.html" title="next Post: 
-Virtualize your development environments with Vagrant &amp; Puppet">Virtualize your development environments with Vagrant &amp; Puppet &raquo; </a> 
+          <a href="/journal/2012/virtualize-your-development-environments-with-vagrant-and-puppet.html" title="next Post: Virtualize your development environments with Vagrant &amp; Puppet" class="btn btn-small">Virtualize your development environments with Vagrant &amp; Puppet <i class="icon-caret-right"></i></a> 
    
   </div> 
   <div class="clear">&nbsp;</div> 
 </div>
 
-<div id="related">
-  <!-- <p>Related posts</p>
+<!-- <div id="related">
+  <p>Related posts</p>
   <ul class="posts">
     
       <li><span class="date">15 Nov 2012</span> &raquo; <a href="/journal/2012/who-said-puppet-was-hard.html">Who said Puppet was hard?</a></li>
@@ -159,88 +111,8 @@ Virtualize your development environments with Vagrant &amp; Puppet">Virtualize y
     
       <li><span class="date">06 Jul 2012</span> &raquo; <a href="/journal/2012/rails3-apps-to-package.html">Rails3 apps to package</a></li>
     
-  </ul> -->
-
-  <div class="cloud">
-    <a class='tag' style='font-size: 14px' href='/tags/#occi'>occi</a>
-<a class='tag' style='font-size: 17px' href='/tags/#opinions'>opinions</a>
-<a class='tag' style='font-size: 12px' href='/tags/#git'>git</a>
-<a class='tag' style='font-size: 14px' href='/tags/#python'>python</a>
-<a class='tag' style='font-size: 19px' href='/tags/#ruby'>ruby</a>
-<a class='tag' style='font-size: 12px' href='/tags/#startup'>startup</a>
-<a class='tag' style='font-size: 20px' href='/tags/#visualization'>visualization</a>
-<a class='tag' style='font-size: 12px' href='/tags/#documentation'>documentation</a>
-<a class='tag' style='font-size: 14px' href='/tags/#talks'>talks</a>
-<a class='tag' style='font-size: 12px' href='/tags/#europe'>europe</a>
-<a class='tag' style='font-size: 12px' href='/tags/#microsoft'>microsoft</a>
-<a class='tag' style='font-size: 12px' href='/tags/#machine learning'>machine learning</a>
-<a class='tag' style='font-size: 14px' href='/tags/#api'>api</a>
-<a class='tag' style='font-size: 16px' href='/tags/#html5'>html5</a>
-<a class='tag' style='font-size: 20px' href='/tags/#code'>code</a>
-<a class='tag' style='font-size: 12px' href='/tags/#syntax highlighting'>syntax highlighting</a>
-<a class='tag' style='font-size: 14px' href='/tags/#humor'>humor</a>
-<a class='tag' style='font-size: 20px' href='/tags/#devops'>devops</a>
-<a class='tag' style='font-size: 20px' href='/tags/#javascript'>javascript</a>
-<a class='tag' style='font-size: 12px' href='/tags/#beautiful things'>beautiful things</a>
-<a class='tag' style='font-size: 12px' href='/tags/#jquery'>jquery</a>
-<a class='tag' style='font-size: 19px' href='/tags/#ui'>ui</a>
-<a class='tag' style='font-size: 12px' href='/tags/#mobile'>mobile</a>
-<a class='tag' style='font-size: 12px' href='/tags/#readme driven development'>readme driven development</a>
-<a class='tag' style='font-size: 12px' href='/tags/#politics'>politics</a>
-<a class='tag' style='font-size: 16px' href='/tags/#packaging'>packaging</a>
-<a class='tag' style='font-size: 12px' href='/tags/#opennebula'>opennebula</a>
-<a class='tag' style='font-size: 18px' href='/tags/#css'>css</a>
-<a class='tag' style='font-size: 12px' href='/tags/#cheat-sheet'>cheat-sheet</a>
-<a class='tag' style='font-size: 12px' href='/tags/#html'>html</a>
-<a class='tag' style='font-size: 12px' href='/tags/#standards'>standards</a>
-<a class='tag' style='font-size: 12px' href='/tags/#ux'>ux</a>
-<a class='tag' style='font-size: 12px' href='/tags/#macos'>macos</a>
-<a class='tag' style='font-size: 12px' href='/tags/#web'>web</a>
-<a class='tag' style='font-size: 14px' href='/tags/#data'>data</a>
-<a class='tag' style='font-size: 18px' href='/tags/#design'>design</a>
-<a class='tag' style='font-size: 12px' href='/tags/#fun'>fun</a>
-<a class='tag' style='font-size: 12px' href='/tags/#mongodb'>mongodb</a>
-<a class='tag' style='font-size: 16px' href='/tags/#node.js'>node.js</a>
-<a class='tag' style='font-size: 12px' href='/tags/#saas'>saas</a>
-<a class='tag' style='font-size: 12px' href='/tags/#rest'>rest</a>
-<a class='tag' style='font-size: 12px' href='/tags/#google'>google</a>
-<a class='tag' style='font-size: 12px' href='/tags/#jobs'>jobs</a>
-<a class='tag' style='font-size: 12px' href='/tags/#diff'>diff</a>
-<a class='tag' style='font-size: 12px' href='/tags/#heroku'>heroku</a>
-<a class='tag' style='font-size: 12px' href='/tags/#java'>java</a>
-<a class='tag' style='font-size: 12px' href='/tags/#paas'>paas</a>
-<a class='tag' style='font-size: 12px' href='/tags/#jruby'>jruby</a>
-<a class='tag' style='font-size: 12px' href='/tags/#d3.js'>d3.js</a>
-<a class='tag' style='font-size: 12px' href='/tags/#filtering'>filtering</a>
-<a class='tag' style='font-size: 14px' href='/tags/#github'>github</a>
-<a class='tag' style='font-size: 12px' href='/tags/#elasticsearch'>elasticsearch</a>
-<a class='tag' style='font-size: 12px' href='/tags/#projects'>projects</a>
-<a class='tag' style='font-size: 14px' href='/tags/#maps'>maps</a>
-<a class='tag' style='font-size: 12px' href='/tags/#http'>http</a>
-<a class='tag' style='font-size: 12px' href='/tags/#smalltalk'>smalltalk</a>
-<a class='tag' style='font-size: 12px' href='/tags/#json'>json</a>
-<a class='tag' style='font-size: 12px' href='/tags/#one-liner'>one-liner</a>
-<a class='tag' style='font-size: 12px' href='/tags/#rpm'>rpm</a>
-<a class='tag' style='font-size: 12px' href='/tags/#deb'>deb</a>
-<a class='tag' style='font-size: 14px' href='/tags/#rails'>rails</a>
-<a class='tag' style='font-size: 12px' href='/tags/#gem'>gem</a>
-<a class='tag' style='font-size: 12px' href='/tags/#objective-c'>objective-c</a>
-<a class='tag' style='font-size: 12px' href='/tags/#misc'>misc</a>
-<a class='tag' style='font-size: 12px' href='/tags/#distributed systems'>distributed systems</a>
-<a class='tag' style='font-size: 14px' href='/tags/#reference'>reference</a>
-<a class='tag' style='font-size: 12px' href='/tags/#toolbox'>toolbox</a>
-<a class='tag' style='font-size: 12px' href='/tags/#vagrant'>vagrant</a>
-<a class='tag' style='font-size: 14px' href='/tags/#puppet'>puppet</a>
-<a class='tag' style='font-size: 14px' href='/tags/#business'>business</a>
-<a class='tag' style='font-size: 12px' href='/tags/#workplace'>workplace</a>
-<a class='tag' style='font-size: 12px' href='/tags/#debian'>debian</a>
-<a class='tag' style='font-size: 12px' href='/tags/#architecture'>architecture</a>
-<a class='tag' style='font-size: 12px' href='/tags/#talk'>talk</a>
-<a class='tag' style='font-size: 12px' href='/tags/#capistrano'>capistrano</a>
-<a class='tag' style='font-size: 12px' href='/tags/#sysadmin'>sysadmin</a>
-
-  </div>
-</div>
+  </ul>
+</div> -->
 
 <div id="disqus_thread" style="margin-top: 3em"></div>
 <script type="text/javascript">
@@ -257,18 +129,20 @@ Virtualize your development environments with Vagrant &amp; Puppet">Virtualize y
 
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+
+    </div>
+  </div>
 </div>
 
-	</div><!-- container -->
+<footer>
+  <div class="up"><a href="#top" class="anchorLink"><i class="icon-caret-up"></i></a></div>
+</footer>
 
-
-
-	<!-- JS
-	================================================== -->
-
-  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-  
+  <!-- JS -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.js"></script>
   <script src='/js/highlight.min.js'></script>
+
   <script type="text/javascript">
     $(document).ready(function() {
       hljs.tabReplace = '  ';
@@ -279,8 +153,8 @@ Virtualize your development environments with Vagrant &amp; Puppet">Virtualize y
       }).each(function(i, e){
         if (match=codeCommentRegexp.exec(e.nodeValue)) {
           try{
-            var code = $(e).nextAll("pre").first().find("code"); 
-            code.addClass(match[1]); 
+            var code = $(e).nextAll("pre").first().find("code");
+            code.addClass(match[1]);
             hljs.highlightBlock(code.get(0));
           } catch(e) {}
         }
@@ -302,7 +176,5 @@ Virtualize your development environments with Vagrant &amp; Puppet">Virtualize y
     })();
   </script>
   <!-- Google Analytics end -->
-<!-- End Document
-================================================== -->
 </body>
 </html>
