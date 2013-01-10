@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <title>One-liner to start a local HTTP server [ruby]</title>
+  <title>Le refactoring en confiance</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ruby and RubyOnRails developer living in Rennes, France. I offer various consulting services such as new developments, legacy application maintenance and migration, formation, and cloud computing consulting.">
@@ -61,25 +61,26 @@
     <div class="span12">
       <a name="top"></a>
       <header>
-  <h1>One-liner to start a local HTTP server [ruby]</h1>
+  <h1>Le refactoring en confiance</h1>
 </header>
 <hr class="large" />
 <div class="article-date">
   
-    <a class="tag" href="/tags/#ruby">ruby</a>
+    <a class="tag" href="/tags/#testing">testing</a>
   
-  &nbsp;&nbsp;20 Oct 2011
+    <a class="tag" href="/tags/#refactoring">refactoring</a>
+  
+    <a class="tag" href="/tags/#capybara">capybara</a>
+  
+    <a class="tag" href="/tags/#selenium">selenium</a>
+  
+  &nbsp;&nbsp;10 Jan 2013
 </div>
 
 <div id="post">
-  <p>Wow, is it really what it takes to start an HTTP server serving static files from the current directory with standard Ruby?</p>
-<!-- code[ruby] -->
-<pre><code>ruby -r webrick -e &quot;s = WEBrick::HTTPServer.new(:Port =&gt; 8888);\
-  s.mount(&#39;/&#39;,WEBrick::HTTPServlet::FileHandler, &#39;./&#39;); \
-  trap(&#39;INT&#39;){ s.shutdown }; \
-  s.start&quot;</code></pre>
+  <p>Le dernier DevCamp à la <a href='http://www.lacantine-rennes.net/'>Cantine Numérique Rennaise</a> était sur le thème du refactoring et des tests. A cette occasion, j&#8217;ai donné une présentation sur comment s&#8217;assurer d&#8217;un minimum de confiance, via l&#8217;écriture de tests au niveau IHM, lorsque l&#8217;on attaque le refactoring d&#8217;une ancienne application. L&#8217;exemple donné est sur une application Rails, mais les mêmes outils pourraient être appliqués pour n&#8217;importe quelle application web.</p>
 
-<p>For once I prefer the <a href='http://ebarnouflant.com/post/11646387716/one-liner-to-start-a-local-http-server'>python way</a>.</p>
+<p><a href='/presentations/refactoring-blackbox-testing/'>Voir la présentation</a>.</p>
 </div>
 
 
@@ -87,12 +88,10 @@
   <div class="clear">&nbsp;</div> 
   <div class="left"> 
    
-      <a href="/journal/2011/why-bother-with-cucumber-testing.html" title="Previous Post: Why Bother With Cucumber Testing?" class="btn btn-small"><i class="icon-caret-left"></i> Why Bother With Cucumber Testing?</a> 
+      <a href="/journal/2012/who-said-puppet-was-hard.html" title="Previous Post: Who said Puppet was hard?" class="btn btn-small"><i class="icon-caret-left"></i> Who said Puppet was hard?</a> 
    
   </div> 
   <div class="right"> 
-   
-          <a href="/journal/2011/understanding-how-dilution-affects-you-at-a-startup.html" title="next Post: Understanding How Dilution Affects You at a Startup" class="btn btn-small">Understanding How Dilution Affects You at a Startup <i class="icon-caret-right"></i></a> 
    
   </div> 
   <div class="clear">&nbsp;</div> 
@@ -102,11 +101,11 @@
   <p>Related posts</p>
   <ul class="posts">
     
-      <li><span class="date">10 Jan 2013</span> &raquo; <a href="/journal/2013/le-refactoring-en-confiance.html">Le refactoring en confiance</a></li>
-    
       <li><span class="date">15 Nov 2012</span> &raquo; <a href="/journal/2012/who-said-puppet-was-hard.html">Who said Puppet was hard?</a></li>
     
       <li><span class="date">26 Sep 2012</span> &raquo; <a href="/journal/2012/software-blueprint.html">Software blueprint</a></li>
+    
+      <li><span class="date">06 Jul 2012</span> &raquo; <a href="/journal/2012/rails3-apps-to-package.html">Rails3 apps to package</a></li>
     
   </ul>
 </div> -->
@@ -114,8 +113,8 @@
 <div id="disqus_thread" style="margin-top: 3em"></div>
 <script type="text/javascript">
     var disqus_shortname = 'crohr';
-    var disqus_identifier = '/journal/2011/one-liner-to-start-a-local-http-server-ruby';
-    var disqus_url = 'http://crohr.me/journal/2011/one-liner-to-start-a-local-http-server-ruby.html';
+    var disqus_identifier = '/journal/2013/le-refactoring-en-confiance';
+    var disqus_url = 'http://crohr.me/journal/2013/le-refactoring-en-confiance.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

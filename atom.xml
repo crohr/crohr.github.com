@@ -4,13 +4,23 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2012-12-21T14:05:39+01:00</updated>
+ <updated>2013-01-10T16:59:57+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Le refactoring en confiance</title>
+   <link href="http://crohr.me/journal/2013/le-refactoring-en-confiance.html"/>
+   <updated>2013-01-10T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2013/le-refactoring-en-confiance</id>
+   <content type="html">&lt;p&gt;Le dernier DevCamp à la &lt;a href='http://www.lacantine-rennes.net/'&gt;Cantine Numérique Rennaise&lt;/a&gt; était sur le thème du refactoring et des tests. A cette occasion, j&amp;#8217;ai donné une présentation sur comment s&amp;#8217;assurer d&amp;#8217;un minimum de confiance, via l&amp;#8217;écriture de tests au niveau IHM, lorsque l&amp;#8217;on attaque le refactoring d&amp;#8217;une ancienne application. L&amp;#8217;exemple donné est sur une application Rails, mais les mêmes outils pourraient être appliqués pour n&amp;#8217;importe quelle application web.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href='/presentations/refactoring-blackbox-testing/'&gt;Voir la présentation&lt;/a&gt;.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Who said Puppet was hard?</title>
@@ -883,44 +893,6 @@
    <id>http://crohr.me/journal/2011/css-contents-and-browser-compatibility</id>
    <content type="html">&lt;a href='http://www.quirksmode.org/css/contents.html'&gt;CSS contents and browser compatibility&lt;/a&gt;
 &lt;p&gt;Totally like this page for quickly checking cross-browser CSS compatibility. Not up to date with the most recent versions of some browsers though.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>How to get a major speedup on all OpenNebula command-line and OCCI tools</title>
-   <link href="http://crohr.me/journal/2011/how-to-get-a-major-speedup-on-all-opennebula-command-line-and-occi-tools.html"/>
-   <updated>2011-12-05T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/how-to-get-a-major-speedup-on-all-opennebula-command-line-and-occi-tools</id>
-   <content type="html">&lt;p&gt;Long version is at http://dev.opennebula.org/issues/1017.&lt;/p&gt;
-
-&lt;p&gt;Short version is: switch to a Nokogiri based XML Stream parser for the XMLRPC client, instead of the (really) slow REXML based stream parser used by default. Then the ONE tools that make XML-RPC requests (i.e. almost all of them, including the OCCI server) will be a &lt;strong&gt;hundred times faster&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is especially useful when you start to have more than 100 VMs running, since you&amp;#8217;re not required to wait for more than 1 minute (!) for your &lt;code&gt;onevm list&lt;/code&gt; or &lt;code&gt;onevm top&lt;/code&gt; to display. These commands are now running in less than 1 second at our local installation.&lt;/p&gt;
-
-&lt;p&gt;The patch is really simple (to be applied to the &lt;code&gt;OpenNebula.rb&lt;/code&gt; file, tested with OpenNebula 3.0.0):&lt;/p&gt;
-&lt;!-- code[diff] --&gt;
-&lt;pre&gt;&lt;code&gt;85a86,92
-&amp;gt;         NOKOGIRI_PARSER = begin
-&amp;gt;             require &amp;#39;stream_parser_mixin&amp;#39;
-&amp;gt;             true
-&amp;gt;         rescue LoadError
-&amp;gt;             false
-&amp;gt;         end
-&amp;gt; 
-132c139,141
-&amp;lt;             if XMLPARSER
----
-&amp;gt;             if NOKOGIRI_PARSER
-&amp;gt;                 @server.set_parser(XMLRPC::XMLParser::NokogiriStreamParser.new)
-&amp;gt;             elsif XMLPARSER
-134a144
-&amp;gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can get everything up and running with:&lt;/p&gt;
-&lt;!-- code[bash] --&gt;
-&lt;pre&gt;&lt;code&gt;$ gem install xmlrpc-streaming nokogiri &amp;amp;&amp;amp; \
-curl http://flag.io/33998d87be6c9f8f3a6b0ae72c65fbb9 | patch /usr/lib/one/ruby/OpenNebula.rb -&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;: looks like you can get similar performance boost by installing the &lt;code&gt;xmlparser&lt;/code&gt; Ruby gem, which uses the Expat XML parsing library (see this &lt;a href='http://opennebula.org/documentation:rel3.0:ignc#ruby_libraries_requirements_front-end'&gt;doc&lt;/a&gt;) and is already supported by OpenNebula for Ruby &amp;lt; 1.9.&lt;/p&gt;</content>
  </entry>
  
  
