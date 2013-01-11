@@ -4,13 +4,53 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-01-10T16:59:57+01:00</updated>
+ <updated>2013-01-11T15:59:38+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Ebarnouflant #001</title>
+   <link href="http://crohr.me/journal/2013/ebarnouflant-001.html"/>
+   <updated>2013-01-11T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2013/ebarnouflant-001</id>
+   <content type="html">&lt;p&gt;This year I&amp;#8217;m going to try something new, i.e. publish every week a list of links, mainly about Web development, Freelancing, DevOps, etc. The goal is not necessarily to post the most awesome or recent links, but things that I&amp;#8217;ve found to be useful or interesting in my daily work.&lt;/p&gt;
+
+&lt;p&gt;Inspiration for this mainly comes from the &lt;em&gt;Double Shot&lt;/em&gt; series on &lt;a href='http://afreshcup.com/'&gt;Mike Gunderloy&amp;#8217;s website&lt;/a&gt;, as you always end up finding a few links to interesting discussions/posts/products/libraries/people that you didn&amp;#8217;t know about. It&amp;#8217;s also a more paced alternative to Twitter for finding links.&lt;/p&gt;
+
+&lt;p&gt;This series will be called &lt;em&gt;Ebarnouflant&lt;/em&gt;, which is a French word to express a mixture of &amp;#8220;wow/awesome/cool/crazy/unbelievable&amp;#8221; feelings about something. I hope you&amp;#8217;ll (re)discover at least something every week.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s start with this week&amp;#8217;s links:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='https://db.risk.io/'&gt;RiskDB Vulnerability Explorer&lt;/a&gt; - With the recent Rails security issues, you may want to keep an eye on the latest vulnerabilities discovered in the software world.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://casperjs.org/'&gt;CasperJS&lt;/a&gt; - Navigation scripting &amp;amp; testing utility for PhantomJS, written in Javascript. If you&amp;#8217;re tired of Capybara &amp;amp; Selenium.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.geckoboard.com/'&gt;Geckoboard&lt;/a&gt; - Paid SaaS product to get a (good-looking) custom dashboard for your key metrics. Integrates with various services and has an API to build custom widgets.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://devopsweekly.com/'&gt;Weekly Devops Email Newsletter&lt;/a&gt; - Weekly newsletter with links to interesting devops-related articles.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.morethanseven.net/2012/12/30/my-personal-package-repository/'&gt;My personal package repository&lt;/a&gt; - Scripts for building and maintaining a debian package repository using Vagrant. Examples available on Github.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.igvita.com/2012/12/18/deploying-new-image-formats-on-the-web/'&gt;Deploying New Image Formats on the Web&lt;/a&gt; - Practical use of content-negotiation techniques to deliver optimized images according to the browser&amp;#8217;s capabilities.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://maxime.sh/2013/01/comment-recuperer-un-compte-twitter/'&gt;Comment récupérer un compte Twitter&lt;/a&gt; - French article on how to get back a twitter account that impersonates your Company/Product.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.image-mapper.com/'&gt;Image Mapper&lt;/a&gt; - Haven&amp;#8217;t done that kind of thing in years, but this looks like a nice online tool to help creating HTML image maps.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/square/cane'&gt;square/cane&lt;/a&gt; - Code quality threshold checking as part of your build.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://developers.google.com/apps-script/?hl=fr'&gt;Google Apps Script&lt;/a&gt; - JavaScript-based language that provides easy ways to automate tasks across Google products and third party services.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://asquera.de/opensource/2012/11/25/elasticsearch-pre-flight-checklist/'&gt;ElasticSearch pre-flight checklist&lt;/a&gt; - List of things that should never be skipped when bringing an ElasticSearch cluster to production.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://upstart.ubuntu.com/cookbook/'&gt;Upstart Intro, Cookbook and Best Practices&lt;/a&gt; - For those interested in writing upstart scripts for debian-based and fedora-based platforms. This doc is specifically targeted at Ubuntu.&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Le refactoring en confiance</title>
@@ -884,15 +924,6 @@
    <id>http://crohr.me/journal/2011/move-the-web-forward</id>
    <content type="html">&lt;a href='http://movethewebforward.org/'&gt;Move The Web Forward&lt;/a&gt;
 &lt;p&gt;In line with the previous &lt;a href='http://ebarnouflant.com/post/13868946794/css-contents-and-browser-compatibility'&gt;link&lt;/a&gt;, here comes &lt;a href='http://movethewebforward.org/'&gt;Move The Web Forward&lt;/a&gt; that &amp;#8220;list some of the ways that anyone can contribute back to the web platform&amp;#8221; at various levels, and also list links to resources about CSS, HTML, standards, etc.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>CSS contents and browser compatibility</title>
-   <link href="http://crohr.me/journal/2011/css-contents-and-browser-compatibility.html"/>
-   <updated>2011-12-07T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/css-contents-and-browser-compatibility</id>
-   <content type="html">&lt;a href='http://www.quirksmode.org/css/contents.html'&gt;CSS contents and browser compatibility&lt;/a&gt;
-&lt;p&gt;Totally like this page for quickly checking cross-browser CSS compatibility. Not up to date with the most recent versions of some browsers though.&lt;/p&gt;</content>
  </entry>
  
  
