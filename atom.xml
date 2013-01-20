@@ -4,13 +4,67 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-01-11T15:59:38+01:00</updated>
+ <updated>2013-01-20T14:07:08+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Ebarnouflant #002</title>
+   <link href="http://crohr.me/journal/2013/ebarnouflant-002.html"/>
+   <updated>2013-01-20T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2013/ebarnouflant-002</id>
+   <content type="html">&lt;p&gt;Back from the &lt;a href='http://takeoffconf.com/'&gt;TakeOff&lt;/a&gt; conference in Lille, France. Great people, some really good talks, and a lot to think about.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://squash.io/'&gt;Squash: The open-source bug-smashing tool&lt;/a&gt; - Exception reporting and bug analysis tool from Square. Requires that your project be stored in a git repo.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/sstephenson/rbenv/wiki/Unix-shell-initialization'&gt;Unix shell initialization&lt;/a&gt; - Ever wondered which initialization files get sourced by your shell depending on how it is run? Good reference page from the rbenv wiki.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.bleonard.com/blog/2013/01/18/singletons/'&gt;Singletons, Threads, and Flexibility&lt;/a&gt; - A take on how to make thread-safe Ruby libraries that use a module or class level singleton for configuration/execution.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.smashingmagazine.com/2012/12/22/talks-to-help-you-become-a-better-front-end-engineer-in-2013/'&gt;Talks To Help You Become A Better Front-End Engineer In 2013&lt;/a&gt; - That&amp;#8217;s a lot of them, but pick the topics that most interest you.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://tomdale.net/2012/01/amd-is-not-the-answer/'&gt;AMD is Not the Answer&lt;/a&gt; - Wanting to look at RequireJS to manage your javascript dependencies? Here is a rant by Tom Dale (creator of Ember.js) explaining why this is not a good solution in modern apps.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://blog.millermedeiros.com/amd-is-better-for-the-web-than-commonjs-modules/'&gt;AMD is better for the web than CommonJS modules&lt;/a&gt; - Counterpoint to the &amp;#8220;AMD is Not the Answer&amp;#8221; article.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.quora.com/Ember-js/Which-one-of-angular-js-and-ember-js-is-the-better-choice'&gt;Which one of angular.js and ember.js is the better choice?&lt;/a&gt; - Good question indeed.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://requirejs.org/'&gt;RequireJS&lt;/a&gt; - If you want to know more about RequireJS, a JavaScript file and module loader.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://headjs.com/'&gt;HeadJS, the only script in your HEAD&lt;/a&gt; - That&amp;#8217;s a lot of Javascript frameworks and loaders for a single edition, but yet another one.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/rwldrn/johnny-five'&gt;rwldrn/johnny-five&lt;/a&gt; - JavaScript Arduino programming framework. We had a demonstration at the TakeOffConf, and it looks very easy to use.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://developers.google.com/identity-toolkit/'&gt;Google Identity Toolkit&lt;/a&gt; - Free toolkit for websites who currently allow users to login with their email address and password, and would like to replace that password with federated login. Currently supports Google mail, Hotmail, Yahoo! mail, AOL mail, and Google Apps mail.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://courseware.codeschool.com/uploads/12_steps_takeoffconf.pdf'&gt;12 steps to win at software development&lt;/a&gt; - Nice talk by Greg Pollack, given at TakeOffConf. Direct link to the PDF.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://pekelman.com/presentations/apidays/#/1/28'&gt;Lipstick on a pig&lt;/a&gt; - Don&amp;#8217;t try to piggyback a REST API on your legacy SOAP web services just by using JSON and HTTP methods. This requires design, or you&amp;#8217;ll likely end up with an API that has the same beauty as what could be achieved by putting lipstick on a pig.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://37signals.com/svn/posts/3372-put-chubby-models-on-a-diet-with-concerns?47#all_comments'&gt;Put chubby models on a diet with concerns&lt;/a&gt; - Nice quote by DHH in the comments of this article: &amp;#8220;Rails itself is designed exclusively with the &amp;#8216;good, responsible, trusted developers&amp;#8217; in mind. If it happens to work for “bad, irresponsible, untrustworthy developers” as well, that’s merely an inconsequential side effect. There are lots of development environments that focus explicitly on preventing that later group from doing much damage. Ruby on Rails was never intended to be among those.&amp;#8221;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.randsinrepose.com/archives/2013/01/01/the_process_myth.html'&gt;Rands In Repose: The Process Myth&lt;/a&gt; - &amp;#8220;On the list of ways to generate a guaranteed negative knee-jerk reaction from an engineer, I offer a single word: process.&amp;#8221;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://amandacox.tumblr.com/'&gt;Amanda Cox and Countrymen&lt;/a&gt; - Visualizations blog by one of the best in the field.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/jonrohan/ZeroClipboard'&gt;jonrohan/ZeroClipboard&lt;/a&gt; - Javascript library to copy text to the clipboard. By github.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.masterzen.fr/2013/01/13/the-10-commandments-of-logging/'&gt;The 10 commandments of logging&lt;/a&gt; - TL;DR : write meaningful and parseable logs, at the right level, using a proper library.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://dtrace.org/blogs/brendan/2013/01/11/virtualization-performance-zones-kvm-xen/'&gt;Virtualization Performance: Zones, KVM, Xen&lt;/a&gt; - Summary of the performance of various virtualization technologies (Zones, KVM, Xen) by Joyent.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://coderwall.com/p/ivvntg'&gt;Cut down some seconds of your spec suite by removing database_cleaner&lt;/a&gt; - Code snippet to only truncate your database tables on examples that really need it.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://twitter.com/climagic/status/289737218795376641'&gt;find ~/ -size +100M -exec du -h {} ;&lt;/a&gt; - Find all files larger than 100MB and display their human readable size.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/vertiginous/pik'&gt;vertiginous/pik&lt;/a&gt; - Ruby version manager for Windows.&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Ebarnouflant #001</title>
@@ -915,15 +969,6 @@
    <id>http://crohr.me/journal/2011/the-messy-art-of-ux-sketching</id>
    <content type="html">&lt;img src='/images/posts/29.media.tumblr.com/tumblr_lwvbu0Ysl21r4ghsio1_1280.jpg' width='100%' /&gt;
 &lt;p&gt;The Messy Art Of UX Sketching&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Move The Web Forward</title>
-   <link href="http://crohr.me/journal/2011/move-the-web-forward.html"/>
-   <updated>2011-12-09T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/move-the-web-forward</id>
-   <content type="html">&lt;a href='http://movethewebforward.org/'&gt;Move The Web Forward&lt;/a&gt;
-&lt;p&gt;In line with the previous &lt;a href='http://ebarnouflant.com/post/13868946794/css-contents-and-browser-compatibility'&gt;link&lt;/a&gt;, here comes &lt;a href='http://movethewebforward.org/'&gt;Move The Web Forward&lt;/a&gt; that &amp;#8220;list some of the ways that anyone can contribute back to the web platform&amp;#8221; at various levels, and also list links to resources about CSS, HTML, standards, etc.&lt;/p&gt;</content>
  </entry>
  
  
