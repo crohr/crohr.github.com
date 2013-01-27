@@ -4,13 +4,43 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-01-20T14:07:08+01:00</updated>
+ <updated>2013-01-27T17:59:17+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Ebarnouflant #003</title>
+   <link href="http://crohr.me/journal/2013/ebarnouflant-003.html"/>
+   <updated>2013-01-27T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2013/ebarnouflant-003</id>
+   <content type="html">&lt;p&gt;Started a series of trainings. Enjoyable and exhausting at the same time.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://www.autosketchup.com/'&gt;Automatic SketchUp: Creating 3-D Models in Ruby&lt;/a&gt; - Great (free) book for learning how to use the &lt;a href='http://www.sketchup.com/intl/en/developer/'&gt;SketchUp Ruby API&lt;/a&gt; to build 3D models programmatically.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.somethingsimilar.com/2013/01/14/notes-on-distributed-systems-for-young-bloods/'&gt;Notes on Distributed Systems for Young Bloods&lt;/a&gt; - Good list. Also, interesting note about the social aspects of distributed systems.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://timeline.verite.co/'&gt;Timeline JS&lt;/a&gt; - Javascript library to display timelines.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/twitter/secureheaders'&gt;twitter/secureheaders&lt;/a&gt; - Security related HTTP headers all in one gem.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/raganwald/homoiconic/blob/master/2013/01/this.md#more-than-you-ever-wanted-to-know-about-this-in-javascript-part-i'&gt;More than you ever wanted to know about &amp;#8220;this&amp;#8221; in JavaScript&lt;/a&gt; - A good post by &lt;a href='http://braythwayt.com/'&gt;Reg Braithwaite&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/rogerwang/node-webkit'&gt;rogerwang/node-webkit&lt;/a&gt; - Write native apps in HTML and Javascript and call Node.js modules directly. App runtime based on Chromium and node.js. Then you can package your apps for all platforms.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.jonathantneal.com/blog/understand-the-favicon/'&gt;Understand the Favicon&lt;/a&gt; - Not so simple.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://jamesmaskell.co.uk/2013/online-payments-in-2013/'&gt;Taking payments online (in Europe) in 2013&lt;/a&gt; - Still harder in Europe than in the US.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.nngroup.com/articles/auto-forwarding/'&gt;Auto-Forwarding Carousels and Accordions Annoy Users and Reduce Visibility&lt;/a&gt; - &amp;#8220;The user&amp;#8217;s target was at the top of the page in 98-point font. But she failed to find it because the panel auto-rotated instead of staying still&amp;#8221;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/brandonhilkert/sucker_punch'&gt;brandonhilkert/sucker_punchb&lt;/a&gt; - A single-process Ruby asynchronous processing library built on Celluloid.&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Ebarnouflant #002</title>
@@ -960,15 +990,6 @@
    <id>http://crohr.me/journal/2012/the-evolution-of-the-web</id>
    <content type="html">&lt;img src='/images/posts/29.media.tumblr.com/tumblr_lx9mr8OVXH1r4ghsio1_1280.png' width='100%' /&gt;
 &lt;p&gt;&lt;a href='http://evolutionofweb.appspot.com/'&gt;The Evolution of the Web&lt;/a&gt; - Visualization of the evolution of web technologies over time.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>The Messy Art Of UX Sketching</title>
-   <link href="http://crohr.me/journal/2011/the-messy-art-of-ux-sketching.html"/>
-   <updated>2011-12-27T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2011/the-messy-art-of-ux-sketching</id>
-   <content type="html">&lt;img src='/images/posts/29.media.tumblr.com/tumblr_lwvbu0Ysl21r4ghsio1_1280.jpg' width='100%' /&gt;
-&lt;p&gt;The Messy Art Of UX Sketching&lt;/p&gt;</content>
  </entry>
  
  
