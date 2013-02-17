@@ -4,13 +4,53 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-02-03T21:28:22+01:00</updated>
+ <updated>2013-02-17T22:50:36+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Ebarnouflant #005</title>
+   <link href="http://crohr.me/journal/2013/ebarnouflant-005.html"/>
+   <updated>2013-02-17T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2013/ebarnouflant-005</id>
+   <content type="html">&lt;p&gt;Training sessions are now finished, quieter weeks ahead!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://pragprog.com/magazines/2013-02/estimation-is-evil'&gt;Estimation is Evil&lt;/a&gt; - Stop estimating. Start shipping.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://www.tbray.org/ongoing/When/201x/2013/02/10/XML-at-15'&gt;XML’s 15th Birthday&lt;/a&gt; - &amp;#8220;These days, if you want to interchange tuples or tables of tuples or numbers and strings, you have JSON. If you want to do nontrivial publishing automation, use XML. If you want to interchange smart bitmaps of page images, there’s PDF. I personally think we’re probably done with inventing low-level textual interchange formats.&amp;#8221; - Tim Bray&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://tenderlovemaking.com/2013/02/06/yaml-f7u12.html'&gt;YAML f7u12&lt;/a&gt; - Aaron Patterson explains the need for a &lt;code&gt;YAML.safe_load&lt;/code&gt;, following newly discovered Rails vulnerabilities.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://robots.thoughtbot.com/post/10125070413/unobtrusive-ruby'&gt;Unobtrusive Ruby&lt;/a&gt; - &amp;#8220;Unobtrusive Ruby is any Ruby code that stays out of your way&amp;#8221;. Follow-up article on &lt;a href='https://practicingruby.com/articles/shared/yfildjshgzew'&gt;PracticingRuby&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://codahale.com/a-lesson-in-timing-attacks/'&gt;A Lesson In Timing Attacks&lt;/a&gt; - Old but still relevant article on timing attacks, which look scary: &amp;#8220;They work against a programmer’s best instincts—don’t do extra work—to give an attacker with access to a Statistics 101 textbook a good solid grip on your application’s guts.&amp;#8221;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://travisjeffery.com/b/2012/02/search-a-git-repo-like-a-ninja/'&gt;Search a Git Repo Like a Ninja&lt;/a&gt; - Much better than manually grep&amp;#8217;ing or ack&amp;#8217;ing.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://practicingruby.com/articles/shared/nkhaprcgwrpv'&gt;A gentle introduction to actor-based concurrency&lt;/a&gt; - The Dining Philosophers Problem, seen from a mutex-based perspective, and with Actors (Celluloid).&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://mahout.apache.org/'&gt;Apache Mahout: Scalable machine learning and data mining&lt;/a&gt; - I really need to test this with Amazon Elastic MapReduce.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/raganwald/homoiconic/blob/master/2013/02/prototypes.md'&gt;Classes vs. Prototypes in JavaScript&lt;/a&gt; - Clear and concise explanation of the difference between class-based inheritance and prototype-based inheritance.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.modern.ie/virtualization-tools'&gt;modern.IE&lt;/a&gt; - Nice effort by Microsoft to provide VMs with various versions of IEs for your OS/Hypervisor. You can also get 3 months of hosted virtualization for free.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://developer.mozilla.org/en-US/docs/CSS/Understanding_z-index/The_stacking_context'&gt;The stacking context&lt;/a&gt; - Useful to understand CSS z-index property.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.blokkfont.com/'&gt;BLOKK&lt;/a&gt; - A font for quick mock-ups and wireframing for clients who do not understand latin.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://robots.thoughtbot.com/post/42286882447/handle-incoming-email-with-griddler'&gt;Handle incoming email with Griddler&lt;/a&gt; - A Rails engine that provides an endpoint for the SendGrid Parse API.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://rivetsjs.com/'&gt;Rivets.js&lt;/a&gt; - A lightweight declarative data binding facility that plays well with existing javascript frameworks.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/mezis/mrd'&gt;mezis/mrd&lt;/a&gt; - Run MySQL off a RAM disk - MacOS only&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Ebarnouflant #004</title>
@@ -992,17 +1032,6 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;Another &amp;#8220;What every programmer should know about time&amp;#8221; article, but worth repeating.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Yak Shaving</title>
-   <link href="http://crohr.me/journal/2012/yak-shaving.html"/>
-   <updated>2012-01-05T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2012/yak-shaving</id>
-   <content type="html">&lt;a href='http://blog.hasmanythrough.com/2012/1/4/yak-shaving'&gt;Yak Shaving&lt;/a&gt;
-&lt;blockquote&gt;
-&lt;p&gt;I often struggle to explain to non-technical folks what I actually spend my time doing when I&amp;#8217;m working and what it feels like. This is the most accessible explanation I can come up with.&lt;/p&gt;
-&lt;/blockquote&gt;</content>
  </entry>
  
  
