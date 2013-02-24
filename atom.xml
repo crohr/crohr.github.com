@@ -4,13 +4,47 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-02-17T22:50:36+01:00</updated>
+ <updated>2013-02-24T19:46:48+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Ebarnouflant #006</title>
+   <link href="http://crohr.me/journal/2013/ebarbouflant-006.html"/>
+   <updated>2013-02-24T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2013/ebarbouflant-006</id>
+   <content type="html">&lt;p&gt;Currently consuming EC2 instances for a new project. Hopefully I&amp;#8217;ll have something ready in the next few weeks.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://engineering.twitter.com/2013/02/twitter-typeaheadjs-you-autocomplete-me.html'&gt;Typeahead.js: You Autocomplete Me&lt;/a&gt; - Autocompletion jQuery plugin from Twitter.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.dropzonejs.com/'&gt;Dropzone.js&lt;/a&gt; - Drag&amp;#8217;n&amp;#8217;drop javascript library for uploading files, with image previews. Designed with the latest browser APIs in mind. Falls back to normal upload form if browser is too old.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://spin.atomicobject.com/2013/02/15/ffi-foreign-function-interfaces/'&gt;When &amp;amp; How to Use an FFI (Foreign Function Interface)&lt;/a&gt; - &amp;#8220;An FFI wrapper is much easier to write and maintain than a C extension, more portable across platforms and language implementations, and easier for users to install.&amp;#8221;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://benediktdeicke.com/2013/02/what-you-did-not-know-about-capistrano-yet/'&gt;What you did not know about Capistrano, yet&lt;/a&gt; - Didn&amp;#8217;t know about the &lt;code&gt;run_locally&lt;/code&gt; command.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://firstround.com/article/How-Stripe-built-one-of-Silicon-Valleys-best-engineering-teams'&gt;How Stripe built one of Silicon Valley’s best engineering teams&lt;/a&gt; - &amp;#8220;Referrals tend to be a really fantastic way to bring people in and should be the first place you go.&amp;#8221;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://csswizardry.com/2013/01/front-end-performance-for-web-designers-and-front-end-developers/#section:retina-images'&gt;Front-end performance for web designers and front-end developers&lt;/a&gt; - In which you learn about DNS and resource prefetching, image optimisation, and to never serve CSS from an asset domain.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://subtlepatterns.com/'&gt;Subtle Patterns&lt;/a&gt; - Free textures for your website.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://bslatkin.github.com/cohorts/'&gt;Cohort Visualizer&lt;/a&gt; - A tool for browsing cohort datasets, built in Javascript.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://vimeo.com/27243627'&gt;3 Baton Rouge Table 2.5 metres&lt;/a&gt; - Coming soon to your nearest Ikea (or not).&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://moqups.com/'&gt;Moqups&lt;/a&gt; - Free (for now) concurrent to Balsamiq mockup.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://color.hailpixel.com/'&gt;color.hailpixel.com&lt;/a&gt; - Very cool tool to choose a colour palette in a wide space.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://freethroww.com/'&gt;freethroww&lt;/a&gt; - Page listing the top freebies on dribble.&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
  
  <entry>
    <title>Ebarnouflant #005</title>
@@ -1018,20 +1052,6 @@
    <id>http://crohr.me/journal/2012/mount-isa-australia-nov-2007</id>
    <content type="html">&lt;img src='/images/posts/26.media.tumblr.com/tumblr_ltj7skzAN31r4ghsio1_1280.jpg' width='100%' /&gt;
 &lt;p&gt;Mount Isa (Australia), Nov. 2007&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Time</title>
-   <link href="http://crohr.me/journal/2012/time.html"/>
-   <updated>2012-01-06T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2012/time</id>
-   <content type="html">&lt;p&gt;&lt;a href='http://unix4lyfe.org/time/'&gt;Time&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Timezones are a presentation-layer problem! Most of your code [&amp;#8230;] should be passing Unix time around.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Another &amp;#8220;What every programmer should know about time&amp;#8221; article, but worth repeating.&lt;/p&gt;</content>
  </entry>
  
  
