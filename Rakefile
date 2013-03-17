@@ -5,8 +5,9 @@ end
 desc "Generates a new ebarnouflant post"
 task :ebarnouflant do
   id = "%03d" % (Dir["./_posts/*-ebarnouflant-*.md"].sort.last.gsub(/.*-ebarnouflant-(\d+)\.md/, '\1').to_i + 1)
-  filename = Time.now.strftime("%Y-%m-%d-ebarbouflant-#{id}.md")
-  File.open("./_posts/#{filename}", "w+") do |f|
+  filename = Time.now.strftime("%Y-%m-%d-ebarnouflant-#{id}.md")
+  filename = "./_posts/#{filename}"
+  File.open(filename, "w+") do |f|
     f.puts "---"
     f.puts "title: \"Ebarnouflant ##{id}\""
     f.puts "layout: post"
@@ -16,4 +17,6 @@ task :ebarnouflant do
     f.puts
     f.puts `FROM="#{ENV.fetch('FROM')}" ebarnouflant`
   end
+
+  system("mate '#{filename}'")
 end
