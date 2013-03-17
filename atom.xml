@@ -4,7 +4,7 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-02-24T19:46:48+01:00</updated>
+ <updated>2013-03-17T18:37:02+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
@@ -13,10 +13,60 @@
 
  
  <entry>
+   <title>Ebarnouflant #007</title>
+   <link href="http://crohr.me/journal/2013/ebarnouflant-007.html"/>
+   <updated>2013-03-17T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2013/ebarnouflant-007</id>
+   <content type="html">&lt;p&gt;Better late than never!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href='http://css-tricks.com/using-svg/'&gt;Using SVG&lt;/a&gt; - Thorough guide to using (and customizing) SVG images in web pages.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/josephg/ShareJS'&gt;josephg/ShareJS&lt;/a&gt; - Node.js library to allow for collaborative editing in any app.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/postrank-labs/postrank-uri'&gt;postrank-labs/postrank-uri&lt;/a&gt; - Ruby library that deals with extracting, (un)escaping, normalization, and canonicalization of URIs. Was used at PostRank.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://gigaom.com/2013/03/15/by-the-numbers-how-google-compute-engine-stacks-up-to-amazon-ec2/'&gt;By the numbers: How Google Compute Engine stacks up to Amazon EC2&lt;/a&gt; - Some interesting numbers, especially regarding the VM boot times, and the difference between Google&amp;#8217;s private backbone and Amazon&amp;#8217;s lack of it.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://lite.ly/'&gt;Photo Presets&lt;/a&gt; - Set of photo filters for Lightroom, Photoshop, Aperture, etc. &amp;#8220;Add gorgeous, film-inspired tones to your photos in seconds.&amp;#8221;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://www.gov.uk/service-manual/web-ops'&gt;Resources for web operations&lt;/a&gt; - Set of articles written as part of the UK Government Digital Strategy initiative. The full list of articles (on agile, design, teams, users, etc.) is available &lt;a href='https://www.gov.uk/service-manual/browse'&gt;here&lt;/a&gt;.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/mitchellh/vagrant-aws'&gt;mitchellh/vagrant-aws&lt;/a&gt; - Plugin that adds AWS support for Vagrant. Awesome!&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://coderwall.com/p/xvzu-g'&gt;Hypermedia APIs&lt;/a&gt; - A brief overview and pointers.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://dotcloud.github.com/docker/'&gt;Docker&lt;/a&gt; - A new take on linux containers, to encapsulate a software component and all its dependencies in a format that is self-describing and portable. Soon to be open-sourced by dotCloud.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.slideshare.net/pcalcado/from-a-monolithic-ruby-on-rails-app-to-the-jvm'&gt;From a monolithic Ruby on Rails app to the JVM&lt;/a&gt; - Presentation on how (and why) SoundCloud is currently migrating away from Rails to JVM-based languages.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/dotcloud/hipache'&gt;dotcloud/hipache&lt;/a&gt; - Distributed HTTP and websocket proxy used at dotCloud to route the incoming requests to a backend (à la heroku).&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/mbostock/stack'&gt;mbostock/stack&lt;/a&gt; - A presentation library that does keep the scroll based navigation controls. By the d3.js guy.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.randsinrepose.com/archives/2013/02/22/the_long_thought.html'&gt;Rands In Repose: The Long Thought&lt;/a&gt; - &amp;#8220;When I observe how I consume information, I’ve become increasingly aware of how little actual deep information I’m consuming.&amp;#8221; - Why &lt;a href='http://discourse.org'&gt;Discourse&lt;/a&gt; is being built to improve communication on Internet.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://joyent.com/blog/linux-performance-analysis-and-tools-brendan-gregg-s-talk-at-scale-11x'&gt;Linux Performance Analysis and Tools&lt;/a&gt; - A quick tour of tools that can be used to see what&amp;#8217;s going on on your system. Lots of them!&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.startuplessonslearned.com/2009/06/why-continuous-deployment.html'&gt;Lessons Learned: Why Continuous Deployment?&lt;/a&gt; - Good (old) article on the advantages of continuous deployment.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/jayferd/rouge'&gt;jayferd/rouge&lt;/a&gt; - Pure-ruby code highlighter compatible with Pygments.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.slideshare.net/mweigel/how-to-not-fail-16647530'&gt;How to (not) Fail&lt;/a&gt; - A lesson on the language of marketing. #1 on the not to do list: assume they&amp;#8217;re interested.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://speakerdeck.com/garrettdimon/bootstrapping-a-software-product'&gt;Bootstrapping a Software Product&lt;/a&gt; - Slide deck on bootstrapping a software product as a solo entrepreneur. &amp;#8220;If people take the time to criticize, it&amp;#8217;s because they feel that the product is already pretty solid. If it&amp;#8217;s way off, they don&amp;#8217;t say anything at all.&amp;#8221;&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='http://www.larentis.eu/switch/'&gt;Bootstrap switch&lt;/a&gt; - iOS-type switch button for Bootstrap.&lt;/li&gt;
+
+&lt;li&gt;&lt;a href='https://github.com/rubyworks/yaml_command'&gt;rubyworks/yaml_command&lt;/a&gt; - A command line tool for working with YAML files.&lt;/li&gt;
+&lt;/ul&gt;</content>
+ </entry>
+ 
+ <entry>
    <title>Ebarnouflant #006</title>
-   <link href="http://crohr.me/journal/2013/ebarbouflant-006.html"/>
+   <link href="http://crohr.me/journal/2013/ebarnouflant-006.html"/>
    <updated>2013-02-24T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2013/ebarbouflant-006</id>
+   <id>http://crohr.me/journal/2013/ebarnouflant-006</id>
    <content type="html">&lt;p&gt;Currently consuming EC2 instances for a new project. Hopefully I&amp;#8217;ll have something ready in the next few weeks.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -1043,15 +1093,6 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;I&amp;#8217;ll have to check this out.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>Mount Isa (Australia), Nov. 2007</title>
-   <link href="http://crohr.me/journal/2012/mount-isa-australia-nov-2007.html"/>
-   <updated>2012-01-07T00:00:00+01:00</updated>
-   <id>http://crohr.me/journal/2012/mount-isa-australia-nov-2007</id>
-   <content type="html">&lt;img src='/images/posts/26.media.tumblr.com/tumblr_ltj7skzAN31r4ghsio1_1280.jpg' width='100%' /&gt;
-&lt;p&gt;Mount Isa (Australia), Nov. 2007&lt;/p&gt;</content>
  </entry>
  
  
