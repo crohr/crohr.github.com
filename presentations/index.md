@@ -4,6 +4,8 @@ title: Presentations
 tab: talks
 ---
 
+* [Gitolite - Héberger ses dépôts GIT simplement](./gitolite/)
+
 * [Le refactoring en confiance](./refactoring-blackbox-testing/)
 
 * [Who said Puppet was hard?](/journal/2012/who-said-puppet-was-hard.html)
