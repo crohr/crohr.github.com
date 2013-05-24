@@ -4,7 +4,7 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-05-24T19:52:29+02:00</updated>
+ <updated>2013-05-24T21:55:53+02:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
@@ -17,7 +17,9 @@
    <link href="http://crohr.me/journal/2013/docker-repository-create-base-boxes.html"/>
    <updated>2013-05-24T00:00:00+02:00</updated>
    <id>http://crohr.me/journal/2013/docker-repository-create-base-boxes</id>
-   <content type="html">&lt;p&gt;Docker comes with a &lt;a href='https://index.docker.io'&gt;registry&lt;/a&gt; where you can find images to use for your containers. You can also create and upload your own images in this repository, which is the subject of this article.&lt;/p&gt;
+   <content type="html">&lt;p&gt;If you don&amp;#8217;t know about it yet, go check out &lt;a href='http://docker.io'&gt;Docker&lt;/a&gt;, which makes manipulating LXC containers painless.&lt;/p&gt;
+
+&lt;p&gt;Docker comes with a &lt;a href='https://index.docker.io'&gt;registry&lt;/a&gt; where you can find images to use for your containers. You can also create and upload your own images in this repository, which is the subject of this article.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;
