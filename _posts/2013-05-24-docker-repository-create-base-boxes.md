@@ -8,7 +8,7 @@ tags:
 
 ---
 
-Preliminary: if you don't know about it yet, go check out [Docker](http://docker.io), which makes manipulating LXC containers painless.
+If you don't know about it yet, go check out [Docker](http://docker.io), which makes manipulating LXC containers painless.
 
 Docker comes with a [registry](https://index.docker.io) where you can find images to use for your containers. You can also create and upload your own images in this repository, which is the subject of this article.
 
