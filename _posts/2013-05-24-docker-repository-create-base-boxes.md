@@ -19,7 +19,7 @@ Docker comes with a [registry](https://index.docker.io) where you can find image
           $> docker login
           Username (): crohr
           Password: 
-          Email (): cyril.rohr@gmail.com
+          Email (): hi@example.com
           Login Succeeded
 
 * For debian-based boxes, just use the [mkimage-debian.sh script in contrib/](https://github.com/dotcloud/docker/blob/master/contrib):
