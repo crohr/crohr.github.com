@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <title>The Messy Art Of UX Sketching</title>
+  <title>How to build and publish base boxes for Docker?</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ruby and RubyOnRails developer living in Rennes, France. I offer various consulting services such as new developments, legacy application maintenance and migration, training, and cloud computing consulting.">
@@ -61,21 +61,85 @@
     <div class="span12">
       <a name="top"></a>
       <header>
-  <h1>The Messy Art Of UX Sketching</h1>
+  <h1>How to build and publish base boxes for Docker?</h1>
 </header>
 <hr class="large" />
 <div class="article-date">
   
-    <a class="tag" href="/tags/#ui">ui</a>
+    <a class="tag" href="/tags/#docker">docker</a>
   
-    <a class="tag" href="/tags/#ux">ux</a>
+    <a class="tag" href="/tags/#lxc">lxc</a>
   
-  &nbsp;&nbsp;27 Dec 2011
+    <a class="tag" href="/tags/#ubuntu">ubuntu</a>
+  
+  &nbsp;&nbsp;24 May 2013
 </div>
 
 <div id="post">
-  <img src='/images/posts/29.media.tumblr.com/tumblr_lwvbu0Ysl21r4ghsio1_1280.jpg' width='100%' />
-<p>The Messy Art Of UX Sketching</p>
+  <p>Docker comes with a <a href='https://index.docker.io'>registry</a> where you can find images to use for your containers. You can also create and upload your own images in this repository, which is the subject of this article.</p>
+
+<ul>
+<li>
+<p>Create an account on the Docker index website: <a href='https://index.docker.io'>https://index.docker.io</a>.</p>
+</li>
+
+<li>
+<p>On your box, login:</p>
+
+<pre><code>    $&gt; docker login
+    Username (): crohr
+    Password: 
+    Email (): cyril.rohr@gmail.com
+    Login Succeeded</code></pre>
+</li>
+
+<li>
+<p>For debian-based boxes, just use the <a href='https://github.com/dotcloud/docker/blob/master/contrib'>mkimage-debian.sh script in contrib/</a>:</p>
+
+<pre><code>    $&gt; ./mkimage-debian.sh crohr/ubuntu lucid http://archive.ubuntu.com/ubuntu
+    ...
+    + img=f7e10b978e8c
+    + docker tag f7e10b978e8c crohr/ubuntu lucid
+    + &#39;[&#39; lucid = wheezy &#39;]&#39;
+    + docker run -i -t crohr/ubuntu:lucid echo success
+    success
+    + &#39;[&#39; lucid &#39;!=&#39; sid -a lucid &#39;!=&#39; unstable &#39;]&#39;
+    ++ docker run crohr/ubuntu:lucid cat /etc/debian_version
+    + ver=squeeze/sid
+    + docker tag f7e10b978e8c crohr/ubuntu squeeze/sid
+    2013/05/24 17:05:40 error: Illegal tag name: squeeze/sid</code></pre>
+
+<p>Note: The second tag is not created, but it does not matter (?).</p>
+</li>
+
+<li>
+<p>Then, check that your image is indeed created:</p>
+
+<pre><code>    $&gt; docker images
+    REPOSITORY          TAG                 ID                  CREATED
+    crohr/ubuntu        lucid               f7e10b978e8c        34 minutes ago
+    ubuntu              latest              8dbd9e392a96        6 weeks ago
+    ubuntu              12.10               b750fe79269d        8 weeks ago
+    ubuntu              12.04               8dbd9e392a96        6 weeks ago
+    ubuntu              quantal             b750fe79269d        8 weeks ago
+    ubuntu              precise             8dbd9e392a96        6 weeks ago</code></pre>
+</li>
+
+<li>
+<p>Now push it to the central repository:</p>
+
+<pre><code>    $&gt; docker push crohr/ubuntu
+    The push refers to a repository [crohr/ubuntu] (len: 1)
+    Processing checksums
+    Sending image list
+    Pushing repository crohr/ubuntu to registry-1.docker.io (1 tags)
+    Pushing f7e10b978e8c15bde845374c490862befb181f0943a0ae2076d070573a435b16
+    145858560/145858560 (100%)
+    Pushing tags for rev [f7e10b978e8c15bde845374c490862befb181f0943a0ae2076d070573a435b16] on {registry-1.docker.io/users/crohr/ubuntu/lucid}</code></pre>
+</li>
+</ul>
+
+<p>That&#8217;s it! Now other people can pull your images using <code>docker pull crohr/ubuntu</code>.</p>
 </div>
 
 
@@ -83,12 +147,10 @@
   <div class="clear">&nbsp;</div> 
   <div class="left"> 
    
-      <a href="/journal/2011/move-the-web-forward.html" title="Previous Post: Move The Web Forward" class="btn btn-small"><i class="icon-caret-left"></i> Move The Web Forward</a> 
+      <a href="/journal/2013/ebarnouflant-007.html" title="Previous Post: Ebarnouflant #007" class="btn btn-small"><i class="icon-caret-left"></i> Ebarnouflant #007</a> 
    
   </div> 
   <div class="right"> 
-   
-          <a href="/journal/2012/the-evolution-of-the-web.html" title="next Post: The Evolution of the Web" class="btn btn-small">The Evolution of the Web <i class="icon-caret-right"></i></a> 
    
   </div> 
   <div class="clear">&nbsp;</div> 
@@ -98,11 +160,11 @@
   <p>Related posts</p>
   <ul class="posts">
     
-      <li><span class="date">24 May 2013</span> &raquo; <a href="/journal/2013/docker-repository-create-base-boxes.html">How to build and publish base boxes for Docker?</a></li>
-    
       <li><span class="date">17 Mar 2013</span> &raquo; <a href="/journal/2013/ebarnouflant-007.html">Ebarnouflant #007</a></li>
     
       <li><span class="date">24 Feb 2013</span> &raquo; <a href="/journal/2013/ebarnouflant-006.html">Ebarnouflant #006</a></li>
+    
+      <li><span class="date">17 Feb 2013</span> &raquo; <a href="/journal/2013/ebarnouflant-005.html">Ebarnouflant #005</a></li>
     
   </ul>
 </div> -->
@@ -110,8 +172,8 @@
 <div id="disqus_thread" style="margin-top: 3em"></div>
 <script type="text/javascript">
     var disqus_shortname = 'crohr';
-    var disqus_identifier = '/journal/2011/the-messy-art-of-ux-sketching';
-    var disqus_url = 'http://crohr.me/journal/2011/the-messy-art-of-ux-sketching.html';
+    var disqus_identifier = '/journal/2013/docker-repository-create-base-boxes';
+    var disqus_url = 'http://crohr.me/journal/2013/docker-repository-create-base-boxes.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
