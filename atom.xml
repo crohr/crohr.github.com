@@ -4,7 +4,7 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-05-24T21:55:53+02:00</updated>
+ <updated>2013-05-24T21:56:39+02:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
@@ -32,7 +32,7 @@
 &lt;pre&gt;&lt;code&gt;    $&amp;gt; docker login
     Username (): crohr
     Password: 
-    Email (): cyril.rohr@gmail.com
+    Email (): hi@example.com
     Login Succeeded&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 
