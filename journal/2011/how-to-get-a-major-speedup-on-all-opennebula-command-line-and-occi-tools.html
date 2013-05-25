@@ -193,6 +193,8 @@ curl http://flag.io/33998d87be6c9f8f3a6b0ae72c65fbb9 | patch /usr/lib/one/ruby/O
     _gaq.push(['_setDomainName', 'crohr.me']);
     _gaq.push(['_trackPageview']);
 
+    setTimeout("_gaq.push(['_trackEvent', '20_seconds', 'read'])", 15000);
+
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
