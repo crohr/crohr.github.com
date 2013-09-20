@@ -4,7 +4,7 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2013-05-25T15:37:55+02:00</updated>
+ <updated>2013-09-20T09:10:29+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>How to build and publish base boxes for Docker?</title>
    <link href="http://crohr.me/journal/2013/docker-repository-create-base-boxes.html"/>
-   <updated>2013-05-24T00:00:00+02:00</updated>
+   <updated>2013-05-24T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2013/docker-repository-create-base-boxes</id>
    <content type="html">&lt;p&gt;If you don&amp;#8217;t know about it yet, go check out &lt;a href='http://docker.io'&gt;Docker&lt;/a&gt;, which makes manipulating LXC containers painless.&lt;/p&gt;
 
@@ -88,7 +88,7 @@
  <entry>
    <title>Ebarnouflant #007</title>
    <link href="http://crohr.me/journal/2013/ebarnouflant-007.html"/>
-   <updated>2013-03-17T00:00:00+01:00</updated>
+   <updated>2013-03-17T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2013/ebarnouflant-007</id>
    <content type="html">&lt;p&gt;Better late than never!&lt;/p&gt;
 
@@ -138,7 +138,7 @@
  <entry>
    <title>Ebarnouflant #006</title>
    <link href="http://crohr.me/journal/2013/ebarnouflant-006.html"/>
-   <updated>2013-02-24T00:00:00+01:00</updated>
+   <updated>2013-02-24T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2013/ebarnouflant-006</id>
    <content type="html">&lt;p&gt;Currently consuming EC2 instances for a new project. Hopefully I&amp;#8217;ll have something ready in the next few weeks.&lt;/p&gt;
 
@@ -172,7 +172,7 @@
  <entry>
    <title>Ebarnouflant #005</title>
    <link href="http://crohr.me/journal/2013/ebarnouflant-005.html"/>
-   <updated>2013-02-17T00:00:00+01:00</updated>
+   <updated>2013-02-17T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2013/ebarnouflant-005</id>
    <content type="html">&lt;p&gt;Training sessions are now finished, quieter weeks ahead!&lt;/p&gt;
 
@@ -212,7 +212,7 @@
  <entry>
    <title>Ebarnouflant #004</title>
    <link href="http://crohr.me/journal/2013/ebarnouflant-004.html"/>
-   <updated>2013-02-03T00:00:00+01:00</updated>
+   <updated>2013-02-03T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2013/ebarnouflant-004</id>
    <content type="html">&lt;p&gt;February already. 2013 looks like a rough year for Rails &amp;amp; Ruby.&lt;/p&gt;
 
@@ -234,7 +234,7 @@
  <entry>
    <title>Ebarnouflant #003</title>
    <link href="http://crohr.me/journal/2013/ebarnouflant-003.html"/>
-   <updated>2013-01-27T00:00:00+01:00</updated>
+   <updated>2013-01-27T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2013/ebarnouflant-003</id>
    <content type="html">&lt;p&gt;Started a series of trainings. Enjoyable and exhausting at the same time.&lt;/p&gt;
 
@@ -264,7 +264,7 @@
  <entry>
    <title>Ebarnouflant #002</title>
    <link href="http://crohr.me/journal/2013/ebarnouflant-002.html"/>
-   <updated>2013-01-20T00:00:00+01:00</updated>
+   <updated>2013-01-20T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2013/ebarnouflant-002</id>
    <content type="html">&lt;p&gt;Back from the &lt;a href='http://takeoffconf.com/'&gt;TakeOff&lt;/a&gt; conference in Lille, France. Great people, some really good talks, and a lot to think about.&lt;/p&gt;
 
@@ -318,7 +318,7 @@
  <entry>
    <title>Ebarnouflant #001</title>
    <link href="http://crohr.me/journal/2013/ebarnouflant-001.html"/>
-   <updated>2013-01-11T00:00:00+01:00</updated>
+   <updated>2013-01-11T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2013/ebarnouflant-001</id>
    <content type="html">&lt;p&gt;This year I&amp;#8217;m going to try something new, i.e. publish every week a list of links, mainly about Web development, Freelancing, DevOps, etc. The goal is not necessarily to post the most awesome or recent links, but things that I&amp;#8217;ve found to be useful or interesting in my daily work.&lt;/p&gt;
 
@@ -358,7 +358,7 @@
  <entry>
    <title>Le refactoring en confiance</title>
    <link href="http://crohr.me/journal/2013/le-refactoring-en-confiance.html"/>
-   <updated>2013-01-10T00:00:00+01:00</updated>
+   <updated>2013-01-10T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2013/le-refactoring-en-confiance</id>
    <content type="html">&lt;p&gt;Le dernier DevCamp à la &lt;a href='http://www.lacantine-rennes.net/'&gt;Cantine Numérique Rennaise&lt;/a&gt; était sur le thème du refactoring et des tests. A cette occasion, j&amp;#8217;ai donné une présentation sur comment s&amp;#8217;assurer d&amp;#8217;un minimum de confiance, via l&amp;#8217;écriture de tests au niveau IHM, lorsque l&amp;#8217;on attaque le refactoring d&amp;#8217;une ancienne application. L&amp;#8217;exemple donné est sur une application Rails, mais les mêmes outils pourraient être appliqués pour n&amp;#8217;importe quelle application web.&lt;/p&gt;
 
@@ -368,7 +368,7 @@
  <entry>
    <title>Who said Puppet was hard?</title>
    <link href="http://crohr.me/journal/2012/who-said-puppet-was-hard.html"/>
-   <updated>2012-11-15T00:00:00+01:00</updated>
+   <updated>2012-11-15T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/who-said-puppet-was-hard</id>
    <content type="html">&lt;p&gt;Yesterday I was at the second edition of the &lt;a href='http://www.lacantine-rennes.net/2012/11/devcamp2-si-tu-codes-tu-viens/'&gt;Devcamp&lt;/a&gt; in Rennes, where developers from various horizons and communities gather to share ideas and tools related to a specific theme.&lt;/p&gt;
 
@@ -632,7 +632,7 @@
  <entry>
    <title>Software blueprint</title>
    <link href="http://crohr.me/journal/2012/software-blueprint.html"/>
-   <updated>2012-09-26T00:00:00+02:00</updated>
+   <updated>2012-09-26T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/software-blueprint</id>
    <content type="html">&lt;p&gt;From that &lt;a href='http://typicalprogrammer.com/?p=15'&gt;Typicalprogrammer article&lt;/a&gt;, in which Greg Jorgensen comments on Joel Spolsky&amp;#8217;s article on five ways to make a software project fail:&lt;/p&gt;
 
@@ -648,7 +648,7 @@
  <entry>
    <title>Rails3 apps to package</title>
    <link href="http://crohr.me/journal/2012/rails3-apps-to-package.html"/>
-   <updated>2012-07-06T00:00:00+02:00</updated>
+   <updated>2012-07-06T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/rails3-apps-to-package</id>
    <content type="html">&lt;p&gt;I&amp;#8217;m still thinking about &lt;a href='http://crohr.me/pkgr'&gt;pkgr&lt;/a&gt;, and I came up with a few Rails apps that would be nice to package as .deb:&lt;/p&gt;
 
@@ -674,7 +674,7 @@
  <entry>
    <title>Rulu 2012</title>
    <link href="http://crohr.me/journal/2012/rulu2012.html"/>
-   <updated>2012-06-25T00:00:00+02:00</updated>
+   <updated>2012-06-25T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/rulu2012</id>
    <content type="html">&lt;p&gt;I just came back from &lt;a href='http://rulu.eu'&gt;Rulu&lt;/a&gt; 2012, the second edition of the best Ruby conference in France. Good food, perfect organization, nice location, very nice weather, and some good talks as well. Most importantly, almost twice as many people as last year, which means I met a lot of new people :)&lt;/p&gt;
 
@@ -694,7 +694,7 @@
  <entry>
    <title>The Valve handbook for new employees</title>
    <link href="http://crohr.me/journal/2012/the-valve-handbook-for-new-employees.html"/>
-   <updated>2012-05-30T00:00:00+02:00</updated>
+   <updated>2012-05-30T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/the-valve-handbook-for-new-employees</id>
    <content type="html">&lt;blockquote&gt;
 &lt;p&gt;A fearless adventure in knowing what to do when no one’s there telling you what to do.&lt;/p&gt;
@@ -706,7 +706,7 @@
  <entry>
    <title>People are your competitive advantage</title>
    <link href="http://crohr.me/journal/2012/people-are-your-competitive-advantage.html"/>
-   <updated>2012-05-30T00:00:00+02:00</updated>
+   <updated>2012-05-30T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/people-are-your-competitive-advantage</id>
    <content type="html">&lt;p&gt;&lt;a href='http://rc3.org/2012/05/04/people-are-your-competitive-advantage/'&gt;Rafe Colburn&lt;/a&gt;:&lt;/p&gt;
 
@@ -718,7 +718,7 @@
  <entry>
    <title>Virtualize your development environments with Vagrant &amp; Puppet</title>
    <link href="http://crohr.me/journal/2012/virtualize-your-development-environments-with-vagrant-and-puppet.html"/>
-   <updated>2012-05-15T00:00:00+02:00</updated>
+   <updated>2012-05-15T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/virtualize-your-development-environments-with-vagrant-and-puppet</id>
    <content type="html">&lt;p&gt;Yesterday I presented the Vagrant &amp;amp; Puppet tools at the Rails Bar in Rennes, to show how you can use these tools to easily provision virtual machines that can be used as isolated development environments for your projects. You&amp;#8217;ll keep your development machine fast, your environments isolated (+ they replicate your production setup), and any developer will be able to get up and running on a new project in less than 5 minutes.&lt;/p&gt;
 
@@ -728,7 +728,7 @@
  <entry>
    <title>The Toolbox</title>
    <link href="http://crohr.me/journal/2012/the-toolbox.html"/>
-   <updated>2012-05-12T00:00:00+02:00</updated>
+   <updated>2012-05-12T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/the-toolbox</id>
    <content type="html">&lt;p&gt;A collection of the best time-saving apps, tools, and widgets from around the web: &lt;a href='http://www.thetoolbox.cc/'&gt;http://www.thetoolbox.cc/&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
@@ -736,7 +736,7 @@
  <entry>
    <title>Selection of data visualization tools</title>
    <link href="http://crohr.me/journal/2012/selection-of-data-visualization-tools.html"/>
-   <updated>2012-05-09T00:00:00+02:00</updated>
+   <updated>2012-05-09T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/selection-of-data-visualization-tools</id>
    <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;a href='http://selection.datavisualization.ch/'&gt;Datavisualization.ch Selected Tools&lt;/a&gt; is a collection of tools that we, the people behind Datavisualization.ch, work with on a daily basis and recommend warmly. This is not a list of everything out there, but instead a thoughtfully curated selection of our favourite tools that will make your life easier creating meaningful and beautiful data visualizations.&lt;/p&gt;
@@ -748,7 +748,7 @@
  <entry>
    <title>Distributed Systems Design</title>
    <link href="http://crohr.me/journal/2012/distributed-systems-design.html"/>
-   <updated>2012-05-09T00:00:00+02:00</updated>
+   <updated>2012-05-09T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/distributed-systems-design</id>
    <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Blue Box is proud to present this series on understanding the basics of distributed systems design. Stephen Balukoff, BBG’s Principal Technologist, was surprised by the lack of practical information available on the subject. He authored this document to help fill the gap and hopefully start an exchange of information within the community.&lt;/p&gt;
@@ -778,7 +778,7 @@
  <entry>
    <title>Change of address</title>
    <link href="http://crohr.me/journal/2012/change-of-address.html"/>
-   <updated>2012-05-09T00:00:00+02:00</updated>
+   <updated>2012-05-09T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/change-of-address</id>
    <content type="html">&lt;p&gt;I&amp;#8217;ve decided to move this collection of notes off of Tumblr and back to my main site at &lt;a href='http://crohr.me'&gt;crohr.me&lt;/a&gt;. Thanks to Feedburner, the Atom feed address will stay the same, but it&amp;#8217;s more than likely that you&amp;#8217;ll get a large list of new (but already published) articles in your feed reader due to the switch.&lt;/p&gt;
 
@@ -790,7 +790,7 @@
  <entry>
    <title>Objective-C</title>
    <link href="http://crohr.me/journal/2012/objective-c.html"/>
-   <updated>2012-05-05T00:00:00+02:00</updated>
+   <updated>2012-05-05T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/objective-c</id>
    <content type="html">&lt;p&gt;In the ars technica article &lt;a href='http://arstechnica.com/business/news/2012/05/exclusive-building-ruby-ios-applications-with-rubymotion.ars/2'&gt;Building native iOS apps with RubyMotion&lt;/a&gt;:&lt;/p&gt;
 
@@ -804,7 +804,7 @@
  <entry>
    <title>Workflow for keeping in sync the gh-pages auto-generated by Github</title>
    <link href="http://crohr.me/journal/2012/workflow-for-keeping-in-sync-the-gh-pages-auto-generated-by-github.html"/>
-   <updated>2012-05-04T00:00:00+02:00</updated>
+   <updated>2012-05-04T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/workflow-for-keeping-in-sync-the-gh-pages-auto-generated-by-github</id>
    <content type="html">&lt;p&gt;The automatic generation of project pages (http://pages.github.com) offered by Github is great, sicne you can use your README.md file as content for this site. The issue is that after the first initialization, if you change the README.md of your project, the gh-pages sites does not pick up the changes automatically. It was not obvious for me at first, but here is how you can (somewhat) keep your sanity when trying to keep your README.md file and your gh-pages sites in sync:&lt;/p&gt;
 
@@ -832,7 +832,7 @@
  <entry>
    <title>pkgr : Package your Rails app into deb or rpm packages</title>
    <link href="http://crohr.me/journal/2012/pkgr-package-your-rails-app-into-deb-or-rpm-packages.html"/>
-   <updated>2012-05-04T00:00:00+02:00</updated>
+   <updated>2012-05-04T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/pkgr-package-your-rails-app-into-deb-or-rpm-packages</id>
    <content type="html">&lt;p&gt;I just released &lt;a href='http://crohr.me/pkgr/'&gt;pkgr&lt;/a&gt;, a gem that helps packaging your Rails app into a debian (DEB) package (RPM support is coming next). It&amp;#8217;s still early days, but if you&amp;#8217;re deploying on Debian Squeeze using Rails 3.2, it should work fine.&lt;/p&gt;
 
@@ -842,7 +842,7 @@
  <entry>
    <title>One-liner to pretty print a JSON output on the command line</title>
    <link href="http://crohr.me/journal/2012/one-liner-to-pretty-print-a-json-output-on-the-command-line.html"/>
-   <updated>2012-05-03T00:00:00+02:00</updated>
+   <updated>2012-05-03T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/one-liner-to-pretty-print-a-json-output-on-the-command-line</id>
    <content type="html">&lt;p&gt;As a reminder, here is how you would pretty print a JSON output on the command line, with no additional dependencies except Python, which is most of the time available everywhere:&lt;/p&gt;
 
@@ -852,7 +852,7 @@
  <entry>
    <title>The Node Toolbox</title>
    <link href="http://crohr.me/journal/2012/the-node-toolbox.html"/>
-   <updated>2012-04-29T00:00:00+02:00</updated>
+   <updated>2012-04-29T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/the-node-toolbox</id>
    <content type="html">&lt;p&gt;Like the &lt;a href='https://www.ruby-toolbox.com/'&gt;Ruby toolbox&lt;/a&gt;, but for Node.js: &lt;a href='http://toolbox.no.de/'&gt;The Node Toolbox&lt;/a&gt;.&lt;/p&gt;</content>
  </entry>
@@ -860,7 +860,7 @@
  <entry>
    <title>The Miso Project</title>
    <link href="http://crohr.me/journal/2012/the-miso-project.html"/>
-   <updated>2012-04-26T00:00:00+02:00</updated>
+   <updated>2012-04-26T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/the-miso-project</id>
    <content type="html">&lt;a href='http://misoproject.com/'&gt;The Miso Project&lt;/a&gt;
 &lt;p&gt;Yet another Javascript library for manipulating datasets. Here are &lt;a href='http://misoproject.com/dataset/examples.html'&gt;some examples&lt;/a&gt;.&lt;/p&gt;</content>
@@ -869,7 +869,7 @@
  <entry>
    <title>Cubism.js</title>
    <link href="http://crohr.me/journal/2012/cubism-js.html"/>
-   <updated>2012-04-25T00:00:00+02:00</updated>
+   <updated>2012-04-25T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/cubism-js</id>
    <content type="html">&lt;a href='http://square.github.com/cubism/'&gt;Cubism.js&lt;/a&gt;
 &lt;p&gt;A D3.js plugin for visualizing time series. By the Square guys (again).&lt;/p&gt;</content>
@@ -878,7 +878,7 @@
  <entry>
    <title>Startups, this is how design works</title>
    <link href="http://crohr.me/journal/2012/startups-this-is-how-design-works.html"/>
-   <updated>2012-04-24T00:00:00+02:00</updated>
+   <updated>2012-04-24T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/startups-this-is-how-design-works</id>
    <content type="html">&lt;a href='http://startupsthisishowdesignworks.com/'&gt;Startups, this is how design works&lt;/a&gt;</content>
  </entry>
@@ -886,7 +886,7 @@
  <entry>
    <title>Amber, Smalltalk brought to the web</title>
    <link href="http://crohr.me/journal/2012/amber-smalltalk-brought-to-the-web.html"/>
-   <updated>2012-04-19T00:00:00+02:00</updated>
+   <updated>2012-04-19T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/amber-smalltalk-brought-to-the-web</id>
    <content type="html">&lt;a href='http://amber-lang.net'&gt;Amber, Smalltalk brought to the web&lt;/a&gt;</content>
  </entry>
@@ -894,7 +894,7 @@
  <entry>
    <title>What's next for HTTP</title>
    <link href="http://crohr.me/journal/2012/what-s-next-for-http.html"/>
-   <updated>2012-04-05T00:00:00+02:00</updated>
+   <updated>2012-04-05T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/what-s-next-for-http</id>
    <content type="html">&lt;p&gt;Mark Nottingham, about HTTP/1.1:&lt;/p&gt;
 
@@ -914,7 +914,7 @@
  <entry>
    <title>Stamen maps</title>
    <link href="http://crohr.me/journal/2012/stamen-maps.html"/>
-   <updated>2012-04-05T00:00:00+02:00</updated>
+   <updated>2012-04-05T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/stamen-maps</id>
    <content type="html">&lt;img src='/images/posts/27.media.tumblr.com/tumblr_m1zw03MaGg1r4ghsio1_1280.png' width='100%' /&gt;
 &lt;p&gt;Three cool map tile sets from &lt;a href='http://maps.stamen.com'&gt;Stamen&lt;/a&gt;&lt;/p&gt;
@@ -925,7 +925,7 @@
  <entry>
    <title>Speaking of maps: a wind map</title>
    <link href="http://crohr.me/journal/2012/speaking-of-maps-a-wind-map.html"/>
-   <updated>2012-04-05T00:00:00+02:00</updated>
+   <updated>2012-04-05T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/speaking-of-maps-a-wind-map</id>
    <content type="html">&lt;img src='/images/posts/29.media.tumblr.com/tumblr_m1zwo791wY1r4ghsio1_1280.png' width='100%' /&gt;
 &lt;p&gt;Speaking of maps: a wind map&lt;/p&gt;</content>
@@ -934,7 +934,7 @@
  <entry>
    <title>Github Watchlist - A personal search engine for your watched repositories</title>
    <link href="http://crohr.me/journal/2012/github-watchlist-a-personal-search-engine-for-your-watched-repositories.html"/>
-   <updated>2012-04-05T00:00:00+02:00</updated>
+   <updated>2012-04-05T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2012/github-watchlist-a-personal-search-engine-for-your-watched-repositories</id>
    <content type="html">&lt;p&gt;I created this because I find the Github search engine to be mostly useless. Sometimes I know I favorited (watched) a project, but can&amp;#8217;t remember the name. And it seems like Github&amp;#8217;s engine does not search into the READMEs, only the project&amp;#8217;s descriptions (at their scale, I guess they have good reasons to do this?). Which leads to average results (at least in my case).&lt;/p&gt;
 
@@ -946,7 +946,7 @@
  <entry>
    <title>Tesseract - Fast Multidimensional Filtering for Coordinated Views.</title>
    <link href="http://crohr.me/journal/2012/tesseract-fast-multidimensional-filtering-for-coordinated-views.html"/>
-   <updated>2012-03-19T00:00:00+01:00</updated>
+   <updated>2012-03-19T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/tesseract-fast-multidimensional-filtering-for-coordinated-views</id>
    <content type="html">&lt;img src='/images/posts/24.media.tumblr.com/tumblr_m155vxlqP91r4ghsio1_1280.png' width='100%' /&gt;
 &lt;p&gt;Tesseract - Fast Multidimensional Filtering for Coordinated Views.&lt;/p&gt;
@@ -957,7 +957,7 @@
  <entry>
    <title>Heroku for Java</title>
    <link href="http://crohr.me/journal/2012/heroku-for-java.html"/>
-   <updated>2012-03-16T00:00:00+01:00</updated>
+   <updated>2012-03-16T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/heroku-for-java</id>
    <content type="html">&lt;a href='http://blog.heroku.com/archives/2011/8/25/java/'&gt;Heroku for Java&lt;/a&gt;
 &lt;blockquote&gt;
@@ -972,7 +972,7 @@
  <entry>
    <title>google-diff-match-patch</title>
    <link href="http://crohr.me/journal/2012/google-diff-match-patch.html"/>
-   <updated>2012-03-15T00:00:00+01:00</updated>
+   <updated>2012-03-15T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/google-diff-match-patch</id>
    <content type="html">&lt;a href='http://code.google.com/p/google-diff-match-patch/'&gt;google-diff-match-patch&lt;/a&gt;
 &lt;p&gt;Diff, Match and Patch libraries for Plain Text. Available in Javascript, among other languages :)&lt;/p&gt;</content>
@@ -981,7 +981,7 @@
  <entry>
    <title>Why James Whittaker Left Google</title>
    <link href="http://crohr.me/journal/2012/why-james-whittaker-left-google.html"/>
-   <updated>2012-03-14T00:00:00+01:00</updated>
+   <updated>2012-03-14T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/why-james-whittaker-left-google</id>
    <content type="html">&lt;a href='http://blogs.msdn.com/b/jw_on_tech/archive/2012/03/13/why-i-left-google.aspx'&gt;Why James Whittaker Left Google&lt;/a&gt;
 &lt;blockquote&gt;
@@ -1000,7 +1000,7 @@
  <entry>
    <title>Submarine Cable Map</title>
    <link href="http://crohr.me/journal/2012/submarine-cable-map.html"/>
-   <updated>2012-02-29T00:00:00+01:00</updated>
+   <updated>2012-02-29T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/submarine-cable-map</id>
    <content type="html">&lt;img src='/images/posts/26.media.tumblr.com/tumblr_m05b0bnk8b1r4ghsio1_1280.png' width='100%' /&gt;
 &lt;p&gt;&lt;a href='http://www.submarinecablemap.com/'&gt;Submarine Cable Map&lt;/a&gt;&lt;/p&gt;</content>
@@ -1009,7 +1009,7 @@
  <entry>
    <title>REST 101</title>
    <link href="http://crohr.me/journal/2012/rest-101.html"/>
-   <updated>2012-02-28T00:00:00+01:00</updated>
+   <updated>2012-02-28T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/rest-101</id>
    <content type="html">&lt;a href='http://publish.luisrei.com/rest.html'&gt;REST 101&lt;/a&gt;
 &lt;p&gt;Quick start guide for designing RESTful Web APIs.&lt;/p&gt;</content>
@@ -1018,7 +1018,7 @@
  <entry>
    <title>HTTP Statuses</title>
    <link href="http://crohr.me/journal/2012/http-statuses.html"/>
-   <updated>2012-02-28T00:00:00+01:00</updated>
+   <updated>2012-02-28T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/http-statuses</id>
    <content type="html">&lt;a href='http://httpstatus.es/'&gt;HTTP Statuses&lt;/a&gt;
 &lt;p&gt;Database of HTTP status codes with their IETF and Wikipedia descriptions.&lt;/p&gt;</content>
@@ -1027,7 +1027,7 @@
  <entry>
    <title>Inventing on Principle</title>
    <link href="http://crohr.me/journal/2012/inventing-on-principle.html"/>
-   <updated>2012-02-27T00:00:00+01:00</updated>
+   <updated>2012-02-27T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/inventing-on-principle</id>
    <content type="html">&lt;p&gt;&lt;em&gt;Inventing on Principle&lt;/em&gt;, by &lt;a href='http://worrydream.com/'&gt;Bret Victor&lt;/a&gt; - Really great talk and demos about the importance of visualization tools for creating and understanding things.&lt;/p&gt;
 &lt;iframe allowFullScreen='allowFullScreen' frameborder='0' height='300' src='http://player.vimeo.com/video/36579366?color=ffffff' webkitAllowFullScreen='webkitAllowFullScreen' width='100%'&gt;&amp;nbsp;&lt;/iframe&gt;</content>
@@ -1036,7 +1036,7 @@
  <entry>
    <title>* { box-sizing: border-box } FTW</title>
    <link href="http://crohr.me/journal/2012/-box-sizing-border-box-ftw.html"/>
-   <updated>2012-02-17T00:00:00+01:00</updated>
+   <updated>2012-02-17T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/-box-sizing-border-box-ftw</id>
    <content type="html">&lt;a href='http://paulirish.com/2012/box-sizing-border-box-ftw/'&gt;* { box-sizing: border-box } FTW&lt;/a&gt;
 &lt;p&gt;&lt;a href='http://paulirish.com/2012/box-sizing-border-box-ftw/'&gt;Paul Irish&lt;/a&gt;:&lt;/p&gt;
@@ -1056,7 +1056,7 @@
  <entry>
    <title>SaaS Fatigue</title>
    <link href="http://crohr.me/journal/2012/saas-fatigue.html"/>
-   <updated>2012-02-13T00:00:00+01:00</updated>
+   <updated>2012-02-13T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/saas-fatigue</id>
    <content type="html">&lt;a href='http://sachagreif.com/saas-fatigue/'&gt;SaaS Fatigue&lt;/a&gt;
 &lt;p&gt;Sacha Greif:&lt;/p&gt;
@@ -1075,7 +1075,7 @@
  <entry>
    <title>Staying up with Node.JS</title>
    <link href="http://crohr.me/journal/2012/staying-up-with-node-js.html"/>
-   <updated>2012-01-31T00:00:00+01:00</updated>
+   <updated>2012-01-31T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/staying-up-with-node-js</id>
    <content type="html">&lt;a href='http://www.devthought.com/2012/01/29/staying-up-with-node-js/'&gt;Staying up with Node.JS&lt;/a&gt;
 &lt;p&gt;Zero-downtime reloads for Node.JS apps. The &lt;a href='https://github.com/LearnBoost/up#readme'&gt;strategy&lt;/a&gt; is quite similar to the &lt;a href='http://unicorn.bogomips.org/SIGNALS.html'&gt;Unicorn&lt;/a&gt; Ruby HTTP server.&lt;/p&gt;</content>
@@ -1084,7 +1084,7 @@
  <entry>
    <title>MongoDB Indexing in Practice</title>
    <link href="http://crohr.me/journal/2012/mongodb-indexing-in-practice.html"/>
-   <updated>2012-01-27T00:00:00+01:00</updated>
+   <updated>2012-01-27T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/mongodb-indexing-in-practice</id>
    <content type="html">&lt;a href='http://www.cloudcomputingdevelopment.net/mongodb-indexing-in-practice/'&gt;MongoDB Indexing in Practice&lt;/a&gt;
 &lt;blockquote&gt;
@@ -1097,7 +1097,7 @@
  <entry>
    <title>Fun with math</title>
    <link href="http://crohr.me/journal/2012/fun-with-math.html"/>
-   <updated>2012-01-27T00:00:00+01:00</updated>
+   <updated>2012-01-27T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/fun-with-math</id>
    <content type="html">&lt;a href=&quot;http://www.iheartchaos.com/post/16393143676/fun-with-math-dividing-one-by-998001-yields-a&quot;&gt;Fun with math: Dividing one by 998001 yields a surprising result&lt;/a&gt;
 
@@ -1112,7 +1112,7 @@
  <entry>
    <title>Lorempixel</title>
    <link href="http://crohr.me/journal/2012/lorempixel.html"/>
-   <updated>2012-01-23T00:00:00+01:00</updated>
+   <updated>2012-01-23T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/lorempixel</id>
    <content type="html">&lt;a href='http://lorempixel.com'&gt;Lorempixel&lt;/a&gt;
 &lt;blockquote&gt;
@@ -1125,7 +1125,7 @@
  <entry>
    <title>HTML5 please</title>
    <link href="http://crohr.me/journal/2012/html5-please.html"/>
-   <updated>2012-01-23T00:00:00+01:00</updated>
+   <updated>2012-01-23T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/html5-please</id>
    <content type="html">&lt;a href='http://html5please.us/'&gt;HTML5 please&lt;/a&gt;
 &lt;blockquote&gt;
@@ -1136,7 +1136,7 @@
  <entry>
    <title>Design and Premature Optimization</title>
    <link href="http://crohr.me/journal/2012/design-and-premature-optimization.html"/>
-   <updated>2012-01-20T00:00:00+01:00</updated>
+   <updated>2012-01-20T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/design-and-premature-optimization</id>
    <content type="html">&lt;a href='http://blog.intercom.io/design-and-premature-optimization/'&gt;Design and Premature Optimization&lt;/a&gt;
 &lt;blockquote&gt;
@@ -1149,7 +1149,7 @@
  <entry>
    <title>Fuzzy match in Ruby</title>
    <link href="http://crohr.me/journal/2012/fuzzy-match-in-ruby.html"/>
-   <updated>2012-01-19T00:00:00+01:00</updated>
+   <updated>2012-01-19T00:00:00+00:00</updated>
    <id>http://crohr.me/journal/2012/fuzzy-match-in-ruby</id>
    <content type="html">&lt;a href='http://numbers.brighterplanet.com/2012/01/18/fuzzy-match-in-ruby'&gt;Fuzzy match in Ruby&lt;/a&gt;
 &lt;p&gt;A library that could be useful for easier cross-referencing of data in public sources such as http://www.data.gouv.fr/, which is full of CSV files with no clear relationship between them.&lt;/p&gt;</content>
