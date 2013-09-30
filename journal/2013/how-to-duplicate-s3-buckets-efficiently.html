@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <title>Tesseract - Fast Multidimensional Filtering for Coordinated Views.</title>
+  <title>How to duplicate S3 buckets efficiently</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ruby and RubyOnRails developer living in Rennes, France. I offer various consulting services such as new developments, legacy application maintenance and migration, training, and cloud computing consulting.">
@@ -61,27 +61,22 @@
     <div class="span12">
       <a name="top"></a>
       <header>
-  <h1>Tesseract - Fast Multidimensional Filtering for Coordinated Views.</h1>
+  <h1>How to duplicate S3 buckets efficiently</h1>
 </header>
 <hr class="large" />
 <div class="article-date">
   
-    <a class="tag" href="/tags/#visualization">visualization</a>
+    <a class="tag" href="/tags/#s3">s3</a>
   
-    <a class="tag" href="/tags/#d3.js">d3.js</a>
+    <a class="tag" href="/tags/#devops">devops</a>
   
-    <a class="tag" href="/tags/#filtering">filtering</a>
-  
-    <a class="tag" href="/tags/#ui">ui</a>
-  
-  &nbsp;&nbsp;19 Mar 2012
+  &nbsp;&nbsp;30 Sep 2013
 </div>
 
 <div id="post">
-  <img src='/images/posts/24.media.tumblr.com/tumblr_m155vxlqP91r4ghsio1_1280.png' width='100%' />
-<p>Tesseract - Fast Multidimensional Filtering for Coordinated Views.</p>
+  <p>Let&#8217;s say you want to duplicate a fairly large S3 bucket (for instance you want to make sure your staging bucket is in sync with your production bucket), but doing so with s3cmd takes forever, as well as going through the console UI (see <a href='http://stackoverflow.com/questions/4663016/faster-s3-bucket-duplication'>this stackoverflow post</a>).</p>
 
-<p>Fast is the important word here. Built on the always awesome <a href='http://mbostock.github.com/d3/'>D3.js</a> library.</p>
+<p>Solution: use <a href='https://github.com/cobbzilla/s3s3mirror'>s3s3mirror</a>, which is a highly concurrent tool targeted at just this exact use case. Note that it won&#8217;t copy the object if it already exists and has the same ETag, and it also copies the object metadata and ACL lists. Perfect!</p>
 </div>
 
 
@@ -89,12 +84,10 @@
   <div class="clear">&nbsp;</div> 
   <div class="left"> 
    
-      <a href="/journal/2012/heroku-for-java.html" title="Previous Post: Heroku for Java" class="btn btn-small"><i class="icon-caret-left"></i> Heroku for Java</a> 
+      <a href="/journal/2013/docker-repository-create-base-boxes.html" title="Previous Post: How to build and publish base boxes for Docker?" class="btn btn-small"><i class="icon-caret-left"></i> How to build and publish base boxes for Docker?</a> 
    
   </div> 
   <div class="right"> 
-   
-          <a href="/journal/2012/github-watchlist-a-personal-search-engine-for-your-watched-repositories.html" title="next Post: Github Watchlist - A personal search engine for your watched repositories" class="btn btn-small">Github Watchlist - A personal search engine for your watched repositories <i class="icon-caret-right"></i></a> 
    
   </div> 
   <div class="clear">&nbsp;</div> 
@@ -104,11 +97,11 @@
   <p>Related posts</p>
   <ul class="posts">
     
-      <li><span class="date">30 Sep 2013</span> &raquo; <a href="/journal/2013/how-to-duplicate-s3-buckets-efficiently.html">How to duplicate S3 buckets efficiently</a></li>
-    
       <li><span class="date">24 May 2013</span> &raquo; <a href="/journal/2013/docker-repository-create-base-boxes.html">How to build and publish base boxes for Docker?</a></li>
     
       <li><span class="date">17 Mar 2013</span> &raquo; <a href="/journal/2013/ebarnouflant-007.html">Ebarnouflant #007</a></li>
+    
+      <li><span class="date">24 Feb 2013</span> &raquo; <a href="/journal/2013/ebarnouflant-006.html">Ebarnouflant #006</a></li>
     
   </ul>
 </div> -->
@@ -116,8 +109,8 @@
 <div id="disqus_thread" style="margin-top: 3em"></div>
 <script type="text/javascript">
     var disqus_shortname = 'crohr';
-    var disqus_identifier = '/journal/2012/tesseract-fast-multidimensional-filtering-for-coordinated-views';
-    var disqus_url = 'http://crohr.me/journal/2012/tesseract-fast-multidimensional-filtering-for-coordinated-views.html';
+    var disqus_identifier = '/journal/2013/how-to-duplicate-s3-buckets-efficiently';
+    var disqus_url = 'http://crohr.me/journal/2013/how-to-duplicate-s3-buckets-efficiently.html';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
