@@ -1,19 +1,28 @@
 # Cyril Rohr
 
+Freelance developer and consultant, specializing in distributed RESTful architectures, Ruby & Node.js development, and DevOps consulting. I can make your software development process more reliable, and improve your tooling to deliver high quality software. You can see my recommendations on LinkedIn (<http://www.linkedin.com/in/cyrilrohr>), and my code on Github (<https://github.com/crohr>).
+
+<!--
 Ruby & RubyOnRails developer. Interested in information retrieval,
 machine learning techniques, distributed software architectures, cloud
 computing, REST and HTTP APIs, and web development in general.
+-->
 
 Website: <http://crohr.me> | Phone: +33-6-33-85-83-32 | Skype: cyril.rohr
 
 ## Work Experience
 
-* Since 2012: working as a freelance. Clients include: Dimelo SA (Paris,
-  France), REVERB (Vancouver, Canada).
+* Since 2012: Working as a Ruby & Rails freelance developer, and doing DevOps consulting. Clients include:
+
+    * **NOWFASHION** (2 months) - Redeveloped website in two weeks, in time for the Fashion weeks, after it was delayed for more than a year by an outsourced team.
+    * **Dexem SA** (8 months) - Improved the development process of the team: new bug tracker, switch from SVN to Git, addition of unit, integration, and acceptance tests to the main application (IVR management), installation of a Jenkins server for continuous integration and deployment. Migration of
+legacy Rails apps (Rails2.0.2, Ruby1.8.6) to more recent versions of Rails and Ruby. *Ruby 1.8.6/1.8.7/1.9.3, Rails 2.0.2/2.3.x/3.x, MySQL, jQuery, Bootstrap, RSpec, Capybara, Selenium, Vagrant, Puppet, Jenkins*.
+    * **ReverbHQ** (3 months) - Developed a shopping website for one of the main school photographers in Canada (thousands of clients). *Ruby, Rails 3.x, PostgreSQL, jQuery, Resque, ImageMagick*.
+    * **Dimelo SA** (1.5 month) - Implemented the Badgeville gamification features for an in-house CRM tool, comprising of three different interconnected apps. *Ruby, Rails 2.3.x, MySQL, jQuery, Badgeville API*.
 
 * 2008-2012: Research engineer at Inria (<http://inria.fr>) in Rennes,
-  France. Worked on RESTful API design, User Interface design (jQuery),
-  Ruby backends (RubyOnRails/Sinatra), and client tools development for
+  France. Worked on RESTful API design, User Interface design (*jQuery*),
+  Ruby backends (*RubyOnRails/Sinatra*), and client tools development for
   Grid'5000 and BonFIRE. Grid'5000 is the leading research platform in
   parallel and distributed systems in France and Europe. BonFIRE is a
   European project aimed at building a federation of cloud computing
@@ -27,6 +36,7 @@ Website: <http://crohr.me> | Phone: +33-6-33-85-83-32 | Skype: cyril.rohr
   automatic segmentation, indexing, and content-based retrieval of
   digital video. Published two articles.
 
+<!--
 * 2007: Three-months internship as a software developer at the Kalistick
   startup (<http://kalistick.fr>) in Lyon, France. Helped building a
   software to drive quality and best practices in Java software
@@ -36,6 +46,7 @@ Website: <http://crohr.me> | Phone: +33-6-33-85-83-32 | Skype: cyril.rohr
 * 2006: Two-months internship as a developer in a small business in
   Lyon, France. Built a customer management and invoicing tool in
   PHP/MySQL/HTML.
+-->
 
 ## Education
 
