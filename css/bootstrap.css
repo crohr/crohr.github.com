@@ -2322,9 +2322,6 @@ input[type="submit"].btn.btn-mini {
 .icon-th-list {
   background-position: -264px 0;
 }
-.icon-ok {
-  background-position: -288px 0;
-}
 .icon-remove {
   background-position: -312px 0;
 }
@@ -2354,9 +2351,6 @@ input[type="submit"].btn.btn-mini {
 }
 .icon-time {
   background-position: -48px -24px;
-}
-.icon-road {
-  background-position: -72px -24px;
 }
 .icon-download-alt {
   background-position: -96px -24px;
