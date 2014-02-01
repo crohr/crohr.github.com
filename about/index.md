@@ -1,111 +1,97 @@
 ---
 layout: page
-title: About me
+title: Cyril Rohr - CV / About me
 tab: about
 ---
 
-{% include about.md %}
+Freelance developer, specializing in distributed RESTful architectures, Ruby & Node.js development (both frontend and backend), and DevOps consulting. I can make your software development process more reliable, and improve your tooling to deliver high quality software. You can see my recommendations on LinkedIn (<http://www.linkedin.com/in/cyrilrohr>), and my code on Github (<https://github.com/crohr>).
+
+Website: <http://crohr.me> | Skype: cyril.rohr
 
 ## Work Experience
 
-### Freelance
+* Since 2012: Working as a Ruby & Rails freelance developer, and doing DevOps consulting. Clients include:
 
-Working independently since April 2012.
+    * **NOWFASHION** - Finished/Restarted the development of central features of the website (Rails4) in two weeks, in time for the Fashion Week events, after it was delayed for more than a year by an outsourced team. Real-time updates (WebSockets / Pusher), simplified administration (ActiveAdmin), batch upload and photo processing (Sidekiq), hosted on Amazon EC2 and S3.
 
-### INRIA - National Research Institute
+    * **Groupe ACP** - 2 weeks training of a technical drawer to use the [Sketch'Up Ruby API](http://www.sketchup.com/intl/en/developer/) to automate common tasks in construction design.
 
-From Oct. 2008 to Mar. 2012, I worked as a R&amp;D Engineer at the
-[INRIA](http://www.inria.fr/) national research institute in Rennes, France.
+    * **Dexem SA** (8 months) - Improved the development process of the team: new bug tracker, switch from SVN to Git, addition of unit, integration, and acceptance tests to the main application (IVR management), installation of a Jenkins server for continuous integration and deployment. Migration of
+legacy Rails apps (Rails2.0.2, Ruby1.8.6) to more recent versions of Rails and Ruby. *Ruby 1.8.6/1.8.7/1.9.3, Rails 2.0.2/2.3.x/3.x, MySQL, jQuery, Bootstrap, RSpec, Capybara, Selenium, Vagrant, Puppet, Jenkins*.
 
-I originally started to work on the [Grid'5000](http://www.grid5000.fr/)
-project, an infrastructure distributed in 9 sites around France for research
-in large-scale parallel and distributed systems. In Aug. 2010 I also joined
-the EU founded [BonFIRE](http://bonfire-project.eu/) project to work on a
-multi-site cloud facility.
+    * **ReverbHQ** (3 months) - Developed a shopping website for one of the main school photographers in Canada (thousands of clients). *Ruby, Rails 3.x, PostgreSQL, jQuery, Resque, ImageMagick*.
 
-I was mainly in charge of designing, implementing and operating a distributed
-software architecture based on RESTful APIs. I also built web interfaces and
-visualizations using standard and lightweight technologies such as HTML5,
-Javascript, CSS.
+    * **Dimelo SA** (1.5 month) - Implemented the Badgeville gamification features for an in-house CRM tool, comprising of three different interconnected apps. *Ruby, Rails 2.3.x, MySQL, jQuery, Badgeville API*.
 
-My day-to-day work usually involved me writing code using a mix of Ruby,
-Javascript, HTML and CSS; pushing and pulling with Git; messing with DEB and
-RPM packages; cooking some Puppet recipes to configure and deploy two dozens
-of servers; and trying to bend big-old Apache and Squid to my will.
+* 2008-2012: Research engineer at Inria (<http://inria.fr>) in Rennes,
+  France. Worked on RESTful API design, User Interface design (*jQuery*, *jQuery Mobile*, *d3.js*),
+  Ruby backends (*RubyOnRails/Sinatra*), and client tools development for
+  Grid'5000 and BonFIRE cloud APIs. Contributed major parts of the technical documentation. Grid'5000 is the leading research platform in
+  parallel and distributed systems in France and Europe. BonFIRE is a
+  European project aimed at building a federation of cloud computing
+  providers over Europe. <br><br>You can see screencasts of my work [**here**](https://vimeo.com/36507035) and [**here**](https://vimeo.com/39257324).
 
-### Queensland University of Technology
+* 2008: Six-months research project at the Queensland University of
+  Technology in Brisbane, Australia. Worked on cross-media summarization
+  and video processing. Built a working prototype of a news aggregation
+  engine (text, images, videos), and participated in the TrecVID
+  (<http://trecvid.nist.gov/>) challenge, devoted to research in
+  automatic segmentation, indexing, and content-based retrieval of
+  digital video. Published two articles.
 
-From Jan. to Jul. 2008, I was a Research Intern at the [Queensland Institute
-of Technology](http://qut.edu.au/) in Brisbane, Australia, where I worked on
-Cross-Media summarization and Video processing.
+<!--
+* 2007: Three-months internship as a software developer at the Kalistick
+  startup (<http://kalistick.fr>) in Lyon, France. Helped building a
+  software to drive quality and best practices in Java software
+  developments using code analyzers, rules engines, and business
+  intelligence tools.
 
-My research project consisted in designing and building a solution to crawl,
-index and process media content (text, videos and images) from hundreds of
-online news sources to provide an aggregated view of the day-to-day news
-information flow. A (then) innovative browser-based interface was also built
-for browsing and filtering the resulting news events (see
-[Publications](#publications)).
-
-I also participated in the international [TRECVid](http://trecvid.nist.gov/)
-workshop sponsored by the National Institute of Standards and Technology
-([NIST](http://www.nist.gov/)), devoted to research in automatic segmentation,
-indexing, and content-based retrieval of digital video (see
-[Publications](#publications)).
-
-### Kalistick - Startup
-
-In 2007, I worked for 3 months as a Software Engineer Intern for the
-[Kalistick](http://kalistick.com/) startup (*Agile quality for continuous
-delivery*) in Lyon, France.
-
-This internship brought me a lot of knowledge about software quality, testing,
-and best-practices. I mainly worked with Java, code analyzers, rules engines
-and business intelligence tools.
-
-### Les Bains de l'Opéra - Small business
-
-In 2006, I worked for 2 months as a Software Developer Intern for [Les Bains
-de l'Opéra](http://lesbainsdelopera.com/) in Lyon, France, where I developed a
-web intranet application to replace their invoicing and customer management
-tool. At that time, I mainly worked with PHP5, HTML and what was called AJAX.
+* 2006: Two-months internship as a developer in a small business in
+  Lyon, France. Built a customer management and invoicing tool in
+  PHP/MySQL/HTML.
+-->
 
 ## Education
 
-In 2008, I obtained my MSc in Computer Science with high honours from the
-*Institut National des Sciences Appliquées* ([INSA] [insa]), a French
-engineering [*Grande École*] [grande-ecole] in Lyon, France.
+* 2008: Received a MSc in Computer Science with high honours from the
+  *Institut National des Sciences Appliquées* (<http://insa-lyon.fr/>)
+  in Lyon, France. Final year of education at the *Queensland University
+  of Technology* (<http://qut.edu.au>) in Brisbane, Australia.
 
-I had a great time doing my final year of education and a bit of research at
-the *Queensland University of Technology* ([QUT] [qut]) in Brisbane,
-Australia.
+## Main skills
 
-[insa]: http://www.insa-lyon.fr/
-[grande-ecole]: http://en.wikipedia.org/wiki/Grandes_%C3%A9coles
-[qut]: http://qut.edu.au
+* Programming languages: Ruby, Javascript (CoffeeScript, Node.js), Java, PHP.
+* Backend: Ruby on Rails (2.x,3.x,4.x), Express.js.
+* Frontend: HTML, CSS (SASS, SCSS), jQuery (jQuery-UI, jQuery-Mobile).
+* Databases: MySQL, LDAP, Redis, CouchDB, Sqlite, Postgres.
+* Deployment & Configuration: Puppet, Capistrano, Debian packaging.
+* Testing: RSpec, Capybara, Selenium.
+* Cloud computing: Amazon Web Services (EC2, S3, ElasticLoadBalancing), Heroku, OpenNebula.
+* Monitoring: Ganglia, Zabbix.
+* HTTP & related: Apache, NginX, HAProxy, Squid, Public key infrastructures, OAuth.
+* UNIX/GNU Linux: bash, SSH, vim, Git, SVN.
+* Machine learning: clustering, classification, rules engines.
 
 ## Publications
 
 I had a brief but fulfilling research experience during the last 6 months of
-my education. Below are the two articles I (co)-authored:
+my education. Below are some of the articles I (co)-authored:
 
-* **Cyril Rohr** and Dian Tjondronegoro. 2008. [*Aggregated cross-media news
-  visualization and
-  personalization*](http://portal.acm.org/citation.cfm?id=1460157). In
-  Proceeding of the 1st ACM international conference on Multimedia information
-  retrieval (MIR '08). ACM, New York, NY, USA, 371-378.
+* Eugen Feller, **Cyril Rohr**, David Margery, and Christine Morin.
+  *Energy Management in IaaS Clouds: A Holistic Approach*. The 5th IEEE
+  International Conference on Cloud Computing (CLOUD), Honolulu, Hawaii,
+  USA, June 2012.
 
-* Johannes Sasongko, **Cyril Rohr**, and Dian Tjondronegoro. 2008. [*Efficient
-  generation of pleasant video
-  summaries*](http://portal.acm.org/citation.cfm?id=1463563.1463585). In
-  Proceedings of the 2nd ACM TRECVid Video Summarization Workshop (TVS '08).
-  ACM, New York, NY, USA, 119-123.
+* **Cyril Rohr** and Dian Tjondronegoro. 2008. Aggregated cross-media
+  news visualization and personalization. In Proceeding of the 1st ACM
+  international conference on Multimedia information retrieval (MIR
+  '08). ACM, New York, NY, USA, 371-378.
 
-And below is an article I co-authored while at Inria:
+* Johannes Sasongko, **Cyril Rohr**, and Dian Tjondronegoro. 2008.
+  Efficient generation of pleasant video summaries. In Proceedings of
+  the 2nd ACM TRECVid Video Summarization Workshop (TVS '08). ACM, New
+  York, NY, USA, 119-123.
 
-* Eugen Feller, **Cyril Rohr**, David Margery, and Christine Morin. *Energy
-  Management in IaaS Clouds: A Holistic Approach*. The 5th IEEE International
-  Conference on Cloud Computing (CLOUD), Honolulu, Hawaii, USA, June 2012.
-  
 ## Code
 
 Here is some software I've written in my spare time or that my previous
