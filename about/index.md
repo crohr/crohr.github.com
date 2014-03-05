@@ -16,7 +16,7 @@ Website: <http://crohr.me> | Email: <contact@crohr.me> | Skype: cyril.rohr
 
     * **NowFashion** - Finished/Restarted the development of central features of the website (Rails4) in two weeks, in time for the Fashion Week events, after it was delayed for more than a year by an outsourced team. Real-time updates (WebSockets / Pusher), simplified administration (ActiveAdmin), batch upload and photo processing (Sidekiq), hosted on Amazon EC2 and S3.
 
-    * **Dexem SA** (8 months) - Design and implementation of new features on RubyOnRails projects. Improved the development process of the team: new bug tracker, switch from SVN to Git, addition of unit, integration, and acceptance tests to the main application (IVR management), installation of a Jenkins server for continuous integration and deployment. Migration of
+    * **Dexem SA** (8 months) - Designed and implementated new features for the company's RubyOnRails projects. Improved the development process of the team: new bug tracker, switch from SVN to Git, addition of unit, integration, and acceptance tests to the main application (IVR management), installation of a Jenkins server for continuous integration and deployment. Migration of
 legacy Rails apps (Rails2.0.2, Ruby1.8.6) to more recent versions of Rails and Ruby. *Ruby 1.8.6/1.8.7/1.9.3, Rails 2.0.2/2.3.x/3.x, MySQL, jQuery, Bootstrap, RSpec, Capybara, Selenium, Vagrant, Puppet, Jenkins*.
 
     * **ReverbHQ** (3 months) - Consulting work for various clients of the Agency. Developed a shopping website for one of the main school photographers in Canada (thousands of clients). *Ruby, Rails 3.x, PostgreSQL, jQuery, Resque, ImageMagick*.
@@ -25,17 +25,18 @@ legacy Rails apps (Rails2.0.2, Ruby1.8.6) to more recent versions of Rails and R
 
     * **Groupe ACP** - 2 weeks training of a technical drawer to use the [Sketch'Up Ruby API](http://www.sketchup.com/intl/en/developer/) to automate common tasks in construction design.
 
-* 2008-2012: Research engineer at **Inria** (<http://inria.fr>) in Rennes,
+* 2008-2012: Research engineer at **Inria** (<http://www.inria.fr>) in Rennes,
 France.
 
-    Worked on RESTful API design, User Interface design (*jQuery*, *jQuery
-Mobile*, *d3.js*), Core Ruby backends (*RubyOnRails/Sinatra*), Monitoring, Identity management and federation (LDAP), and client tool
+    Led the work on RESTful API design, User Interface design (*jQuery*, *jQuery
+Mobile*, *d3.js*), Core Ruby backends (*RubyOnRails/Sinatra*), user monitoring, identity management and federation (LDAP), and client tool
 developments for Grid'5000 and BonFIRE cloud APIs. Also contributed major parts of
 the user and technical documentation. Grid'5000 is the leading research platform in
 parallel and distributed systems in France and Europe. BonFIRE is a European
 project aimed at building a federation of cloud computing providers over
 Europe. <br><br>You can see screencasts of my work
-at <https://vimeo.com/36507035> and <https://vimeo.com/39257324>.
+at <https://vimeo.com/36507035> and
+<https://vimeo.com/39257324>.
 
 * 2008: Six-months research project at the **Queensland University of
   Technology** in Brisbane, Australia.
