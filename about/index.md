@@ -34,9 +34,7 @@ developments for Grid'5000 and BonFIRE cloud APIs. Also contributed major parts 
 the user and technical documentation. Grid'5000 is the leading research platform in
 parallel and distributed systems in France and Europe. BonFIRE is a European
 project aimed at building a federation of cloud computing providers over
-Europe. <br><br>You can see screencasts of my work
-at <https://vimeo.com/36507035> and
-<https://vimeo.com/39257324>.
+Europe. <br><br>You can see screencasts of my work at <https://vimeo.com/36507035> and <https://vimeo.com/39257324>.
 
 * 2008: Six-months research project at the **Queensland University of
   Technology** in Brisbane, Australia.
