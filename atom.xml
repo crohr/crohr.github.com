@@ -4,13 +4,304 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2014-03-05T12:03:39+00:00</updated>
+ <updated>2014-04-14T14:11:29+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>How to get a debian package out of your Rails app, and host it on S3</title>
+   <link href="http://crohr.me/journal/2014/how-to-get-a-debian-package-out-of-your-rails-app-and-host-it-on-s3.html"/>
+   <updated>2014-04-14T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2014/how-to-get-a-debian-package-out-of-your-rails-app-and-host-it-on-s3</id>
+   <content type="html">&lt;p&gt;Software packaging is a kind of a dark art for many people, due in most part to packaging manuals and &lt;a href='https://www.debian.org/doc/debian-policy/'&gt;policies&lt;/a&gt; that are hard to understand for the busy developer, but most importantly do not address well the needs of developers who want to package a full web app (i.e. with rapidly evolving libraries, latest runtime).&lt;/p&gt;
+
+&lt;p&gt;Today I want to introduce two tools, &lt;a href='https://github.com/crohr/pkgr'&gt;pkgr&lt;/a&gt; and &lt;a href='https://github.com/krobertson/deb-s3'&gt;deb-s3&lt;/a&gt;, which will allow you to respectively package a rails app, and host the resulting debian package on S3, all without the need to know about any of the debian packaging rules.&lt;/p&gt;
+
+&lt;h2 id='why_package_at_all'&gt;Why package at all?&lt;/h2&gt;
+
+&lt;p&gt;Packaging your app, as opposed to just sending tarballs or cloning git repos, has many advantages:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;easy distribution&lt;/strong&gt;: just add a new APT repository and you can fetch the app immediately.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;easy installation&lt;/strong&gt;: &lt;code&gt;apt-get install my-app&lt;/code&gt; and you&amp;#8217;re done.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;fast installation&lt;/strong&gt;: no need to compile anything on the server.&lt;/li&gt;
+
+&lt;li&gt;&lt;strong&gt;improved reliability&lt;/strong&gt;: if you&amp;#8217;ve tested that it works on one server, deploying to many servers is a no-brainer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Up until now, it was quite an undertaking to try packaging a Rails app all by yourself. You could use tools such as &lt;a href='https://github.com/jordansissel/fpm'&gt;FPM&lt;/a&gt; to generate your package and any dependencies your application requires, but the main goal of FPM is to abstract package managers, not necessarily simplify the packaging of a full app with many dependencies. Omnibus is another option, but then you basically embed a full OS into your package, and the recent &lt;a href='http://heartbleed.com'&gt;heartbleed&lt;/a&gt; vulnerability shows that it&amp;#8217;s probably not such a good idea. Also you still had to figure out how to host the packages.&lt;/p&gt;
+
+&lt;p&gt;So, let&amp;#8217;s start this tutorial with pkgr, the tool that will allow you to generate a debian package out of your app&lt;/p&gt;
+
+&lt;h2 id='prerequisites_get_hold_of_a_debianbased_vm'&gt;Prerequisites: get hold of a debian-based VM&lt;/h2&gt;
+
+&lt;p&gt;pkgr needs to be run on the system you build the package for. That means that if you want a package for Ubuntu 12.04 (Precise), go ahead and find a machine with that distribution. You could use Vagrant, docker, or just click on the following link to start an official Ubuntu 12.04 AMI on Amazon EC2: &lt;a href='https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-5db4a934'&gt;https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-5db4a934&lt;/a&gt; (list of available Ubuntu AMIs &lt;a href='http://uec-images.ubuntu.com/releases/precise/release/'&gt;here&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Then, setup the build VM:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get update
+$ sudo apt-get install -y build-essential rng-tools git ruby1.9.1-full rubygems1.9.1
+$ sudo gem install pkgr deb-s3 --no-ri --no-rdoc&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id='generating_a_debian_package_with_pkgr'&gt;Generating a debian package with pkgr&lt;/h2&gt;
+
+&lt;p&gt;pkgr is basically Heroku buildpacks + FPM + peripheral stuff (init scripts, cli, etc.). If you like the way you deploy apps on Heroku, you&amp;#8217;ll probably like packaging your app.&lt;/p&gt;
+
+&lt;h3 id='get_some_rails_app_to_package'&gt;Get some Rails app to package&lt;/h3&gt;
+
+&lt;p&gt;The example app we&amp;#8217;ll use is a blank Rails4 app, using postgres as the database. Note that you should be able to package any Ruby app (starting with Ruby1.8.7), with any type of database, gems, etc.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ mkdir ~/apps
+$ cd ~/apps
+$ git clone https://github.com/pkgr/rails4-example-app.git&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id='start_the_packaging_process'&gt;Start the packaging process&lt;/h3&gt;
+
+&lt;p&gt;Note: The &lt;code&gt;--auto&lt;/code&gt; option will try to automatically install missing build dependencies with &lt;code&gt;apt-get&lt;/code&gt;, which means it can take some time before you see the &lt;code&gt;-----&amp;gt; Ruby app&lt;/code&gt; line on a fresh build machine:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ pkgr package ~/apps/rails4-example-app --auto
+-----&amp;gt; Ruby app
+-----&amp;gt; Compiling Ruby/Rails
+-----&amp;gt; Using Ruby version: ruby-2.0.0
+-----&amp;gt; Installing dependencies using 1.5.2
+       Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+       Fetching gem metadata from https://rubygems.org/..........
+       Fetching additional metadata from https://rubygems.org/..
+       Installing minitest (5.3.2)
+       Installing i18n (0.6.9)
+       Installing rake (10.2.2)
+       Installing thread_safe (0.3.3)
+       Installing builder (3.2.2)
+       Installing mime-types (1.25.1)
+       Installing erubis (2.7.0)
+       Installing polyglot (0.3.4)
+       ...
+       Installing turbolinks (2.2.2)
+       Installing sass-rails (4.0.3)
+       Installing rails (4.1.0)
+       Installing pg (0.17.1)
+       Your bundle is complete!
+       Gems in the groups development and test were not installed.
+       It was installed into ./vendor/bundle
+       Post-install message from rdoc:
+       Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+       &amp;lt;= 1.8.6 : unsupported
+       = 1.8.7 : gem install rdoc-data; rdoc-data --install
+       = 1.9.1 : gem install rdoc-data; rdoc-data --install
+       &amp;gt;= 1.9.2 : nothing to do! Yay!
+       Bundle completed (92.63s)
+       Cleaning up the bundler cache.
+-----&amp;gt; Preparing app for Rails asset pipeline
+       Running: rake assets:precompile
+       I, [2014-04-14T09:57:53.391958 #18689]  INFO -- : Writing /tmp/d20140414-15482-1nlncju/opt/rails4-example-app/public/assets/application-59ffd4525232837e51088483ed301f44.js
+       I, [2014-04-14T09:57:53.624426 #18689]  INFO -- : Writing /tmp/d20140414-15482-1nlncju/opt/rails4-example-app/public/assets/application-9cc0575249625b8d8648563841072913.css
+       Asset precompilation completed (15.65s)
+       Cleaning assets
+       Running: rake assets:clean
+-----&amp;gt; WARNINGS:
+       Include &amp;#39;rails_12factor&amp;#39; gem to enable all platform features
+       See https://devcenter.heroku.com/articles/rails-integration-gems for more information.
+
+       You have not declared a Ruby version in your Gemfile.
+       To set your Ruby version add this line to your Gemfile:
+       ruby &amp;#39;2.0.0&amp;#39;
+       # See https://devcenter.heroku.com/articles/ruby-versions for more information.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, the tool detected that we had a Ruby app, fetched the corresponding Ruby version (2.0.0), and then installed all the required gems. If the process successfully ended, you should now have a &lt;code&gt;.deb&lt;/code&gt; file containing the result of that building process, in the directory from where you launched the &lt;code&gt;pkgr&lt;/code&gt; command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls -t
+rails4-example-app_0.0.0-20140414100914_amd64.deb  config.ru  log     vendor   Gemfile.lock
+bin                                                db         public  app      Rakefile
+config                                             lib        test    Gemfile  README.rdoc&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Please refer to the &lt;a href='https://github.com/crohr/pkgr'&gt;pkgr&lt;/a&gt; website to know more about the various options you can pass to the &lt;code&gt;package&lt;/code&gt; command. Also, further calls to the &lt;code&gt;package&lt;/code&gt; command will be much faster, since the result of the &lt;code&gt;bundle install&lt;/code&gt; runs are cached.&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;#8217;s release the newly generated package on S3!&lt;/p&gt;
+
+&lt;h2 id='host_your_newly_created_debian_package_on_s3'&gt;Host your newly created debian package on S3&lt;/h2&gt;
+
+&lt;h3 id='create_a_new_gpg_key'&gt;Create a new gpg key&lt;/h3&gt;
+
+&lt;p&gt;This will be used to sign the release file of your APT repository. If you don&amp;#8217;t already have a gpg key you want to use, then you can generate a new one by doing:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo rngd -r /dev/urandom # needed to generate enough entropy on remote servers
+$ gpg --gen-key # choose default options, enter a name and email address, and you can choose to keep the passphrase blank if you wish.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You should now have a new gpg secret key:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gpg --list-secret-keys
+/home/ubuntu/.gnupg/secring.gpg
+-------------------------------
+sec   2048R/CF0B4573 2014-04-14
+uid                  Cyril Rohr &amp;lt;hi@pkgr.io&amp;gt;
+ssb   2048R/7198E0E7 2014-04-14&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note the key ID (here: CF0B4573). Also, for all things related to gpg, this &lt;a href='http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/gpg-cs.html'&gt;cheatsheet&lt;/a&gt; can be useful.&lt;/p&gt;
+
+&lt;h3 id='upload_the_debian_package'&gt;Upload the debian package&lt;/h3&gt;
+
+&lt;p&gt;This part assumes that you have signed up for an Amazon AWS account, and that you have created a new S3 bucket to host your APT repository. We&amp;#8217;ll be using the &lt;code&gt;deb-s3&lt;/code&gt; tool to manage our APT repository on S3. The good thing about deb-s3 is that it does not need to keep the full repository in sync on the disk: it just updates the metadata files when you add a new package.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;#8217;s set up a few environment variables:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ export S3_BUCKET=&amp;quot;my-apt-bucket&amp;quot;
+$ export AWS_ACCESS_KEY=&amp;quot;key&amp;quot;
+$ export AWS_SECRET_KEY=&amp;quot;secret&amp;quot;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, upload your package:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ deb-s3 upload \
+  --bucket ${S3_BUCKET} \
+  --codename precise \
+  --component master \
+  --preserve-versions \
+  --visibility public \
+  --access-key-id &amp;quot;${AWS_ACCESS_KEY}&amp;quot; \
+  --secret-access-key &amp;quot;${AWS_SECRET_KEY}&amp;quot; \
+  --sign CF0B4573 \
+  ~/apps/rails4-example-app/rails4-example-app_0.0.0-20140414100914_amd64.deb
+&amp;gt;&amp;gt; Retrieving existing manifests
+&amp;gt;&amp;gt; Examining package file rails4-example-app_0.0.0-20140414100914_amd64.deb
+&amp;gt;&amp;gt; Uploading packages and new manifests to S3
+   -- Transferring pool/r/ra/rails4-example-app_0.0.0-20140414100914_amd64.deb
+   -- Transferring dists/precise/master/binary-amd64/Packages
+   -- Transferring dists/precise/master/binary-amd64/Packages.gz
+   -- Transferring dists/precise/master/binary-i386/Packages
+   -- Transferring dists/precise/master/binary-i386/Packages.gz
+   -- Transferring dists/precise/Release
+   -- Transferring dists/precise/Release.gpg
+&amp;gt;&amp;gt; Update complete.&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;#8217;s it, you now have a debian package hosted on S3!&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;#8217;s see how your users can install it, and launch the application.&lt;/p&gt;
+
+&lt;h2 id='install_the_package_from_the_newly_created_apt_repository'&gt;Install the package from the newly created APT repository&lt;/h2&gt;
+
+&lt;p&gt;Add a new entry to your list of APT repositories:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo &amp;quot;deb https://s3.amazonaws.com/my-apt-bucket precise master&amp;quot; | sudo tee /etc/apt/sources.list.d/my-repo.list&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Import the public gpg key (replace &lt;code&gt;CF0B4573&lt;/code&gt; with your key ID), so that APT knows about your signature:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gpg --export -a &amp;quot;CF0B4573&amp;quot; | sudo apt-key add -
+OK&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: In the real world, your public key would probably be hosted in your S3 bucket, and users would retrieve it like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ wget -qO - https://s3.amazonaws.com/my-apt-bucket/key | sudo apt-key add -&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, install the package:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get update
+$ sudo apt-get install -y rails4-example-app
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following extra packages will be installed:
+  libreadline5
+The following NEW packages will be installed:
+  libreadline5 rails4-example-app
+0 upgraded, 2 newly installed, 0 to remove and 26 not upgraded.
+Need to get 24.9 MB of archives.
+After this operation, 87.1 MB of additional disk space will be used.
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu/ precise/main libreadline5 amd64 5.2-11 [128 kB]
+Get:2 https://s3.amazonaws.com/my-apt-bucket/ precise/master rails4-example-app amd64 0.0.0-20140414100914 [24.8 MB]
+Fetched 24.9 MB in 2s (10.2 MB/s)
+Selecting previously unselected package libreadline5.
+(Reading database ... 72529 files and directories currently installed.)
+Unpacking libreadline5 (from .../libreadline5_5.2-11_amd64.deb) ...
+Selecting previously unselected package rails4-example-app.
+Unpacking rails4-example-app (from .../rails4-example-app_0.0.0-20140414100914_amd64.deb) ...
+Processing triggers for ureadahead ...
+Setting up libreadline5 (5.2-11) ...
+Setting up rails4-example-app (0.0.0-20140414100914) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pkgr installed the app files into &lt;code&gt;/opt/rails4-example-app&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls /opt/rails4-example-app/
+app  bin  config  config.ru  db  Gemfile  Gemfile.lock  lib  log  public  Rakefile  README.rdoc  test  tmp  vendor&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And it indeed uses Ruby 2.0.0:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo rails4-example-app run ruby -v
+ruby 2.0.0p451 (2014-02-24 revision 45167) [x86_64-linux]&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To finish the tutorial, let&amp;#8217;s get it up and running, by installing a postgres database, playing with the console, and starting a web daemon:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install -y postgresql-9.1
+$ echo &amp;quot;CREATE USER \&amp;quot;user\&amp;quot; PASSWORD &amp;#39;pass&amp;#39;;&amp;quot; | sudo su - postgres -c psql &amp;amp;&amp;amp; \
+  echo &amp;quot;CREATE DATABASE rails4_example_app;&amp;quot; | sudo su - postgres -c psql &amp;amp;&amp;amp; \
+  echo &amp;quot;GRANT ALL PRIVILEGES ON DATABASE \&amp;quot;rails4_example_app\&amp;quot; TO \&amp;quot;user\&amp;quot;;&amp;quot; | sudo su - postgres -c psql
+
+$ sudo rails4-example-app config:set DATABASE_URL=&amp;quot;postgres://user:pass@127.0.0.1/rails4_example_app&amp;quot;
+$ sudo rails4-example-app config:set SECRET_KEY_BASE=$(sudo rails4-example-app run rake secret)
+
+$ sudo rails4-example-app run console
+Loading production environment (Rails 4.1.0)
+irb(main):001:0&amp;gt; Rails::VERSION::STRING
+=&amp;gt; &amp;quot;4.1.0&amp;quot;
+
+$ sudo rails4-example-app scale web=1
+Scaling up...
+rails4-example-app-web-1 start/running, process 2030
+rails4-example-app-web start/running
+rails4-example-app start/running
+--&amp;gt; done.
+
+$ ps aux | grep ruby
+106       2030  0.1 11.5 349560 69896 ?        Ssl  11:17   0:02 ruby bin/rails server -p 6000 -e production&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Looks like everything is running fine, so &lt;code&gt;curl localhost:6000&lt;/code&gt; should give you the expected HTML output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl localhost:6000
+Hello from Rails4 Example App!&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Success!&lt;/p&gt;
+
+&lt;p&gt;If you want to access your app on port 80, you could set up a proxy directive in nginx:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install -y nginx
+$ sudo tee /etc/nginx/sites-available/default &amp;lt;&amp;lt;EOF
+server {
+  listen          80;
+  server_name     example.com;
+  location / {
+    proxy_pass      http://localhost:6000;
+  }
+}
+EOF
+$ sudo service nginx restart&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, &lt;code&gt;curl localhost:80&lt;/code&gt; or &lt;code&gt;curl hostname-of-the-machine:80&lt;/code&gt; should give you the same result.&lt;/p&gt;
+
+&lt;p&gt;You can also restart the Rails app using the provided init script:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo service rails4-example-app restart&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And should you need to do anything to finish setting up your app, arbitrary commands can be run (in the context of your app&amp;#8217;s Ruby version, gems, etc.) with the command line tool that was automatically generated by pkgr:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo rails4-example-app run rake db:migrate
+$ sudo rails4-example-app run rake -T&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;#8217;s it!&lt;/p&gt;
+
+&lt;h2 id='conclusion'&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As you can see from this tutorial, packaging a Rails app, and hosting the resulting package on S3, just became a lot easier with tools such as &lt;a href='https://github.com/crohr/pkgr'&gt;pkgr&lt;/a&gt; and &lt;a href='https://github.com/krobertson/deb-s3'&gt;deb-s3&lt;/a&gt;. pkgr can also be used to package NodeJS apps, and in the near future will be able to generate RPM packages as well.&lt;/p&gt;
+
+&lt;p&gt;If you like what you&amp;#8217;ve seen, but would like a bit more automation, please have a look at &lt;a href='https://pkgr.io'&gt;pkgr.io&lt;/a&gt;, the hosted service I created based on pkgr. You can enable a new project for packaging in one click, and it supports multiple targets.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading!&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>How to duplicate S3 buckets efficiently</title>
@@ -1141,19 +1432,6 @@
 &lt;blockquote&gt;
 &lt;p&gt;Use the new and shiny responsibly. Look up HTML5 features, know if they are ready for use, and if so find out you should use them – with polyfills, fallbacks or as they are.&lt;/p&gt;
 &lt;/blockquote&gt;</content>
- </entry>
- 
- <entry>
-   <title>Design and Premature Optimization</title>
-   <link href="http://crohr.me/journal/2012/design-and-premature-optimization.html"/>
-   <updated>2012-01-20T00:00:00+00:00</updated>
-   <id>http://crohr.me/journal/2012/design-and-premature-optimization</id>
-   <content type="html">&lt;a href='http://blog.intercom.io/design-and-premature-optimization/'&gt;Design and Premature Optimization&lt;/a&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Get the important stuff done first, the cool fun stuff can follow. It applies in all disciplines. Let’s see some examples.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Interesting to read a piece about premature optimization that is not only about software development.&lt;/p&gt;</content>
  </entry>
  
  
