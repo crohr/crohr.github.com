@@ -590,9 +590,6 @@ ol ol,
 ol ul {
   margin-bottom: 0;
 }
-li {
-  line-height: 20px;
-}
 ul.unstyled,
 ol.unstyled {
   margin-left: 0;

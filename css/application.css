@@ -3,6 +3,7 @@ body {
   padding-top: 20px;
   padding-bottom: 0px;
   background:url('../images/back.png') repeat;
+  line-height: 1.6em;
 }
 
 p { margin: 0 0 20px 0; }
@@ -13,8 +14,11 @@ h1 {
   line-height:45px;
 }
 h2 {
+  margin-top: 1em;
+  padding-bottom: 10px;
   font-size:35px;
   line-height:40px;
+  border-bottom: 1px solid #ddd;
 }
 h3 {
   font-size:30px;
@@ -320,14 +324,14 @@ pre {
 }
 
 #post pre {
-  border: 1px solid #ddd;
-  background-color: ghostWhite;
   padding: 0 .4em;
   word-wrap: break-word;      /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
   white-space: pre-wrap;      /* current browsers */
   font-family: monospace;
   overflow: auto;
+  background-color: #002b36;
+  color: #93a1a1
 }
 
 #post ul,
@@ -337,14 +341,12 @@ pre {
 
 #post code {
   border: 1px solid #ddd;
-  background-color: #eef;
   font-size: 85%;
   padding: 0 .2em;
 }
 
   #post pre code {
     border: none;
-    background-color: ghostWhite;
   }
 
 /* terminal */
