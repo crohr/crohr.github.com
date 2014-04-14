@@ -4,3 +4,19 @@ lsi: false
 plugins: ./_plugins
 permalink: /journal/:year/:title.html
 url: http://crohr.me
+description: "Ruby and RubyOnRails developer living in Warwichshire, UK. I offer various consulting services such as new developments, legacy application maintenance and migration, training, and cloud computing consulting."
+keywords:
+  - ruby
+  - rails
+  - freelance
+  - developer
+  - england
+  - united kingdom
+  - consulting
+  - cloud computing
+  - javascript
+  - web sites
+  - training
+  - sketchup
+  - api
+  - rest
