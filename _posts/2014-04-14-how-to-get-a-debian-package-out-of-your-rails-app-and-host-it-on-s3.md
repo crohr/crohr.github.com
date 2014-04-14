@@ -1,5 +1,5 @@
 ---
-title: How to effortlessly get a debian package out of your Rails app, and host it on S3
+title: Packaging and sharing your Rails app, the easy way
 description: "How to package a Ruby on Rails app, and host the resulting debian package on S3, all without the need to know about any of the debian packaging rules."
 layout: post
 tags:
