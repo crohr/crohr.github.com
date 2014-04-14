@@ -4,7 +4,7 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2014-04-14T14:16:35+01:00</updated>
+ <updated>2014-04-14T14:20:45+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
@@ -13,7 +13,7 @@
 
  
  <entry>
-   <title>How to get a debian package out of your Rails app, and host it on S3</title>
+   <title>How to effortlessly get a debian package out of your Rails app, and host it on S3</title>
    <link href="http://crohr.me/journal/2014/how-to-get-a-debian-package-out-of-your-rails-app-and-host-it-on-s3.html"/>
    <updated>2014-04-14T00:00:00+01:00</updated>
    <id>http://crohr.me/journal/2014/how-to-get-a-debian-package-out-of-your-rails-app-and-host-it-on-s3</id>
