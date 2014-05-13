@@ -4,13 +4,108 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2014-04-14T17:45:29+01:00</updated>
+ <updated>2014-05-13T17:56:44+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>Fixing postgres UTF-8 encoding error when creating new databases</title>
+   <link href="http://crohr.me/journal/2014/postgres-rails-the-chosen-lc-ctype-setting-requires-encoding-latin1.html"/>
+   <updated>2014-05-13T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2014/postgres-rails-the-chosen-lc-ctype-setting-requires-encoding-latin1</id>
+   <content type="html">&lt;p&gt;Quick tip, mainly as a reference for myself.&lt;/p&gt;
+
+&lt;p&gt;I wanted to create a new postgres database from Rails, here is what I did:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo apt-get install -y postgresql-9.1
+$ sudo -u postgres createuser myuser --createdb --no-superuser --no-createrole
+$ ./bin/rake db:create
+PG::InvalidParameterValue: ERROR:  encoding UTF8 does not match locale en_US
+DETAIL:  The chosen LC_CTYPE setting requires encoding LATIN1.
+: CREATE DATABASE &amp;quot;my-database&amp;quot; ENCODING = &amp;#39;utf8&amp;#39;
+...&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Looks like my locales are wrong. Here was the result of calling &lt;code&gt;locale&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ locale
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE=&amp;quot;en_US&amp;quot;
+LC_NUMERIC=&amp;quot;en_US&amp;quot;
+LC_TIME=&amp;quot;en_US&amp;quot;
+LC_COLLATE=&amp;quot;en_US&amp;quot;
+LC_MONETARY=&amp;quot;en_US&amp;quot;
+LC_MESSAGES=&amp;quot;en_US&amp;quot;
+LC_PAPER=&amp;quot;en_US&amp;quot;
+LC_NAME=&amp;quot;en_US&amp;quot;
+LC_ADDRESS=&amp;quot;en_US&amp;quot;
+LC_TELEPHONE=&amp;quot;en_US&amp;quot;
+LC_MEASUREMENT=&amp;quot;en_US&amp;quot;
+LC_IDENTIFICATION=&amp;quot;en_US&amp;quot;
+LC_ALL=en_US&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, I have &lt;code&gt;en_US&lt;/code&gt; values that should be &lt;code&gt;en_US.UTF-8&lt;/code&gt; instead. Looking on the internet, you can see various ways of fixing it for a specific database by creating the database directly with the &lt;code&gt;psql&lt;/code&gt; CLI, and forcing &lt;code&gt;lc_ctype&lt;/code&gt; &amp;amp; co.&lt;/p&gt;
+
+&lt;p&gt;To definitely fix it, the fastest way I found is to do as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Make sure you&amp;#8217;ve got your locale properly generated:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ sudo locale-gen en_US.UTF-8&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Update the &lt;code&gt;/etc/default/locale&lt;/code&gt; file with the corresponding variables (or use &lt;code&gt;update-locale LANG=xx LC_CTYPE=xx ...&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ sudo cat - &amp;gt; /etc/default/locale &amp;lt;&amp;lt;EOF
+ LANG=en_US.UTF-8
+ LANGUAGE=
+ LC_CTYPE=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_NUMERIC=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_TIME=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_COLLATE=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_MONETARY=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_MESSAGES=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_PAPER=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_NAME=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_ADDRESS=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_TELEPHONE=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_MEASUREMENT=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_IDENTIFICATION=&amp;quot;en_US.UTF-8&amp;quot;
+ LC_ALL=en_US.UTF-8
+ EOF&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Remove postgres (necessary because it looks like the default postgres locale is set at install time based on your system&amp;#8217;s locale):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ sudo apt-get remove postgresql-9.1 ...&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Reinstall postgres&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ sudo apt-get install postgresql-9.1&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Open a new terminal session (you can also probably just reload your &lt;code&gt;~/.bashrc&lt;/code&gt;), and start again:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; $ sudo -u postgres createuser myuser --createdb --no-superuser --no-createrole
+ $ ./bin/rake db:create
+ # success!&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is most probably not the easiest way to do it (please let me know in the comments), but it works.&lt;/p&gt;
+
+&lt;p&gt;Conclusion: Next time, always make sure you correctly set the locales before installing anything :)&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Packaging and sharing your Rails app, the easy way</title>
@@ -1421,17 +1516,6 @@ $ sudo rails4-example-app run rake -T&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;Another tiny useful service.&lt;/p&gt;</content>
- </entry>
- 
- <entry>
-   <title>HTML5 please</title>
-   <link href="http://crohr.me/journal/2012/html5-please.html"/>
-   <updated>2012-01-23T00:00:00+00:00</updated>
-   <id>http://crohr.me/journal/2012/html5-please</id>
-   <content type="html">&lt;a href='http://html5please.us/'&gt;HTML5 please&lt;/a&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Use the new and shiny responsibly. Look up HTML5 features, know if they are ready for use, and if so find out you should use them – with polyfills, fallbacks or as they are.&lt;/p&gt;
-&lt;/blockquote&gt;</content>
  </entry>
  
  

@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Fixing postgres UTF-8 encoding error when creating new databases</title>
+  <meta name="description" content="Quick tip to fix the dreaded PG::InvalidParameterValue: ERROR: encoding UTF8 does not match locale en_US. DETAIL: The chosen LC_CTYPE setting requires encoding LATIN1." />
+  <meta name="keywords" content="rails,postgres,tip" />
+  <meta http-equiv="date" content="Tuesday, 13 2014 00:00:00 GMT" />
+  <meta name="robots" content="INDEX,FOLLOW" />
+  <meta name="author" content="Cyril Rohr">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="http://feeds.feedburner.com/crohr" rel="alternate" title="Cyril Rohr" type="application/atom+xml" />
+
+  <!-- HTML5 Support for IE -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shim.js"></script>
+  <![endif]-->
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic' rel='stylesheet' type='text/css'>
+
+  <link href="/css/bootstrap.css" rel="stylesheet">
+  <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+  <link href="/css/application.css" rel="stylesheet">
+  <link href="/css/font-awesome.css" rel="stylesheet">
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="css/font-awesome-ie7.css">
+  <![endif]-->
+  <link rel="stylesheet" href="/css/highlight/github.min.css">
+
+  <link rel="shortcut icon" href="/images/favicon/favicon.png">
+
+  <link rel="openid.server"
+         href="http://www.myopenid.com/server">
+   <link rel="openid.delegate"
+         href="http://crohr.myopenid.com/">
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1 class="pull-left">
+        <div class="pic" style="display: inline"><img src="/images/me.jpg" width="50" alt="Cyril Rohr" class="img-circle" /></div>
+        <a href="http://crohr.me" class="brand"><span class="color">Cyril</span> Rohr<span class="color">.</span></a>
+      </h1>
+
+      <ul class="nav nav-pills pull-right">
+        <li class=""><a href="/">Home</a></li>
+        <li class="active"><a href="/journal/">Journal</a></li>
+        <li class=""><a href="/presentations/">Talks</a></li>
+        <li class=""><a href="/about">About</a></li>
+      </ul>
+    </header>
+  </div>
+
+
+  <div class="container content">
+  <div class="row">
+    <div class="span12">
+      <a name="top"></a>
+      <header>
+  <h1>Fixing postgres UTF-8 encoding error when creating new databases</h1>
+</header>
+<hr class="large" />
+<div class="article-date">
+  
+    <a class="tag" href="/tags/#rails">rails</a>
+  
+    <a class="tag" href="/tags/#postgres">postgres</a>
+  
+    <a class="tag" href="/tags/#tip">tip</a>
+  
+  &nbsp;&nbsp;13 May 2014
+</div>
+
+<div id="post">
+  <p>Quick tip, mainly as a reference for myself.</p>
+
+<p>I wanted to create a new postgres database from Rails, here is what I did:</p>
+
+<pre><code>$ sudo apt-get install -y postgresql-9.1
+$ sudo -u postgres createuser myuser --createdb --no-superuser --no-createrole
+$ ./bin/rake db:create
+PG::InvalidParameterValue: ERROR:  encoding UTF8 does not match locale en_US
+DETAIL:  The chosen LC_CTYPE setting requires encoding LATIN1.
+: CREATE DATABASE &quot;my-database&quot; ENCODING = &#39;utf8&#39;
+...</code></pre>
+
+<p>Looks like my locales are wrong. Here was the result of calling <code>locale</code>:</p>
+
+<pre><code>$ locale
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE=&quot;en_US&quot;
+LC_NUMERIC=&quot;en_US&quot;
+LC_TIME=&quot;en_US&quot;
+LC_COLLATE=&quot;en_US&quot;
+LC_MONETARY=&quot;en_US&quot;
+LC_MESSAGES=&quot;en_US&quot;
+LC_PAPER=&quot;en_US&quot;
+LC_NAME=&quot;en_US&quot;
+LC_ADDRESS=&quot;en_US&quot;
+LC_TELEPHONE=&quot;en_US&quot;
+LC_MEASUREMENT=&quot;en_US&quot;
+LC_IDENTIFICATION=&quot;en_US&quot;
+LC_ALL=en_US</code></pre>
+
+<p>As you can see, I have <code>en_US</code> values that should be <code>en_US.UTF-8</code> instead. Looking on the internet, you can see various ways of fixing it for a specific database by creating the database directly with the <code>psql</code> CLI, and forcing <code>lc_ctype</code> &amp; co.</p>
+
+<p>To definitely fix it, the fastest way I found is to do as follows:</p>
+
+<ol>
+<li>
+<p>Make sure you&#8217;ve got your locale properly generated:</p>
+
+<pre><code> $ sudo locale-gen en_US.UTF-8</code></pre>
+</li>
+
+<li>
+<p>Update the <code>/etc/default/locale</code> file with the corresponding variables (or use <code>update-locale LANG=xx LC_CTYPE=xx ...</code>):</p>
+
+<pre><code> $ sudo cat - &gt; /etc/default/locale &lt;&lt;EOF
+ LANG=en_US.UTF-8
+ LANGUAGE=
+ LC_CTYPE=&quot;en_US.UTF-8&quot;
+ LC_NUMERIC=&quot;en_US.UTF-8&quot;
+ LC_TIME=&quot;en_US.UTF-8&quot;
+ LC_COLLATE=&quot;en_US.UTF-8&quot;
+ LC_MONETARY=&quot;en_US.UTF-8&quot;
+ LC_MESSAGES=&quot;en_US.UTF-8&quot;
+ LC_PAPER=&quot;en_US.UTF-8&quot;
+ LC_NAME=&quot;en_US.UTF-8&quot;
+ LC_ADDRESS=&quot;en_US.UTF-8&quot;
+ LC_TELEPHONE=&quot;en_US.UTF-8&quot;
+ LC_MEASUREMENT=&quot;en_US.UTF-8&quot;
+ LC_IDENTIFICATION=&quot;en_US.UTF-8&quot;
+ LC_ALL=en_US.UTF-8
+ EOF</code></pre>
+</li>
+
+<li>
+<p>Remove postgres (necessary because it looks like the default postgres locale is set at install time based on your system&#8217;s locale):</p>
+
+<pre><code> $ sudo apt-get remove postgresql-9.1 ...</code></pre>
+</li>
+
+<li>
+<p>Reinstall postgres</p>
+
+<pre><code> $ sudo apt-get install postgresql-9.1</code></pre>
+</li>
+
+<li>
+<p>Open a new terminal session (you can also probably just reload your <code>~/.bashrc</code>), and start again:</p>
+
+<pre><code> $ sudo -u postgres createuser myuser --createdb --no-superuser --no-createrole
+ $ ./bin/rake db:create
+ # success!</code></pre>
+</li>
+</ol>
+
+<p>This is most probably not the easiest way to do it (please let me know in the comments), but it works.</p>
+
+<p>Conclusion: Next time, always make sure you correctly set the locales before installing anything :)</p>
+</div>
+
+
+<div id="page-navigation">
+  <div class="clear">&nbsp;</div>
+  <div class="left">
+  
+      <a href="/journal/2014/how-to-get-a-debian-package-out-of-your-rails-app-and-host-it-on-s3.html" title="Previous Post: Packaging and sharing your Rails app, the easy way" class="btn btn-small"><i class="icon-caret-left"></i> Packaging and sharing your Rails app, the easy way</a>
+  
+  </div>
+  <div class="right">
+  
+  </div>
+  <div class="clear">&nbsp;</div>
+</div>
+
+<p style="text-align: right">
+  <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+  <a href="https://twitter.com/crohr" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @crohr</a>
+</p>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<div id="disqus_thread" style="margin-top: 3em"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'crohr';
+    var disqus_identifier = '/journal/2014/postgres-rails-the-chosen-lc-ctype-setting-requires-encoding-latin1';
+    var disqus_url = 'http://crohr.me/journal/2014/postgres-rails-the-chosen-lc-ctype-setting-requires-encoding-latin1.html';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="up"><a href="#top" class="anchorLink"><i class="icon-caret-up"></i></a></div>
+</footer>
+
+  <!-- JS -->
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.js"></script>
+  <script src='/js/highlight.min.js'></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      hljs.tabReplace = '  ';
+      var codeCommentRegexp = /code\[(.+)\]/;
+      var match;
+      $("pre").parent().contents().filter(function(){
+          return this.nodeType == 8;
+      }).each(function(i, e){
+        if (match=codeCommentRegexp.exec(e.nodeValue)) {
+          try{
+            var code = $(e).nextAll("pre").first().find("code");
+            code.addClass(match[1]);
+            hljs.highlightBlock(code.get(0));
+          } catch(e) {}
+        }
+      });
+    });
+  </script>
+
+  <!-- Google Analytics -->
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-13023229-1']);
+    _gaq.push(['_setDomainName', 'crohr.me']);
+    _gaq.push(['_trackPageview']);
+
+    setTimeout("_gaq.push(['_trackEvent', '20_seconds', 'read'])", 15000);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <!-- Google Analytics end -->
+</body>
+</html>
