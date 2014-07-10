@@ -4,13 +4,32 @@
  <title>Cyril Rohr - Journal</title>
  <link href="http://feeds.feedburner.com/crohr" rel="self"/>
  <link href="http://crohr.me/"/>
- <updated>2014-05-13T17:56:44+01:00</updated>
+ <updated>2014-07-10T10:19:35+01:00</updated>
  <id>http://crohr.me/</id>
  <author>
    <name>Cyril Rohr</name>
    <email>contact@crohr.me</email>
  </author>
 
+ 
+ <entry>
+   <title>How to generate a self-signed certificate in non interactive mode</title>
+   <link href="http://crohr.me/journal/2014/generate-self-signed-ssl-certificate-without-prompt-noninteractive-mode.html"/>
+   <updated>2014-07-10T00:00:00+01:00</updated>
+   <id>http://crohr.me/journal/2014/generate-self-signed-ssl-certificate-without-prompt-noninteractive-mode</id>
+   <content type="html">&lt;p&gt;If you ever need to generate a self-signed SSL certificate automatically (i.e. without any prompt or interactive questions), here is how you would do it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;openssl genrsa -des3 -passout pass:x -out server.pass.key 2048
+openssl rsa -passin pass:x -in server.pass.key -out server.key
+rm server.pass.key
+openssl req -new -key server.key -out server.csr \
+  -subj &amp;quot;/C=UK/ST=Warwickshire/L=Leamington/O=OrgName/OU=IT Department/CN=example.com&amp;quot;
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(adapted from &lt;a href='https://devcenter.heroku.com/articles/ssl-certificate-self'&gt;Heroku&amp;#8217;s procedure&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Then, just use the generated &lt;code&gt;server.key&lt;/code&gt; and &lt;code&gt;server.crt&lt;/code&gt; files.&lt;/p&gt;</content>
+ </entry>
  
  <entry>
    <title>Fixing postgres UTF-8 encoding error when creating new databases</title>
@@ -1503,19 +1522,6 @@ $ sudo rails4-example-app run rake -T&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&quot;http://media.tumblr.com/tumblr_lya93spLjr1qzozj1.png&quot;&gt;&lt;/p&gt;
 &lt;p&gt;There’s all sorts of magic to be had with numbers, and many mathematicians have made entire careers in finding these little tricks that are mostly useless, but fun anyway. Unfortunately, a lot of calculators are going to truncate the results of this trick, but if you manage to get a hold of...&lt;/p&gt;&lt;/blockquote&gt;
 </content>
- </entry>
- 
- <entry>
-   <title>Lorempixel</title>
-   <link href="http://crohr.me/journal/2012/lorempixel.html"/>
-   <updated>2012-01-23T00:00:00+00:00</updated>
-   <id>http://crohr.me/journal/2012/lorempixel</id>
-   <content type="html">&lt;a href='http://lorempixel.com'&gt;Lorempixel&lt;/a&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Placeholder Images for every case. Webdesign or Print.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Another tiny useful service.&lt;/p&gt;</content>
  </entry>
  
  
