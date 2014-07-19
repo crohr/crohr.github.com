@@ -6,7 +6,7 @@ tab: about
 
 Freelance developer, specializing in distributed RESTful architectures, APIs, Ruby & Node.js development (both frontend and backend), and DevOps consulting. I can make your software development process more reliable, and improve your tooling to deliver high quality software. You can see my recommendations on LinkedIn (<http://www.linkedin.com/in/cyrilrohr>), and my open-source contributions on Github (<https://github.com/crohr>).
 
-Tel: +44 (0) 7527 469431 | Address: 77 Frances Havergal Close, CV31 3BU, Leamington, UK.
+Tel: +44 (0) 7527 469431 | Address: Leamington Spa, UK.
 <br/>
 Website: <http://crohr.me> | Email: <contact@crohr.me> | Skype: cyril.rohr
 
