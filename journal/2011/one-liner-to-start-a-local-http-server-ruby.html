@@ -73,14 +73,20 @@
 </div>
 
 <div id="post">
-  <p>Wow, is it really what it takes to start an HTTP server serving static files from the current directory with standard Ruby?</p>
-<!-- code[ruby] -->
-<pre><code>ruby -r webrick -e &quot;s = WEBrick::HTTPServer.new(:Port =&gt; 8888);\
-  s.mount(&#39;/&#39;,WEBrick::HTTPServlet::FileHandler, &#39;./&#39;); \
-  trap(&#39;INT&#39;){ s.shutdown }; \
-  s.start&quot;</code></pre>
+  <p>Wow, is it really what it takes to start an HTTP server serving static files
+from the current directory with standard Ruby?</p>
 
-<p>For once I prefer the <a href='http://ebarnouflant.com/post/11646387716/one-liner-to-start-a-local-http-server'>python way</a>.</p>
+<!-- code[ruby] -->
+
+<pre><code>ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port =&gt; 8888);\
+  s.mount('/',WEBrick::HTTPServlet::FileHandler, './'); \
+  trap('INT'){ s.shutdown }; \
+  s.start"
+</code></pre>
+
+<p>For once I prefer the <a href="http://ebarnouflant.com/post/11646387716/one-liner-to-start-a-local-http-server">python
+way</a>.</p>
+
 </div>
 
 

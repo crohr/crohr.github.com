@@ -75,32 +75,52 @@
 </div>
 
 <div id="post">
-  <p>There are multiple solutions to add syntax highlighting for code blocks in Tumblr articles written with Markdown, but they all demand to manually put <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code> tags and <code>class</code> attributes in the text. You can find the references here:</p>
+  <p>There are multiple solutions to add syntax highlighting for code blocks in Tumblr articles written with Markdown, but they all demand to manually put <code>&lt;pre&gt;</code>, <code>&lt;code&gt;</code> tags and <code>class</code> attributes in the text. You can find the references here: </p>
 
 <ul>
-<li><a href='http://drnicwilliams.com/2007/03/08/syntax-highlighting-in-tumblr/'>http://drnicwilliams.com/2007/03/08/syntax-highlighting-in-tumblr/</a></li>
-
-<li><a href='http://alan.dipert.org/post/55814908/shjs-javascript-syntax-highlighting-for-tumblr'>http://alan.dipert.org/post/55814908/shjs-javascript-syntax-highlighting-for-tumblr</a></li>
-
-<li><a href='http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr'>http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr</a></li>
+  <li><a href="http://drnicwilliams.com/2007/03/08/syntax-highlighting-in-tumblr/">http://drnicwilliams.com/2007/03/08/syntax-highlighting-in-tumblr/</a></li>
+  <li><a href="http://alan.dipert.org/post/55814908/shjs-javascript-syntax-highlighting-for-tumblr">http://alan.dipert.org/post/55814908/shjs-javascript-syntax-highlighting-for-tumblr</a></li>
+  <li><a href="http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr">http://snippets-of-code.tumblr.com/post/6027484416/adding-syntax-highlighting-into-tumblr</a></li>
 </ul>
 
-<p>This is too much pollution for me, since you will no longer see the code blocks nicely formatted in your text editor of choice. Therefore I came up with a simple solution that consists in putting an HTML comment before the code blocks you want to highlight. I then use a small bit of Javascript to extract that info and automatically update the class of the <code>&lt;code&gt;</code> tag. Associated with <a href='http://softwaremaniacs.org/soft/highlight/en/'>Highlight.js</a>, this gives nice syntax highlighting in just one line. For example, the following Markdown snippet:</p>
-<!-- code[no-highlight] -->
-<pre><code>&lt;!-- code[ruby] --&gt;
+<p>This is too much pollution for me, since you will no longer see the code
+blocks nicely formatted in your text editor of choice. Therefore I came
+up with a simple solution that consists in putting an HTML comment
+before the code blocks you want to highlight. I then use a small bit of
+Javascript to extract that info and automatically update the class of
+the <code>&lt;code&gt;</code> tag. Associated with
+<a href="http://softwaremaniacs.org/soft/highlight/en/">Highlight.js</a>, this
+gives nice syntax highlighting in just one line. For example, the
+following Markdown snippet:</p>
 
-    puts &quot;This is Ruby code&quot;</code></pre>
+<!-- code[no-highlight] -->
+
+<pre><code>&lt;!-- code[ruby] --&gt;
+  
+    puts "This is Ruby code"
+</code></pre>
 
 <p>Will give:</p>
+
 <!-- code[ruby] -->
-<pre><code>puts &quot;This is Ruby code&quot;</code></pre>
 
-<p>Note that most of the time, you don&#8217;t even need to specify the language, since Highlight.js will often detect the right brush for you. Also, HTML comments won&#8217;t show up in your RSS feed.</p>
+<pre><code>puts "This is Ruby code"
+</code></pre>
 
-<p>To enable this feature, open the &#8216;customize appearance&#8217; link in your Tumblr dashboard, then click on &#8216;Edit HTML&#8217;, and enter the following code just before the opening <code>&lt;body&gt;</code> tag (you might need to include the <a href='http://code.google.com/apis/libraries/devguide.html#jquery'>jQuery</a> library if you don&#8217;t already have it):</p>
+<p>Note that most of the time, you don’t even need to specify the language,
+since Highlight.js will often detect the right brush for you. Also, HTML
+comments won’t show up in your RSS feed.</p>
+
+<p>To enable this feature, open the ‘customize appearance’ link in your
+Tumblr dashboard, then click on ‘Edit HTML’, and enter the following
+code just before the opening <code>&lt;body&gt;</code> tag (you might need to include the
+<a href="http://code.google.com/apis/libraries/devguide.html#jquery">jQuery</a>
+library if you don’t already have it):</p>
+
 <!-- code[html] -->
-<pre><code>&lt;link rel=&quot;stylesheet&quot; 
-      href=&quot;http://yandex.st/highlightjs/6.1/styles/zenburn.min.css&quot;&gt;
+
+<pre><code>&lt;link rel="stylesheet" 
+      href="http://yandex.st/highlightjs/6.1/styles/zenburn.min.css"&gt;
 &lt;style&gt;
   code {
     font-family: monospace;
@@ -108,29 +128,34 @@
   }
 &lt;/style&gt;
 
-&lt;script src=&#39;http://yandex.st/highlightjs/6.1/highlight.min.js&#39;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;script src='http://yandex.st/highlightjs/6.1/highlight.min.js'&gt;&lt;/script&gt;
+&lt;script type="text/javascript"&gt;
   $(document).ready(function() {
     var codeCommentRegexp = /code\[(.+)\]/;
     var match;
-    $(&quot;pre&quot;).parent().contents().filter(function(){
+    $("pre").parent().contents().filter(function(){
         return this.nodeType == 8;
     }).each(function(i, e){
       if (match=codeCommentRegexp.exec(e.nodeValue)) {
         try{
-          $(e).nextAll(&quot;pre&quot;).first().
-            find(&quot;code&quot;).addClass(match[1]);
+          $(e).nextAll("pre").first().
+            find("code").addClass(match[1]);
         } catch(e) {}
       }
     });
-    hljs.tabReplace = &#39;  &#39;;
+    hljs.tabReplace = '  ';
     hljs.initHighlightingOnLoad();
   });
-&lt;/script&gt;</code></pre>
+&lt;/script&gt;
+</code></pre>
 
 <p>Enjoy!</p>
 
-<p><strong>Update (2012/05/29)</strong>: this technique also works for Jekyll blogs (look at the source code of this site). In the comments, <em>isagalaev</em> (the author of Highlight.js) points out a performance improvement to apply the highlighting brush directly in the loop.</p>
+<p><strong>Update (2012/05/29)</strong>: this technique also works for Jekyll blogs
+(look at the source code of this site). In the comments, <em>isagalaev</em>
+(the author of Highlight.js) points out a performance improvement to
+apply the highlighting brush directly in the loop.</p>
+
 </div>
 
 

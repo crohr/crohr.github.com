@@ -76,24 +76,22 @@
   <p>The automatic generation of project pages (http://pages.github.com) offered by Github is great, sicne you can use your README.md file as content for this site. The issue is that after the first initialization, if you change the README.md of your project, the gh-pages sites does not pick up the changes automatically. It was not obvious for me at first, but here is how you can (somewhat) keep your sanity when trying to keep your README.md file and your gh-pages sites in sync:</p>
 
 <ul>
-<li>
-<p>Convert your README.md to HTML (the Markdown Textmate bundle provides a shortcut for this, but you can use any command line tool as well).</p>
-</li>
-
-<li>
-<p>Copy/paste that HTML between the <code>&lt;section&gt;&lt;/section&gt;</code> of the main content div.</p>
-</li>
-
-<li>
-<p>Check with jekyll that the rendering is ok: <code>jekyll --serve</code>.</p>
-</li>
-
-<li>
-<p>Commit and push.</p>
-</li>
+  <li>
+    <p>Convert your README.md to HTML (the Markdown Textmate bundle provides a shortcut for this, but you can use any command line tool as well).</p>
+  </li>
+  <li>
+    <p>Copy/paste that HTML between the <code>&lt;section&gt;&lt;/section&gt;</code> of the main content div.</p>
+  </li>
+  <li>
+    <p>Check with jekyll that the rendering is ok: <code>jekyll --serve</code>.</p>
+  </li>
+  <li>
+    <p>Commit and push.</p>
+  </li>
 </ul>
 
-<p>I was very surprised to see that you have to do it manually by yourself (contrary to http://documentup.com for instance), but it&#8217;s not <em>that</em> difficult after all.</p>
+<p>I was very surprised to see that you have to do it manually by yourself (contrary to http://documentup.com for instance), but it’s not <em>that</em> difficult after all.</p>
+
 </div>
 
 

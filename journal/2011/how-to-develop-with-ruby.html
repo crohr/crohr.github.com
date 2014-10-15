@@ -79,155 +79,218 @@
 <div id="post">
   <p>RVM - Gemsets - Bundler - Gemfiles - Dependencies - Packaging</p>
 
-<h2 id='the_sysadmins_dream'>The Sysadmin&#8217;s Dream</h2>
+<h2 id="the-sysadmins-dream">The Sysadmin’s Dream</h2>
 
 <p>AKA the <em>production</em> mindset.</p>
 
 <p>Install Ruby:</p>
 
-<pre><code>$ sudo apt-get install ruby1.8</code></pre>
+<pre><code>$ sudo apt-get install ruby1.8
+</code></pre>
 
 <p>Install the required Ruby libs:</p>
 
-<pre><code>$ sudo apt-get install libhopefullymygemispackaged-ruby1.8</code></pre>
+<pre><code>$ sudo apt-get install libhopefullymygemispackaged-ruby1.8
+</code></pre>
 
-<p>Well, we&#8217;re not there yet, and anyway we might have two Ruby projects in need of two different versions of the same library. So&#8230; what do we do?</p>
+<p>Well, we’re not there yet, and anyway we might have two Ruby projects in need
+of two different versions of the same library. So… what do we do?</p>
 
-<h2 id='the_developers_dream'>The Developer&#8217;s Dream</h2>
+<h2 id="the-developers-dream">The Developer’s Dream</h2>
 
-<p>AKA the&#8230; well&#8230; <em>development</em> mindset. And Sysadmin&#8217;s Nightmare.</p>
+<p>AKA the… well… <em>development</em> mindset. And Sysadmin’s Nightmare.</p>
 
-<h3 id='managing_rubies_and_installed_gems_rvm'>Managing rubies and installed gems (RVM)</h3>
+<h3 id="managing-rubies-and-installed-gems-rvm">Managing rubies and installed gems (RVM)</h3>
 
-<p>I need libA with version 1.2.3 and libB with version 4.5.6 for projectC, running on rubyX.Y.Z, and I don&#8217;t want to mess around with my carefully crafted list of system gems.</p>
+<p>I need libA with version 1.2.3 and libB with version 4.5.6 for projectC,
+running on rubyX.Y.Z, and I don’t want to mess around with my carefully
+crafted list of system gems.</p>
 
-<p>Install Ruby Version Manager (<a href='http://beginrescueend.com/rvm'>RVM</a>):</p>
+<p>Install Ruby Version Manager (<a href="http://beginrescueend.com/rvm">RVM</a>):</p>
 
-<pre><code>$ bash &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)</code></pre>
+<pre><code>$ bash &lt; &lt;(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+</code></pre>
 
 <p>Install required ruby version from source (JRuby, Rubinius and other Ruby runtimes are also available)</p>
 
 <pre><code>$ rvm install X.Y.Z
-$ rvm use X.Y.Z</code></pre>
+$ rvm use X.Y.Z
+</code></pre>
 
-<p>Create a project-specific <code>gemset</code>, that will contain all the gems installed for this project:</p>
+<p>Create a project-specific <code>gemset</code>, that will contain all the gems installed
+for this project:</p>
 
 <pre><code>$ rvm gemset create projectC-gemset
 $ rvm gemset use projectC-gemset
 $ gem install libA --version 1.2.3
-$ gem install libB --version 4.5.6</code></pre>
+$ gem install libB --version 4.5.6
+</code></pre>
 
-<p>Under the hood, <code>rvm</code> creates a specific <code>GEM_HOME</code> for each <code>gemset</code>. When you run <code>rvm gemset use project-gemset</code>, it will change the <code>GEM_HOME</code> environment variable. In this way, the installed gems are isolated from the gems that were installed system-wide.</p>
+<p>Under the hood, <code>rvm</code> creates a specific <code>GEM_HOME</code> for each <code>gemset</code>. When
+you run <code>rvm gemset use project-gemset</code>, it will change the <code>GEM_HOME</code>
+environment variable. In this way, the installed gems are isolated from the
+gems that were installed system-wide.</p>
 
 <p>So:</p>
 
 <blockquote>
-<p>RVM is for managing multiple versions of Ruby on the same machine, and</p>
+  <p>RVM is for managing multiple versions of Ruby on the same machine, and
+switching between them. Gemsets is a powerful feature RVM provides that
+isolates gems for one application/library from the rest of your system.</p>
 </blockquote>
 
-<p>switching between them. Gemsets is a powerful feature RVM provides that isolates gems for one application/library from the rest of your system.</p>
+<h3 id="managing-dependencies-bundler">Managing dependencies (Bundler)</h3>
 
-<h3 id='managing_dependencies_bundler'>Managing dependencies (Bundler)</h3>
-
-<p>Wait, I&#8217;m working with other developers, and even I don&#8217;t want to have to remember the specific lib versions I want. Here comes <a href='http://gembundler.com/'>Bundler</a>, which is available as a ruby gem:</p>
+<p>Wait, I’m working with other developers, and even I don’t want to have to
+remember the specific lib versions I want. Here comes
+<a href="http://gembundler.com/">Bundler</a>, which is available as a ruby gem:</p>
 
 <blockquote>
-<p>Bundler makes it easy to make sure that your application has the dependencies it needs to start up and run without errors.</p>
+  <p>Bundler makes it easy to make sure that your application has the
+dependencies it needs to start up and run without errors.</p>
 </blockquote>
 
-<p>You describe your dependencies for the target project in a specific file named <code>Gemfile</code>, that you place in your project&#8217;s root directory:</p>
+<p>You describe your dependencies for the target project in a specific file named
+<code>Gemfile</code>, that you place in your project’s root directory:</p>
 
 <pre><code>projectC $ cat Gemfile
 
-source &quot;http://rubygems.org&quot;
+source "http://rubygems.org"
 
-gem &quot;rails&quot;, &quot;3.0.0.rc&quot;
-gem &quot;rack-cache&quot;
-gem &quot;nokogiri&quot;, &quot;~&gt; 1.4.2&quot;</code></pre>
+gem "rails", "3.0.0.rc"
+gem "rack-cache"
+gem "nokogiri", "~&gt; 1.4.2"
+</code></pre>
 
 <p>Then install the specified gems in your newly created ruby environment:</p>
 
 <pre><code>$ rvm use X.Y.Z &amp;&amp; rvm gemset use projectC-gemset
 $ gem install bundler
-$ bundle install</code></pre>
+$ bundle install
+</code></pre>
 
-<p>Bundler will fetch the requested dependencies (and check that they can be fulfilled), and then install the gems in the specified gemset (this is transparent for Bundler since it&#8217;s based on <code>GEM_HOME</code> environment variable).</p>
+<p>Bundler will fetch the requested dependencies (and check that they can be
+fulfilled), and then install the gems in the specified gemset (this is
+transparent for Bundler since it’s based on <code>GEM_HOME</code> environment variable).</p>
 
-<p>This means any developer can then install all the required dependencies by running <code>$ bundle install</code> on their machine.</p>
+<p>This means any developer can then install all the required dependencies by
+running <code>$ bundle install</code> on their machine.</p>
 
-<p>Also, some libraries come with executables (e.g. <code>rails</code>, <code>sequel</code>, etc.). If you want to run these executables in the current dependency context, you must use the <code>bundle exec</code> command:</p>
+<p>Also, some libraries come with executables (e.g. <code>rails</code>, <code>sequel</code>, etc.). If
+you want to run these executables in the current dependency context, you must
+use the <code>bundle exec</code> command:</p>
 
-<pre><code>$ bundle exec rails ...</code></pre>
+<pre><code>$ bundle exec rails ...
+</code></pre>
 
 <p>So:</p>
 
 <blockquote>
-<p>Bundler is for managing Ruby dependencies. Those dependencies are described in a <code>Gemfile</code> file.</p>
+  <p>Bundler is for managing Ruby dependencies. Those dependencies
+are described in a <code>Gemfile</code> file. </p>
 </blockquote>
 
 <blockquote>
-<p>You don&#8217;t <em>need</em> to use RVM with Bundler. They are separate tools. By default Bundler will install your gems in the default <code>GEM_HOME</code> path. When using RVM and Bundler together, RVM &#8220;tells&#8221; (by setting a different <code>GEM_HOME</code>) Bundler where the gems should go, and Bundler installs them into the RVM-folder.</p>
+  <p>You don’t <em>need</em> to use RVM with Bundler. They are separate tools. By
+default Bundler will install your gems in the default <code>GEM_HOME</code>
+path. When using RVM and Bundler together, RVM “tells” (by setting a
+different <code>GEM_HOME</code>) Bundler where the gems should go, and Bundler
+installs them into the RVM-folder.</p>
 </blockquote>
 
-<h3 id='files_of_interest'>Files of interest</h3>
+<h3 id="files-of-interest">Files of interest</h3>
 
 <ul>
-<li>
-<p>Obviously there is the <code>Gemfile</code> file, which lists the dependencies required by your project. Commit this into your repository, be it a Ruby application or a gem.</p>
-</li>
+  <li>
+    <p>Obviously there is the <code>Gemfile</code> file, which lists the dependencies required
+by your project. Commit this into your repository, be it a Ruby application
+or a gem.</p>
+  </li>
+  <li>
+    <p>The first time bundle runs, it will create a <code>Gemfile.lock</code> file that will
+contain a dump of the library dependency tree for the gems it just
+installed. If you commit this file into your project’s repository, then when
+other developers will run <code>$ bundle install</code> on their machines, they’ll get
+the <em>exact</em> same versions for the gems. If one of the developers want to
+update a dependency, he’ll have to modify the <code>Gemfile</code> file and run <code>$
+bundle update</code>. Do <em>not</em> commit this file if you’re developing a Ruby gem,
+otherwise you’ll be always testing against a static view of the dependency
+tree your gem is using, which is probably not the one that your users are
+seeing.</p>
+  </li>
+  <li>
+    <p>To avoid entering <code>$ rvm use X.Y.Z &amp;&amp; rvm gemset use projectC-gemset</code> each
+time you work on <code>projectC</code>, you can create a <code>.rvmrc</code> file that will be
+picked up by RVM when you <code>cd</code> into the project’s directory:</p>
 
-<li>
-<p>The first time bundle runs, it will create a <code>Gemfile.lock</code> file that will contain a dump of the library dependency tree for the gems it just installed. If you commit this file into your project&#8217;s repository, then when other developers will run <code>$ bundle install</code> on their machines, they&#8217;ll get the <em>exact</em> same versions for the gems. If one of the developers want to update a dependency, he&#8217;ll have to modify the <code>Gemfile</code> file and run <code>$
-bundle update</code>. Do <em>not</em> commit this file if you&#8217;re developing a Ruby gem, otherwise you&#8217;ll be always testing against a static view of the dependency tree your gem is using, which is probably not the one that your users are seeing.</p>
-</li>
+    <pre><code>  projectC $ cat .rvmrc
+  rvm use ruby1.9.2@projectC-gemset --create
+</code></pre>
 
-<li>
-<p>To avoid entering <code>$ rvm use X.Y.Z &amp;&amp; rvm gemset use projectC-gemset</code> each time you work on <code>projectC</code>, you can create a <code>.rvmrc</code> file that will be picked up by RVM when you <code>cd</code> into the project&#8217;s directory:</p>
-
-<pre><code>  projectC $ cat .rvmrc
-  rvm use ruby1.9.2@projectC-gemset --create</code></pre>
-
-<p>You may commit this file into the project&#8217;s repository, but only if it&#8217;s a Ruby application, not a Ruby gem.</p>
-</li>
-
-<li>
-<p>There is also a <code>.bundle/config</code> file, which contains the Bundler configuration for the project. This is especially useful (and must be shipped with the project) if you&#8217;re using Bundler in deployment mode (see next section). Do not commit this into the repository.</p>
-</li>
+    <p>You may commit this file into the project’s repository, but only if it’s a
+Ruby application, not a Ruby gem.</p>
+  </li>
+  <li>
+    <p>There is also a <code>.bundle/config</code> file, which contains the Bundler
+configuration for the project. This is especially useful (and must be
+shipped with the project) if you’re using Bundler in deployment mode (see
+next section). Do not commit this into the repository.</p>
+  </li>
 </ul>
 
-<h2 id='finding_a_tradeoff_between_the_sysadmins_and_developers_dreams'>Finding a trade-off between the Sysadmin&#8217;s and Developer&#8217;s dreams</h2>
+<h2 id="finding-a-trade-off-between-the-sysadmins-and-developers-dreams">Finding a trade-off between the Sysadmin’s and Developer’s dreams</h2>
 
-<p>Where we&#8217;ll talk about packaging.</p>
+<p>Where we’ll talk about packaging.</p>
 
 <ul>
-<li>
-<p>Usually it makes a lot of sense to install the Ruby version with your distribution package manager =&gt; Sysadmin is happy, and you get security patches for free. Same for standard non-ruby dependencies (<code>libxml2</code>, <code>sqlite3</code>, etc.)</p>
-</li>
+  <li>
+    <p>Usually it makes a lot of sense to install the Ruby version with your
+distribution package manager =&gt; Sysadmin is happy, and you get security
+patches for free. Same for standard non-ruby dependencies (<code>libxml2</code>,
+<code>sqlite3</code>, etc.)</p>
+  </li>
+  <li>
+    <p>Vendor all the Ruby libraries you’re using. Vendoring means: shipping all
+the source code of your dependencies with your project. It’s usually located
+in a <code>vendor/</code> folder, and Bundler can create it for you by running it in
+deployment mode:</p>
 
-<li>
-<p>Vendor all the Ruby libraries you&#8217;re using. Vendoring means: shipping all the source code of your dependencies with your project. It&#8217;s usually located in a <code>vendor/</code> folder, and Bundler can create it for you by running it in deployment mode:</p>
+    <pre><code>  $ bundler install --deployment
+</code></pre>
 
-<pre><code>  $ bundler install --deployment</code></pre>
+    <p>You should even package Bundler in your <code>vendor/</code> directory!</p>
 
-<p>You should even package Bundler in your <code>vendor/</code> directory!</p>
+    <pre><code>  $ gem install bundler -i vendor/bundle/
+</code></pre>
 
-<pre><code>  $ gem install bundler -i vendor/bundle/</code></pre>
-
-<p>Then you just need to change the <code>$LOAD_PATH</code> in your application, so that Ruby looks for libraries in your <code>vendor/</code> folder first. Note that the installation of the gems in <code>vendor/</code> must be done on a machine that has the same distribution and architecture of the target machine, <em>unless all</em> your dependencies are pure Ruby libraries.</p>
-</li>
+    <p>Then you just need to change the <code>$LOAD_PATH</code> in your application, so that
+Ruby looks for libraries in your <code>vendor/</code> folder first. Note that the
+installation of the gems in <code>vendor/</code> must be done on a machine that has the
+same distribution and architecture of the target machine, <em>unless all</em> your
+dependencies are pure Ruby libraries.</p>
+  </li>
 </ul>
 
-<h2 id='takeaway_messages'>Take-Away messages</h2>
+<h2 id="take-away-messages">Take-Away messages</h2>
 
 <ul>
-<li>
-<p>Go crazy on your development machine. You need a quick and easy way to test your app on different versions of Ruby, switch between library versions, reinstall dependencies from scratch, etc. RVM fits the bill perfectly. And Bundler is the de-factor standard for managing dependencies in your applications (for Ruby gems just use the <code>.gemspec</code> file and point your <code>Gemfile</code> to the <code>.gemspec</code>).</p>
-</li>
-
-<li>
-<p>Once you push into production, I would go against using RVM and instead picking the adequate Ruby version from your distribution package manager (assuming that version exists). However, you should vendor any Ruby dependency with your project.</p>
-</li>
+  <li>
+    <p>Go crazy on your development machine. You need a quick and easy way to test
+your app on different versions of Ruby, switch between library versions,
+reinstall dependencies from scratch, etc. RVM fits the bill perfectly. And
+Bundler is the de-factor standard for managing dependencies in your
+applications (for Ruby gems just use the <code>.gemspec</code> file and point your
+<code>Gemfile</code> to the <code>.gemspec</code>).</p>
+  </li>
+  <li>
+    <p>Once you push into production, I would go against using RVM and instead
+picking the adequate Ruby version from your distribution package manager
+(assuming that version exists). However, you should vendor any Ruby
+dependency with your project.</p>
+  </li>
 </ul>
+
+
 </div>
 
 

@@ -86,85 +86,89 @@ $ sudo -u postgres createuser myuser --createdb --no-superuser --no-createrole
 $ ./bin/rake db:create
 PG::InvalidParameterValue: ERROR:  encoding UTF8 does not match locale en_US
 DETAIL:  The chosen LC_CTYPE setting requires encoding LATIN1.
-: CREATE DATABASE &quot;my-database&quot; ENCODING = &#39;utf8&#39;
-...</code></pre>
+: CREATE DATABASE "my-database" ENCODING = 'utf8'
+...
+</code></pre>
 
 <p>Looks like my locales are wrong. Here was the result of calling <code>locale</code>:</p>
 
 <pre><code>$ locale
 LANG=en_US.UTF-8
 LANGUAGE=
-LC_CTYPE=&quot;en_US&quot;
-LC_NUMERIC=&quot;en_US&quot;
-LC_TIME=&quot;en_US&quot;
-LC_COLLATE=&quot;en_US&quot;
-LC_MONETARY=&quot;en_US&quot;
-LC_MESSAGES=&quot;en_US&quot;
-LC_PAPER=&quot;en_US&quot;
-LC_NAME=&quot;en_US&quot;
-LC_ADDRESS=&quot;en_US&quot;
-LC_TELEPHONE=&quot;en_US&quot;
-LC_MEASUREMENT=&quot;en_US&quot;
-LC_IDENTIFICATION=&quot;en_US&quot;
-LC_ALL=en_US</code></pre>
+LC_CTYPE="en_US"
+LC_NUMERIC="en_US"
+LC_TIME="en_US"
+LC_COLLATE="en_US"
+LC_MONETARY="en_US"
+LC_MESSAGES="en_US"
+LC_PAPER="en_US"
+LC_NAME="en_US"
+LC_ADDRESS="en_US"
+LC_TELEPHONE="en_US"
+LC_MEASUREMENT="en_US"
+LC_IDENTIFICATION="en_US"
+LC_ALL=en_US
+</code></pre>
 
 <p>As you can see, I have <code>en_US</code> values that should be <code>en_US.UTF-8</code> instead. Looking on the internet, you can see various ways of fixing it for a specific database by creating the database directly with the <code>psql</code> CLI, and forcing <code>lc_ctype</code> &amp; co.</p>
 
 <p>To definitely fix it, the fastest way I found is to do as follows:</p>
 
 <ol>
-<li>
-<p>Make sure you&#8217;ve got your locale properly generated:</p>
+  <li>
+    <p>Make sure you’ve got your locale properly generated:</p>
 
-<pre><code> $ sudo locale-gen en_US.UTF-8</code></pre>
-</li>
+    <pre><code> $ sudo locale-gen en_US.UTF-8
+</code></pre>
+  </li>
+  <li>
+    <p>Update the <code>/etc/default/locale</code> file with the corresponding variables (or use <code>update-locale LANG=xx LC_CTYPE=xx ...</code>):</p>
 
-<li>
-<p>Update the <code>/etc/default/locale</code> file with the corresponding variables (or use <code>update-locale LANG=xx LC_CTYPE=xx ...</code>):</p>
-
-<pre><code> $ sudo cat - &gt; /etc/default/locale &lt;&lt;EOF
+    <pre><code> $ sudo cat - &gt; /etc/default/locale &lt;&lt;EOF
  LANG=en_US.UTF-8
  LANGUAGE=
- LC_CTYPE=&quot;en_US.UTF-8&quot;
- LC_NUMERIC=&quot;en_US.UTF-8&quot;
- LC_TIME=&quot;en_US.UTF-8&quot;
- LC_COLLATE=&quot;en_US.UTF-8&quot;
- LC_MONETARY=&quot;en_US.UTF-8&quot;
- LC_MESSAGES=&quot;en_US.UTF-8&quot;
- LC_PAPER=&quot;en_US.UTF-8&quot;
- LC_NAME=&quot;en_US.UTF-8&quot;
- LC_ADDRESS=&quot;en_US.UTF-8&quot;
- LC_TELEPHONE=&quot;en_US.UTF-8&quot;
- LC_MEASUREMENT=&quot;en_US.UTF-8&quot;
- LC_IDENTIFICATION=&quot;en_US.UTF-8&quot;
+ LC_CTYPE="en_US.UTF-8"
+ LC_NUMERIC="en_US.UTF-8"
+ LC_TIME="en_US.UTF-8"
+ LC_COLLATE="en_US.UTF-8"
+ LC_MONETARY="en_US.UTF-8"
+ LC_MESSAGES="en_US.UTF-8"
+ LC_PAPER="en_US.UTF-8"
+ LC_NAME="en_US.UTF-8"
+ LC_ADDRESS="en_US.UTF-8"
+ LC_TELEPHONE="en_US.UTF-8"
+ LC_MEASUREMENT="en_US.UTF-8"
+ LC_IDENTIFICATION="en_US.UTF-8"
  LC_ALL=en_US.UTF-8
- EOF</code></pre>
-</li>
+ EOF
+</code></pre>
+  </li>
+  <li>
+    <p>Remove postgres (necessary because it looks like the default postgres locale is set at install time based on your system’s locale):</p>
 
-<li>
-<p>Remove postgres (necessary because it looks like the default postgres locale is set at install time based on your system&#8217;s locale):</p>
+    <pre><code> $ sudo apt-get remove postgresql-9.1 ...
+</code></pre>
+  </li>
+  <li>
+    <p>Reinstall postgres</p>
 
-<pre><code> $ sudo apt-get remove postgresql-9.1 ...</code></pre>
-</li>
+    <pre><code> $ sudo apt-get install postgresql-9.1
+</code></pre>
+  </li>
+  <li>
+    <p>Open a new terminal session (you can also probably just reload your <code>~/.bashrc</code>), and start again:</p>
 
-<li>
-<p>Reinstall postgres</p>
-
-<pre><code> $ sudo apt-get install postgresql-9.1</code></pre>
-</li>
-
-<li>
-<p>Open a new terminal session (you can also probably just reload your <code>~/.bashrc</code>), and start again:</p>
-
-<pre><code> $ sudo -u postgres createuser myuser --createdb --no-superuser --no-createrole
+    <pre><code> $ sudo -u postgres createuser myuser --createdb --no-superuser --no-createrole
  $ ./bin/rake db:create
- # success!</code></pre>
-</li>
+ # success!
+</code></pre>
+  </li>
 </ol>
 
 <p>This is most probably not the easiest way to do it (please let me know in the comments), but it works.</p>
 
 <p>Conclusion: Next time, always make sure you correctly set the locales before installing anything :)</p>
+
 </div>
 
 

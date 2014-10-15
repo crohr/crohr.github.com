@@ -79,15 +79,23 @@
 <div id="post">
   <p>Long version is at http://dev.opennebula.org/issues/1017.</p>
 
-<p>Short version is: switch to a Nokogiri based XML Stream parser for the XMLRPC client, instead of the (really) slow REXML based stream parser used by default. Then the ONE tools that make XML-RPC requests (i.e. almost all of them, including the OCCI server) will be a <strong>hundred times faster</strong>.</p>
+<p>Short version is: switch to a Nokogiri based XML Stream parser for the XMLRPC
+client, instead of the (really) slow REXML based stream parser used by
+default. Then the ONE tools that make XML-RPC requests (i.e. almost all of
+them, including the OCCI server) will be a <strong>hundred times faster</strong>.</p>
 
-<p>This is especially useful when you start to have more than 100 VMs running, since you&#8217;re not required to wait for more than 1 minute (!) for your <code>onevm list</code> or <code>onevm top</code> to display. These commands are now running in less than 1 second at our local installation.</p>
+<p>This is especially useful when you start to have more than 100 VMs running, since you’re not required to wait for more than 1 minute (!)
+for your <code>onevm list</code> or <code>onevm top</code> to display. These commands are now
+running in less than 1 second at our local installation.</p>
 
-<p>The patch is really simple (to be applied to the <code>OpenNebula.rb</code> file, tested with OpenNebula 3.0.0):</p>
+<p>The patch is really simple (to be applied to the <code>OpenNebula.rb</code> file, tested
+with OpenNebula 3.0.0):</p>
+
 <!-- code[diff] -->
+
 <pre><code>85a86,92
 &gt;         NOKOGIRI_PARSER = begin
-&gt;             require &#39;stream_parser_mixin&#39;
+&gt;             require 'stream_parser_mixin'
 &gt;             true
 &gt;         rescue LoadError
 &gt;             false
@@ -100,14 +108,19 @@
 &gt;                 @server.set_parser(XMLRPC::XMLParser::NokogiriStreamParser.new)
 &gt;             elsif XMLPARSER
 134a144
-&gt;</code></pre>
+&gt;
+</code></pre>
 
 <p>You can get everything up and running with:</p>
-<!-- code[bash] -->
-<pre><code>$ gem install xmlrpc-streaming nokogiri &amp;&amp; \
-curl http://flag.io/33998d87be6c9f8f3a6b0ae72c65fbb9 | patch /usr/lib/one/ruby/OpenNebula.rb -</code></pre>
 
-<p><strong>UPDATE</strong>: looks like you can get similar performance boost by installing the <code>xmlparser</code> Ruby gem, which uses the Expat XML parsing library (see this <a href='http://opennebula.org/documentation:rel3.0:ignc#ruby_libraries_requirements_front-end'>doc</a>) and is already supported by OpenNebula for Ruby &lt; 1.9.</p>
+<!-- code[bash] -->
+
+<pre><code>$ gem install xmlrpc-streaming nokogiri &amp;&amp; \
+curl http://flag.io/33998d87be6c9f8f3a6b0ae72c65fbb9 | patch /usr/lib/one/ruby/OpenNebula.rb -
+</code></pre>
+
+<p><strong>UPDATE</strong>: looks like you can get similar performance boost by installing the <code>xmlparser</code> Ruby gem, which uses the Expat XML parsing library (see this <a href="http://opennebula.org/documentation:rel3.0:ignc#ruby_libraries_requirements_front-end">doc</a>) and is already supported by OpenNebula for Ruby &lt; 1.9.</p>
+
 </div>
 
 

@@ -36,10 +36,10 @@ CONFIG
 ln -s /etc/nginx/sites-available/jenkins /etc/nginx/sites-enabled/jenkins
 service nginx restart
 
-sudo apt-get install -y git xvfb firefox htop
+sudo apt-get install -y libssl-dev git xvfb firefox htop
 vi /etc/default/jenkins # add  --httpListenAddress=127.0.0.1s
 service jenkins restart
 
-# install xvfb plugin, rbenv plugin, urltrigger plugin, git plugin
+# install xvfb plugin, rbenv plugin, urltrigger plugin, git plugin, ansicolor plugin, environment-script plugin
 # setup matrix based auth, add 'crohr' user, save, then create new account with crohr username
 

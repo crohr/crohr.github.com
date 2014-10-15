@@ -87,12 +87,14 @@
 openssl rsa -passin pass:x -in server.pass.key -out server.key
 rm server.pass.key
 openssl req -new -key server.key -out server.csr \
-  -subj &quot;/C=UK/ST=Warwickshire/L=Leamington/O=OrgName/OU=IT Department/CN=example.com&quot;
-openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</code></pre>
+  -subj "/C=UK/ST=Warwickshire/L=Leamington/O=OrgName/OU=IT Department/CN=example.com"
+openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+</code></pre>
 
-<p>(adapted from <a href='https://devcenter.heroku.com/articles/ssl-certificate-self'>Heroku&#8217;s procedure</a>).</p>
+<p>(adapted from <a href="https://devcenter.heroku.com/articles/ssl-certificate-self">Heroku’s procedure</a>).</p>
 
 <p>Then, just use the generated <code>server.key</code> and <code>server.crt</code> files.</p>
+
 </div>
 
 

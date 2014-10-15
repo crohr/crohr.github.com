@@ -79,25 +79,35 @@
 </div>
 
 <div id="post">
-  <p>I&#8217;m still thinking about <a href='http://crohr.me/pkgr'>pkgr</a>, and I came up with a few Rails apps that would be nice to package as .deb:</p>
+  <p>I’m still thinking about <a href="http://crohr.me/pkgr">pkgr</a>, and I came up with a few Rails
+apps that would be nice to package as .deb:</p>
 
 <ul>
-<li>
-<p><a href='http://redmine.org'>Redmine</a> - the famous project management tool. A debian package already exists, but with a way too old version. I&#8217;ve been able to build a package with pkgr. Just need to test it further and upload it somewhere.</p>
-</li>
-
-<li>
-<p><a href='gitlabhq.com'>Gitlab HQ</a> - a Github clone. Useful for setting up a private Github clone with pull requests, comments, etc.</p>
-</li>
-
-<li>
-<p><a href='http://getbarkeep.org/'>barkeep</a> - a new code review tool.</p>
-</li>
+  <li>
+    <p><a href="http://redmine.org">Redmine</a> - the famous project management tool. A
+debian package already exists, but with a way too old version. I’ve
+been able to build a package with pkgr. Just need to test it further
+and upload it somewhere.</p>
+  </li>
+  <li>
+    <p><a href="gitlabhq.com">Gitlab HQ</a> - a Github clone. Useful for setting up a
+private Github clone with pull requests, comments, etc.</p>
+  </li>
+  <li>
+    <p><a href="http://getbarkeep.org/">barkeep</a> - a new code review tool.</p>
+  </li>
 </ul>
 
-<p>All those projects use a mix of dependencies (MySQL, Postgres, Redis, Git, etc.), have different configuration strategies, and some of them have a <a href='https://devcenter.heroku.com/articles/procfile'>Procfile</a> where they declare the processes to run. Therefore it&#8217;ll be a good test to see if I&#8217;m able to package them easily.</p>
+<p>All those projects use a mix of dependencies (MySQL, Postgres, Redis,
+Git, etc.), have different configuration strategies, and some of them
+have a <a href="https://devcenter.heroku.com/articles/procfile">Procfile</a> where they declare the processes to run.
+Therefore it’ll be a good test to see if I’m able to package them
+easily.</p>
 
-<p>If it works, then it&#8217;ll be time to set up a continuous packaging server hooked to Github ;)</p>
+<p>If it works, then it’ll be time to set up a continuous packaging server
+hooked to Github ;)</p>
+
+
 </div>
 
 

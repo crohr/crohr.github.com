@@ -73,13 +73,19 @@
 </div>
 
 <div id="post">
-  <p>For a silly reason I wanted to send an archive of a local git repository to a remote server in one command.</p>
+  <p>For a silly reason I wanted to send an archive of a local git repository to a
+remote server in one command. </p>
 
 <p>Here is how you would do it over SSH, using <code>git archive</code> to create a tarball of your repository:</p>
-<!-- code[bash] -->
-<pre><code>$ git archive HEAD | ssh server.ltd &quot;cat - &gt;&gt; /path/to/archive.tar&quot;</code></pre>
 
-<p>For reference, here are the <a href='http://www.kernel.org/pub/software/scm/git/docs/v1.6.0.6/git-archive.html'><code>git-archive</code></a> and <a href='http://man.cx/cat'><code>cat</code></a> man pages.</p>
+<!-- code[bash] -->
+
+<pre><code>$ git archive HEAD | ssh server.ltd "cat - &gt;&gt; /path/to/archive.tar"
+</code></pre>
+
+<p>For reference, here are the <a href="http://www.kernel.org/pub/software/scm/git/docs/v1.6.0.6/git-archive.html"><code>git-archive</code></a> and <a href="http://man.cx/cat"><code>cat</code></a> man pages.</p>
+
+
 </div>
 
 
