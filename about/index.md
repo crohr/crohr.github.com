@@ -12,6 +12,8 @@ Website: <http://crohr.me> | Email: <contact@crohr.me> | Skype: cyril.rohr
 
 ## Work Experience
 
+* Since 2014: Founder of [Packager.io](https://packager.io), the easiest way to get debian or rpm packages out of your Ruby / NodeJS / Go app.
+
 * Since 2012: Working as a Ruby & Rails freelance developer, and doing DevOps consulting. Clients include:
 
     * **NowFashion** - Finished/Restarted the development of central features of the website (Rails4) in two weeks, in time for the Fashion Week events, after it was delayed for more than a year by an outsourced team. Real-time updates (WebSockets / Pusher), simplified administration (ActiveAdmin), batch upload and photo processing (Sidekiq), hosted on Amazon EC2 and S3.
@@ -104,14 +106,14 @@ my education. Below are some of the articles I (co)-authored:
 
 * Chess player. Juggler. Loves skiing & reading.
 
-* Side-projects: <https://pkgr.io> (RubyOnRails, docker), <http://chunk.io> (Node.js).
+* Side-projects: <http://chunk.io> (Node.js).
 
 ## Code
 
 Here is some software I've written in my spare time or that my previous
 employers allowed me to publicly release.
 
-* [pkgr] [pkgr] - Easily package your Rails app into deb or rpm packages.
+* [pkgr] [pkgr] - Easily package your Ruby (Rails, Sinatra, etc.) / NodeJS / Go app into deb or rpm packages.
   After a few months of dealing with the various intricacies of packaging Ruby
   apps for debian or centos, here is a gem that does everything for you.
 
